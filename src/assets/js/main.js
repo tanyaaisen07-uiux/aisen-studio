@@ -150,7 +150,7 @@ if (tabsRoot) {
       select(tabs[(map[e.key] + tabs.length) % tabs.length], true);
     });
   });
-  // Слова Brand. Digital. Product. в hero открывают нужную вкладку
+  // Слова Brand, Digital, Product в hero открывают нужную вкладку
   $$("[data-tab-link]").forEach((a) => a.addEventListener("click", () => {
     const tab = tabs.find((t) => t.dataset.tab === a.dataset.tabLink);
     if (tab) select(tab);

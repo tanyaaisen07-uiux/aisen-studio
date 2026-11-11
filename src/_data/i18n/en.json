@@ -47,15 +47,15 @@
     "role": "Brand, Web & Product Designer",
     "words": [
       {
-        "label": "Brand.",
+        "label": "Brand",
         "tab": "brand"
       },
       {
-        "label": "Digital.",
+        "label": "Digital",
         "tab": "web"
       },
       {
-        "label": "Product.",
+        "label": "Product",
         "tab": "product"
       }
     ],
