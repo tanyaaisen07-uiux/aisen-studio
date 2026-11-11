@@ -26,9 +26,9 @@
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="/assets/css/fonts.css">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v={{ build.version }}">
+  <link rel="stylesheet" href="/assets/css/base.css?v={{ build.version }}">
+  <link rel="stylesheet" href="/assets/css/components.css?v={{ build.version }}">
 </head>
 <body class="page-{{ pageType or 'default' }}">
   <a class="skip-link" href="#main">{{ t.skip }}</a>
@@ -37,6 +37,6 @@
     {{ content | safe }}
   </main>
   {% include "partials/footer.njk" %}
-  <script src="/assets/js/main.js" type="module"></script>
+  <script src="/assets/js/main.js?v={{ build.version }}" type="module"></script>
 </body>
 </html>
