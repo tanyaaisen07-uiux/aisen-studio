@@ -51,9 +51,9 @@ function measureIntro() {
   const need = headerH + 16 + h0 * intro.S + 32 - heroContentTop;
   introSpace.style.height = `${Math.max(0, Math.round(need))}px`;
   if (shape) {
-    const title = $(".hero__title", hero);
-    shape.style.top = window.innerWidth <= 860 && title
-      ? `${title.offsetTop}px`
+    const label = $(".hero__label", hero);
+    shape.style.top = window.innerWidth <= 860 && label
+      ? `${label.offsetTop}px`
       : `${Math.max(0, Math.round(need)) + 40}px`;
   }
   intro.on = true;
@@ -117,29 +117,6 @@ if (revealEls.length) {
   }
 }
 
-/* ---------- Фигура в hero: следует за курсором, по клику меняет форму ---------- */
-if (shape && hero) {
-  const inner = $("[data-shape-inner]", shape);
-  const forms = ["50% 50% 50% 0", "50% 50% 0 0", "999px", "0 50% 50% 50%"];
-  let formIdx = 0;
-  shape.addEventListener("click", () => {
-    formIdx = (formIdx + 1) % forms.length;
-    inner.style.borderRadius = forms[formIdx];
-    track("hero_shape_click", { form: formIdx });
-  });
-  if (finePointer && !reduceMotion) {
-    hero.addEventListener("pointermove", (e) => {
-      const r = hero.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      inner.style.setProperty("--mx", `${(x * 60).toFixed(1)}px`);
-      inner.style.setProperty("--my", `${(y * 60).toFixed(1)}px`);
-      inner.style.setProperty("--rot", `${(x * 16).toFixed(1)}deg`);
-    });
-    hero.addEventListener("pointerleave", () => ["--mx", "--my", "--rot"].forEach((p) => inner.style.removeProperty(p)));
-  }
-}
-
 /* ---------- Галерея работ: превью меняется при наведении и фокусе ---------- */
 const gallery = $("[data-gallery]");
 if (gallery) {
@@ -197,6 +174,7 @@ if (clock) {
   const zoneFmt = new Intl.DateTimeFormat("en-GB", { timeZone: tz, timeZoneName: "short" });
   const tick = () => {
     const now = new Date();
+    clock.hidden = false;
     timeEl.textContent = timeFmt.format(now);
     timeEl.dateTime = now.toISOString();
     const z = zoneFmt.formatToParts(now).find((p) => p.type === "timeZoneName");

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
+  <title>{{ title | safe }}</title>
   <meta name="description" content="{{ description }}">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#F6F1E8">
@@ -17,7 +17,7 @@
   {%- endif %}
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title }}">
+  <meta property="og:title" content="{{ title | safe }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:locale" content="{{ 'ru_RU' if lang == 'ru' else ('es_ES' if lang == 'es' else 'en_US') }}">
 

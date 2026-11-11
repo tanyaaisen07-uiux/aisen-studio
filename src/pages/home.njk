@@ -15,9 +15,7 @@ eleventyComputed:
 {#- 1. Hero: крупный AISEN STUDIO (логотип в шапке), заголовок, роль, слова-переключатели -#}
 <section class="hero container" id="top" data-hero>
   <div class="intro-space" data-intro-space aria-hidden="true"></div>
-  <button class="hero__shape" type="button" aria-label="{{ t.home.shapeLabel }}" data-hero-shape>
-    <span class="hero__shape-inner" data-shape-inner></span>
-  </button>
+  <div class="hero__shape" aria-hidden="true" data-hero-shape><span class="hero__shape-inner"></span></div>
 
   <p class="hero__label mono">{{ t.home.label }}</p>
   <h1 class="hero__title">
@@ -176,9 +174,9 @@ eleventyComputed:
         <span><strong>{{ site.author if lang != 'ru' else 'Таня Айсен' }}</strong><span class="mono mono--plain">{{ t.contact.founder }}</span></span>
       </div>
       {%- if site.showClock %}
-      <p class="clock" data-clock data-tz="{{ site.timezone }}">
+      <p class="clock" data-clock data-tz="{{ site.timezone }}" hidden>
         <span class="mono">{{ t.contact.localTime }}</span>
-        <time class="clock__time" data-clock-time>--:--</time>
+        <time class="clock__time" data-clock-time></time>
         <span class="mono mono--plain" data-clock-zone></span>
       </p>
       {%- endif %}
