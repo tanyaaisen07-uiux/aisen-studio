@@ -7,15 +7,16 @@ permalink: "/{{ lang }}/contact/"
 layout: layouts/base.njk
 pageType: contact
 eleventyComputed:
-  title: "{{ i18n[lang].contact.title }}"
-  description: "{{ i18n[lang].contact.description }}"
+  title: "{{ i18n[lang].contact.pageTitle }}"
+  description: "{{ i18n[lang].contact.pageDescription }}"
 ---
 <section class="page-head container">
-  <h1 class="page-head__title">{{ t.contact.heading }}</h1>
-  <p class="page-head__lead">{{ t.contact.text }}</p>
+  <p class="mono soft">{{ t.contact.label }}</p>
+  <h1 class="page-head__title">{{ t.contact.heading }}<span class="drop" aria-hidden="true"></span></h1>
+  <p class="page-head__lead soft">{{ t.contact.text }}</p>
 </section>
 
-<section class="container contact">
+<section class="container contact-page">
   {%- if site.formAccessKey %}
   <form class="form" action="https://api.web3forms.com/submit" method="POST" novalidate data-form
         data-msg-required="{{ t.contact.form.required }}" data-msg-email="{{ t.contact.form.emailInvalid }}"
@@ -24,7 +25,6 @@ eleventyComputed:
     <input type="hidden" name="access_key" value="{{ site.formAccessKey }}">
     <input type="hidden" name="subject" value="Aisen Studio · new message ({{ lang }})">
     <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-
     <div class="field">
       <label class="field__label" for="f-name">{{ t.contact.form.name }}</label>
       <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required>
@@ -40,20 +40,25 @@ eleventyComputed:
       <textarea class="field__input" id="f-msg" name="message" rows="5" required></textarea>
       <p class="field__error" id="f-msg-err" aria-live="polite"></p>
     </div>
-    <button class="btn btn--primary btn--lg" type="submit">{{ t.contact.form.send }} <span class="arrow" aria-hidden="true">→</span></button>
+    <button class="btn btn--dark btn--lg" type="submit">{{ t.contact.form.send }}</button>
     <p class="form__status" role="status" data-form-status></p>
   </form>
   {%- endif %}
 
-  <div class="contact__links">
-    <h2 class="mono label">{{ t.contact.elsewhere }}</h2>
-    <ul class="contact__list">
+  <div class="contact-page__side">
+    <div class="person">
+      <img src="/assets/img/about/tania-avatar.webp" alt="" width="64" height="64">
+      <span><strong>{{ site.author if lang != 'ru' else 'Таня Айсен' }}</strong><span class="mono mono--plain soft">{{ t.contact.founder }}</span></span>
+    </div>
+    <p class="mono soft">{{ t.contact.elsewhere }}</p>
+    <ul class="contact-page__list">
       {%- for c in site.contacts %}
-      <li><a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %} data-track="cta_click" data-track-label="contact_{{ c.label | slugify }}">{{ c.label }}{% if c.external %} <span class="arrow">↗</span>{% endif %}</a></li>
+      <li><a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %} data-track="cta_click" data-track-label="contact_{{ c.label | slugify }}">{{ c.label }}{% if c.external %} <span aria-hidden="true">↗</span>{% endif %}</a></li>
       {%- endfor %}
     </ul>
     {%- if site.cvFile[lang] %}
-    <a class="btn btn--ghost" href="{{ site.cvFile[lang] }}" download data-track="cv_download">{{ t.cta.cv }}</a>
+    <a class="btn btn--outline" href="{{ site.cvFile[lang] }}" download data-track="cv_download">{{ t.contact.cv }}</a>
     {%- endif %}
+    <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ t.contact.status }}</p>
   </div>
 </section>

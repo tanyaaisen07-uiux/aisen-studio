@@ -3,140 +3,173 @@
   "skip": "Skip to content",
   "nav": {
     "work": "Work",
+    "expertise": "Expertise",
     "studio": "Studio",
     "contact": "Contact",
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "home": "Aisen Studio, to the top"
   },
-  "cta": {
-    "project": "Start a project",
-    "work": "Selected work",
-    "cv": "Download CV",
-    "allWork": "All work",
-    "viewCase": "View case",
-    "live": "Live site"
-  },
-  "status": "Open to work & new projects",
-  "role": "Brand, Web & Product Designer",
-  "slogan": [
-    "Design with purpose.",
-    "Build with clarity."
-  ],
-  "signature": "Custom design, no templates.",
   "categories": {
     "all": "All",
-    "brand": "Brand & Graphic",
-    "web": "Web Design",
-    "uiux": "UI/UX & Product"
+    "brand": "Brand",
+    "web": "Web",
+    "product": "Product"
+  },
+  "catMeta": {
+    "brand": "Brand",
+    "web": "Web",
+    "product": "Product",
+    "uiux": "UI/UX"
   },
   "types": {
     "client": "Client project",
+    "inProgress": "In progress",
     "concept": "Concept",
-    "team": "Team project",
-    "inProgress": "In progress"
+    "team": "Team project"
   },
   "nameChanged": "Client name changed for confidentiality",
+  "links": {
+    "openCase": "Open case",
+    "site": "Live site ↗",
+    "behance": "On Behance ↗",
+    "allWork": "[ View all work ]",
+    "demo": "Open demo ↗"
+  },
   "home": {
     "title": "Aisen Studio · Brand, Web & Product Designer",
     "description": "Aisen Studio: brand identity, websites and digital products. Custom design, no templates.",
-    "intro": "Brand identity, websites and digital products for businesses and teams.",
-    "workTitle": "Selected work",
-    "servicesTitle": "What I do",
-    "approachTitle": "How I work",
-    "ctaTitle": "Have a project in mind?",
-    "ctaText": "Tell me about it, and let's see how I can help."
+    "label": "Independent creative practice by Tania Aisen",
+    "titleLines": [
+      "Design with purpose.",
+      "Build with clarity."
+    ],
+    "role": "Brand, Web & Product Designer",
+    "words": [
+      {
+        "label": "Brand.",
+        "tab": "brand"
+      },
+      {
+        "label": "Digital.",
+        "tab": "web"
+      },
+      {
+        "label": "Product.",
+        "tab": "product"
+      }
+    ],
+    "intro": "Brand identity, websites and digital products for businesses and teams. Custom design, no templates.",
+    "toWork": "Selected work",
+    "shapeLabel": "Change the shape",
+    "caps": [
+      "Brand identity",
+      "Web design",
+      "UI/UX design",
+      "Product design",
+      "Design systems"
+    ],
+    "capsLabel": "Capabilities",
+    "workTitle": "Selected work"
   },
-  "services": [
-    {
-      "key": "brand",
-      "title": "Brand & Graphic Design",
-      "items": [
-        "Brand identity",
-        "Logo, colour and type",
-        "Graphics for social media and print",
-        "Packaging"
-      ]
-    },
-    {
-      "key": "web",
-      "title": "Web Design & Development",
-      "items": [
-        "Websites and landing pages",
-        "Responsive front-end",
-        "Webflow or hand-coded build",
-        "A/B tests and analytics"
-      ]
-    },
-    {
-      "key": "uiux",
-      "title": "UI/UX & Product Design",
-      "items": [
-        "User flows",
-        "Wireframes and prototypes",
-        "UI for SaaS, dashboards and e-commerce",
-        "Usability testing"
-      ]
-    }
-  ],
-  "approach": [
-    {
-      "title": "Understand",
-      "text": "Goals, users and constraints first. Then the brief is clear for both sides."
-    },
-    {
-      "title": "Design",
-      "text": "Structure, flows and visual system, checked against real content."
-    },
-    {
-      "title": "Build",
-      "text": "Responsive, accessible front-end or a clean handoff to developers."
-    },
-    {
-      "title": "Measure",
-      "text": "Analytics and A/B tests to see what works and improve it."
-    }
-  ],
-  "work": {
-    "title": "Work · Aisen Studio",
-    "description": "Brand, web and UI/UX projects by Tania Aisen.",
-    "heading": "Work",
-    "filterLabel": "Filter projects",
-    "empty": "No projects in this category yet."
-  },
-  "case": {
-    "role": "Role",
-    "year": "Year",
-    "type": "Type",
-    "category": "Category",
-    "soon": "Full case study is coming soon.",
-    "next": "Next project"
+  "expertise": {
+    "label": "Expertise",
+    "related": "Related projects",
+    "tabs": [
+      {
+        "key": "brand",
+        "title": "Brand",
+        "lead": "Identity that works everywhere it appears: from a logo to a full visual system.",
+        "items": [
+          "Brand identity",
+          "Logo, colour, type",
+          "Visual systems",
+          "Packaging",
+          "Social and print graphics",
+          "Brand guidelines"
+        ],
+        "projects": [
+          "art-cook",
+          "kun"
+        ]
+      },
+      {
+        "key": "web",
+        "title": "Web",
+        "lead": "Websites that look custom and work hard: clear structure, fast pages, measured results.",
+        "items": [
+          "Websites and landing pages",
+          "Responsive design",
+          "Webflow and Framer",
+          "Hand-coded front-end",
+          "A/B tests",
+          "Analytics setup"
+        ],
+        "projects": [
+          "lumia",
+          "art-cook"
+        ]
+      },
+      {
+        "key": "product",
+        "title": "Product",
+        "lead": "Interfaces for real work: flows, roles, tables, states and the system that holds them together.",
+        "items": [
+          "UX research",
+          "User flows",
+          "Wireframes and prototypes",
+          "UI for SaaS and dashboards",
+          "Design systems",
+          "Developer handoff"
+        ],
+        "projects": [
+          "cohorta",
+          "lumia"
+        ]
+      }
+    ]
   },
   "studio": {
-    "title": "Studio · Aisen Studio",
-    "description": "About Tania Aisen and Aisen Studio: services, approach and tools.",
-    "heading": "Studio",
-    "about": [
-      "I'm Tania Aisen, a designer based in Spain. I work on brand identity, websites and interfaces, from the first sketch to a live product.",
-      "Before design I spent more than ten years in finance. That helps me design with the business side in mind: numbers, processes and what a client needs to earn."
-    ],
-    "toolsTitle": "Tools",
-    "tools": [
-      "Figma",
-      "Miro",
-      "Notion",
-      "Webflow",
-      "HTML, CSS, JavaScript",
-      "PostHog",
-      "ChatGPT, Claude, Midjourney"
-    ],
-    "formatTitle": "Working format",
-    "format": "Remote, with clients and teams in different countries. Full-time roles and project work. Languages: English, Spanish, Russian."
+    "label": "Studio · Founder & designer",
+    "statement": "Aisen Studio is a small independent practice. One designer from brief to launch: brand, website and product interface speak the same language, and every decision has a business reason behind it.",
+    "note": "Before design: more than ten years in finance. Numbers, processes and margins are part of how the work is shaped.",
+    "caption": "Tania Aisen · Spain",
+    "portraitAlt": "Portrait of Tania Aisen",
+    "workWithMe": "[ Work with me ]",
+    "steps": [
+      {
+        "title": "Understand",
+        "text": "Goals, users and constraints first, so the brief is clear for both sides."
+      },
+      {
+        "title": "Design",
+        "text": "Structure, flows and a visual system, tested on real content."
+      },
+      {
+        "title": "Build",
+        "text": "Responsive front-end or a clean handoff with components and states."
+      },
+      {
+        "title": "Measure",
+        "text": "Analytics and A/B tests show what works, then it gets better."
+      }
+    ]
   },
   "contact": {
-    "title": "Contact · Aisen Studio",
-    "description": "Start a project with Aisen Studio or get in touch with Tania Aisen.",
+    "label": "Contact",
+    "titleLines": [
+      "Have a project",
+      "in mind?"
+    ],
+    "start": "Start a project",
+    "localTime": "Local time · Spain",
+    "founder": "Founder, Aisen Studio",
+    "status": "Open to work & new projects",
+    "pageTitle": "Contact · Aisen Studio",
+    "pageDescription": "Start a project with Aisen Studio.",
     "heading": "Let's talk",
     "text": "Tell me about your project or the role you are hiring for.",
+    "elsewhere": "Elsewhere",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -148,11 +181,54 @@
       "required": "Please fill in this field.",
       "emailInvalid": "Please enter a valid email."
     },
-    "elsewhere": "Elsewhere"
+    "cv": "Download CV"
+  },
+  "work": {
+    "title": "Work · Aisen Studio",
+    "description": "Brand, web and product design projects by Aisen Studio.",
+    "eyebrow": "Brand · Web · Product",
+    "heading": "Work",
+    "intro": "Selected client projects and work in progress.",
+    "filterLabel": "Filter projects",
+    "empty": "No projects in this category yet."
+  },
+  "case": {
+    "back": "← All work",
+    "role": "Role",
+    "type": "Type",
+    "year": "Year",
+    "platform": "Platform",
+    "demo": "Live demo",
+    "playground": {
+      "label": "Product UI playground",
+      "lead": "Switch the role, the theme and the state. The same screen adapts to each person and each moment.",
+      "role": "Role",
+      "theme": "Theme",
+      "state": "State",
+      "roles": {
+        "student": "Student",
+        "instructor": "Instructor",
+        "admin": "Admin"
+      },
+      "themes": {
+        "light": "Light",
+        "dark": "Dark"
+      },
+      "states": {
+        "default": "Default",
+        "empty": "Empty",
+        "loading": "Loading"
+      },
+      "caption": "Simplified concept screens with sample data. The full flows are in the live demo."
+    },
+    "decisionsLabel": "Key decisions",
+    "decisionsLead": "Three decisions that shaped the product.",
+    "demoCta": "Explore the live demo",
+    "next": "Next project"
   },
   "footer": {
-    "localTime": "Local time",
-    "rights": "All rights reserved."
+    "signature": "Custom design, no templates.",
+    "rights": "© {year} Aisen Studio"
   },
   "notFound": {
     "title": "Page not found",

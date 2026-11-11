@@ -39,18 +39,14 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-p { margin: 0 0 var(--space-4); text-wrap: pretty; }
-p:last-child { margin-bottom: 0; }
+p { margin: 0; text-wrap: pretty; }
 
 ul, ol { margin: 0; padding: 0; list-style: none; }
 
 img, svg, video { display: block; max-width: 100%; height: auto; }
 
-a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-}
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--color-accent); }
 
 button { font: inherit; color: inherit; cursor: pointer; }
 
@@ -60,9 +56,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border-radius: 2px;
 }
 
-::selection { background: var(--color-ink); color: var(--vanilla); }
+::selection { background: var(--color-ink); color: var(--milk); }
 
-/* Утилиты */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -70,16 +65,17 @@ button { font: inherit; color: inherit; cursor: pointer; }
   padding-inline: var(--gutter);
 }
 
+/* Моноширинные метки: единственное место с разрядкой */
 .mono {
   font-family: var(--font-mono);
   font-size: var(--fs-label);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
-
-.label { color: var(--color-ink-soft); margin-bottom: var(--space-4); font-weight: 400; }
-
-.lead { font-size: var(--fs-lead); line-height: 1.5; }
+.mono--plain { letter-spacing: 0; text-transform: none; }
+.serif { font-family: var(--font-display); }
+.soft { color: var(--color-ink-soft); }
+.accent { color: var(--color-accent); }
 
 .visually-hidden {
   position: absolute !important;
@@ -96,20 +92,15 @@ button { font: inherit; color: inherit; cursor: pointer; }
   z-index: 100;
   padding: var(--space-2) var(--space-4);
   background: var(--color-ink);
-  color: var(--vanilla);
+  color: var(--milk);
   border-radius: var(--radius-sm);
 }
-.skip-link:focus { top: var(--space-4); }
-
-.arrow {
-  display: inline-block;
-  transition: transform var(--dur-base) var(--ease-out);
-}
+.skip-link:focus { top: var(--space-4); color: var(--milk); }
 
 /* Появление при скролле. Без JS всё видно сразу. */
 .js .reveal {
   opacity: 0;
-  transform: translateY(1.25rem);
+  transform: translateY(1.5rem);
   transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
@@ -118,15 +109,22 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .js .reveal { opacity: 1; transform: none; }
 }
 
-/* Переходы между страницами (Chrome, Edge, Safari 18.2+). Остальные просто переходят. */
+/* Переходы между страницами (Chrome, Edge, Safari 18.2+). Остальные браузеры просто переходят. */
 @view-transition { navigation: auto; }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 420ms;
+  animation-duration: 450ms;
+  animation-timing-function: var(--ease-out);
+}
+
+::view-transition-group(*) {
+  animation-duration: 600ms;
   animation-timing-function: var(--ease-out);
 }
 
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }
+
+[hidden] { display: none !important; }

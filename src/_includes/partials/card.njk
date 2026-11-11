@@ -1,23 +1,21 @@
-{#- Карточка проекта. Ожидает: item (кейс), lang, t, size ("lg" для первой) -#}
-{%- set cats = item.categories or [item.category] -%}
-<article class="card{% if size == 'lg' %} card--lg{% endif %}" data-card data-categories="{{ cats | join(' ') }}">
-  <a class="card__link" href="/{{ lang }}/work/{{ item.slug }}/" data-track="project_open" data-track-label="{{ item.slug }}">
+{#- Карточка проекта. Ожидает: item, lang, t. Кейс открывается на сайте, остальные ведут на живой сайт или Behance. -#}
+{%- set href = ("/" + lang + "/work/" + item.slug + "/") if item.hasCase else item.live -%}
+{%- set cta = t.links.openCase if item.hasCase else (t.links.behance if item.liveKind == "behance" else t.links.site) -%}
+<article class="card" data-card data-categories="{{ item.categories | join(' ') }}">
+  <a class="card__link" href="{{ href }}"{% if not item.hasCase %} target="_blank" rel="noopener"{% endif %}
+     data-track="{{ 'project_open' if item.hasCase else 'live_demo_open' }}" data-track-label="{{ item.slug }}">
     <div class="card__media" style="view-transition-name: cover-{{ item.slug }}">
-      {%- if item.cover %}
-      <img src="{{ item.cover }}" alt="" loading="lazy" width="1600" height="1000">
-      {%- else %}
-      <div class="card__placeholder card__placeholder--{{ item.tone }}" aria-hidden="true">
-        <span>{{ item.title }}</span>
-      </div>
-      {%- endif %}
+      <img src="{{ item.cover }}" alt="{{ item.title }}" loading="lazy" decoding="async" style="object-position: {{ item.coverPos }}">
+      <span class="card__tag mono">{{ t.types[item.type] }}</span>
+      <span class="card__cta">{{ cta }}</span>
     </div>
     <div class="card__body">
-      <p class="card__meta mono">
-        {%- for c in cats %}<span>{{ t.categories[c] }}</span>{% endfor %}<span>{{ item.year }}</span>
-      </p>
-      <h3 class="card__title">{{ item.title }}</h3>
-      <p class="card__summary">{{ item.summary[lang] }}</p>
-      <span class="card__more">{{ t.cta.viewCase }} <span class="arrow" aria-hidden="true">→</span></span>
+      <div class="card__text">
+        <span class="card__meta mono">{% for c in (item.metaKeys or item.categories) %}{{ t.catMeta[c] }}{% if not loop.last %} · {% endif %}{% endfor %} · {{ item.year }}</span>
+        <h3 class="card__title">{{ item.title }}</h3>
+        <p class="card__summary">{{ item.summary[lang] }}</p>
+      </div>
+      <svg class="card__arrow" width="26" height="26" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
     </div>
   </a>
 </article>

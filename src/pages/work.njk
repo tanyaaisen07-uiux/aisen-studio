@@ -11,22 +11,27 @@ eleventyComputed:
   description: "{{ i18n[lang].work.description }}"
 ---
 <section class="page-head container">
-  <h1 class="page-head__title">{{ t.work.heading }}</h1>
-  <p class="page-head__count mono"><span data-count>{{ cases.length }}</span> / {{ cases.length }}</p>
+  <p class="mono soft">{{ t.work.eyebrow }}</p>
+  <div class="page-head__row">
+    <h1 class="page-head__title">{{ t.work.heading }}<span class="drop" aria-hidden="true"></span>
+      <span class="page-head__count mono mono--plain">(<span data-count>0{{ cases.length }}</span>)</span></h1>
+    <p class="page-head__intro mono mono--plain soft">{{ t.work.intro }}</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="{{ t.work.filterLabel }}" data-filters>
+    {%- for key in ["all", "brand", "web", "product"] %}
+    <button class="filter" type="button" data-filter="{{ key }}" aria-pressed="{{ 'true' if key == 'all' else 'false' }}">
+      {{ t.categories[key] }} <span class="filter__n mono mono--plain" data-filter-count="{{ key }}"></span>
+    </button>
+    {%- endfor %}
+  </div>
 </section>
 
 <section class="container" aria-label="{{ t.work.heading }}">
-  <div class="filters" role="group" aria-label="{{ t.work.filterLabel }}" data-filters>
-    {%- for key in ["all", "brand", "web", "uiux"] %}
-    <button class="filter" type="button" data-filter="{{ key }}" aria-pressed="{{ 'true' if key == 'all' else 'false' }}">{{ t.categories[key] }}</button>
-    {%- endfor %}
-  </div>
-
-  <div class="work-grid" data-grid aria-live="polite">
+  <div class="work-grid" data-grid>
     {%- for item in cases %}
-    {%- set size = "" %}
     {% include "partials/card.njk" %}
     {%- endfor %}
   </div>
-  <p class="work-empty" data-empty hidden>{{ t.work.empty }}</p>
+  <p class="work-empty soft" data-empty hidden>{{ t.work.empty }}</p>
 </section>

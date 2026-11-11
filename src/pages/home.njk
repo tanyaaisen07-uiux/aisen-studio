@@ -10,93 +10,184 @@ eleventyComputed:
   title: "{{ i18n[lang].home.title }}"
   description: "{{ i18n[lang].home.description }}"
 ---
-{#- 1. Hero -#}
-<section class="hero container" aria-labelledby="hero-title">
-  <p class="hero__label mono reveal">{{ site.name }} · {{ site.author }}</p>
-  <h1 class="hero__title" id="hero-title">
-    {%- for line in t.slogan %}
-    <span class="hero__line"><span class="hero__line-inner" style="--i: {{ loop.index0 }}">{{ line }}</span></span>
+{%- set home = "/" + lang + "/" -%}
+
+{#- 1. Hero: крупный AISEN STUDIO (логотип в шапке), заголовок, роль, слова-переключатели -#}
+<section class="hero container" id="top" data-hero>
+  <div class="intro-space" data-intro-space aria-hidden="true"></div>
+  <button class="hero__shape" type="button" aria-label="{{ t.home.shapeLabel }}" data-hero-shape>
+    <span class="hero__shape-inner" data-shape-inner></span>
+  </button>
+
+  <p class="hero__label mono">{{ t.home.label }}</p>
+  <h1 class="hero__title">
+    {%- for line in t.home.titleLines %}
+    <span class="hero__line"><span class="hero__line-inner{% if loop.last %} accent{% endif %}" style="--i: {{ loop.index0 }}">{{ line }}</span></span>
     {%- endfor %}
   </h1>
+
   <div class="hero__bottom">
-    <p class="hero__role reveal">{{ t.role }}</p>
-    <p class="hero__intro reveal">{{ t.home.intro }}</p>
-    <p class="hero__sign mono reveal">{{ t.signature }}</p>
+    <div class="hero__main">
+      <p class="hero__role">{{ t.home.role }}</p>
+      <div class="hero__words">
+        {%- for w in t.home.words %}
+        <a class="pill-word" href="#expertise" data-tab-link="{{ w.tab }}">{{ w.label }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="hero__side">
+      <p class="hero__intro mono mono--plain">{{ t.home.intro }}</p>
+      <a class="btn btn--dark" href="#work" data-track="cta_click" data-track-label="hero_selected_work">{{ t.home.toWork }}
+        <span class="btn__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v12M3 9l5 5 5-5"/></svg></span>
+      </a>
+    </div>
   </div>
-  <a class="hero__scroll" href="#work" data-track="cta_click" data-track-label="hero_selected_work">
-    <span>{{ t.cta.work }}</span><span class="arrow arrow--down" aria-hidden="true">↓</span>
-  </a>
-  <div class="hero__shape" aria-hidden="true" data-hero-shape></div>
 </section>
 
-{#- 2. Selected Work -#}
+{#- 2. Плашка компетенций -#}
+<section class="container" aria-label="{{ t.home.capsLabel }}">
+  <ul class="caps">
+    {%- for c in t.home.caps %}
+    <li class="cap"><span class="cap__num mono">0{{ loop.index }}</span><span class="cap__label">{{ c }}</span></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+{#- 3. Selected work: список + крупное превью (desktop), карточки (mobile) -#}
 <section class="section container" id="work" aria-labelledby="work-title">
   <header class="section__head">
-    <p class="section__index mono">01</p>
-    <h2 class="section__title" id="work-title">{{ t.home.workTitle }}</h2>
-    <a class="link-arrow" href="/{{ lang }}/work/">{{ t.cta.allWork }} <span class="arrow" aria-hidden="true">→</span></a>
+    <h2 class="section__title" id="work-title">{{ t.home.workTitle }} <span class="section__count mono mono--plain">(0{{ cases.length }})</span></h2>
+    <a class="mono link-plain" href="{{ home }}work/">{{ t.links.allWork }}</a>
   </header>
-  <div class="work-grid work-grid--home">
+
+  <div class="gallery" data-gallery>
+    <ul class="gallery__list" role="list">
+      {%- for item in cases %}
+      {%- set href = (home + "work/" + item.slug + "/") if item.hasCase else item.live %}
+      <li>
+        <a class="gallery__row{% if loop.first %} is-active{% endif %}" href="{{ href }}"{% if not item.hasCase %} target="_blank" rel="noopener"{% endif %}
+           data-gallery-row="{{ loop.index0 }}" data-track="{{ 'project_open' if item.hasCase else 'live_demo_open' }}" data-track-label="{{ item.slug }}">
+          <span class="gallery__num mono mono--plain">0{{ loop.index }}</span>
+          <span class="gallery__text">
+            <span class="gallery__title">{{ item.title }}</span>
+            <span class="gallery__meta mono">{% for c in (item.metaKeys or item.categories) %}{{ t.catMeta[c] }}{% if not loop.last %} · {% endif %}{% endfor %} · {{ item.year }}</span>
+          </span>
+          <svg class="gallery__arrow" width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <div class="gallery__preview" aria-hidden="true">
+      <div class="gallery__frame">
+        {%- for item in cases %}
+        <figure class="gallery__slide{% if loop.first %} is-active{% endif %}" data-gallery-slide="{{ loop.index0 }}">
+          <img src="{{ item.cover }}" alt="" {% if not loop.first %}loading="lazy" {% endif %}decoding="async" style="object-position: {{ item.coverPos }}">
+          <span class="card__tag mono">{{ t.types[item.type] }}</span>
+        </figure>
+        {%- endfor %}
+      </div>
+      {%- for item in cases %}
+      <p class="gallery__caption{% if loop.first %} is-active{% endif %}" data-gallery-caption="{{ loop.index0 }}">{{ item.summary[lang] }}</p>
+      {%- endfor %}
+    </div>
+  </div>
+
+  <div class="gallery-cards">
     {%- for item in cases %}
-    {%- set size = "lg" if loop.first else "" %}
     {% include "partials/card.njk" %}
     {%- endfor %}
   </div>
 </section>
 
-{#- 3. Services -#}
-<section class="section container" aria-labelledby="services-title">
-  <header class="section__head">
-    <p class="section__index mono">02</p>
-    <h2 class="section__title" id="services-title">{{ t.home.servicesTitle }}</h2>
-  </header>
-  <div class="services">
-    {%- for s in t.services %}
-    <details class="service" {% if loop.first %}open{% endif %}>
-      <summary class="service__summary">
-        <span class="service__num mono">0{{ loop.index }}</span>
-        <span class="service__title">{{ s.title }}</span>
-        <span class="service__icon" aria-hidden="true"></span>
-      </summary>
-      <div class="service__body">
-        <ul class="service__list">
-          {%- for i in s.items %}<li>{{ i }}</li>{% endfor %}
-        </ul>
-        <a class="link-arrow" href="/{{ lang }}/work/?filter={{ s.key }}" data-track="filter_click" data-track-label="services_{{ s.key }}">{{ t.nav.work }}: {{ t.categories[s.key] }} <span class="arrow" aria-hidden="true">→</span></a>
-      </div>
-    </details>
-    {%- endfor %}
-  </div>
-</section>
-
-{#- 4. Approach + Studio -#}
-<section class="section section--dark" aria-labelledby="approach-title">
+{#- 4. Экспертиза: три вкладки -#}
+<section class="section section--dark" id="expertise" aria-labelledby="expertise-label">
   <div class="container">
-    <header class="section__head">
-      <p class="section__index mono">03</p>
-      <h2 class="section__title" id="approach-title">{{ t.home.approachTitle }}</h2>
-      <a class="link-arrow" href="/{{ lang }}/studio/">{{ t.nav.studio }} <span class="arrow" aria-hidden="true">→</span></a>
-    </header>
-    <ol class="steps">
-      {%- for step in t.approach %}
-      <li class="step reveal">
-        <span class="step__num mono">0{{ loop.index }}</span>
-        <h3 class="step__title">{{ step.title }}</h3>
-        <p class="step__text">{{ step.text }}</p>
-      </li>
+    <p class="mono on-dark-soft" id="expertise-label">{{ t.expertise.label }}</p>
+    <div class="expertise" data-tabs>
+      <div class="expertise__tabs" role="tablist" aria-labelledby="expertise-label">
+        {%- for tab in t.expertise.tabs %}
+        <button class="expertise__tab" type="button" role="tab" id="tab-{{ tab.key }}" aria-controls="panel-{{ tab.key }}"
+                aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}" data-tab="{{ tab.key }}">
+          <span class="expertise__num mono mono--plain">0{{ loop.index }}</span>
+          <span class="expertise__title">{{ tab.title }}</span>
+        </button>
+        {%- endfor %}
+      </div>
+      {%- for tab in t.expertise.tabs %}
+      <div class="expertise__panel" role="tabpanel" id="panel-{{ tab.key }}" aria-labelledby="tab-{{ tab.key }}" tabindex="0"{% if not loop.first %} hidden{% endif %}>
+        <p class="expertise__lead">{{ tab.lead }}</p>
+        <ul class="expertise__items">
+          {%- for it in tab.items %}<li>{{ it }}</li>{% endfor %}
+        </ul>
+        <p class="mono on-dark-soft">{{ t.expertise.related }}</p>
+        <div class="expertise__projects">
+          {%- for slug in tab.projects %}
+          {%- for item in cases %}{% if item.slug == slug %}
+          {%- set href = (home + "work/" + item.slug + "/") if item.hasCase else item.live %}
+          <a class="chip chip--dark" href="{{ href }}"{% if not item.hasCase %} target="_blank" rel="noopener"{% endif %}>{{ item.title }} ↗</a>
+          {%- endif %}{% endfor %}
+          {%- endfor %}
+        </div>
+      </div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-{#- 5. Contact CTA -#}
-<section class="cta container" aria-labelledby="cta-title">
-  <h2 class="cta__title" id="cta-title">{{ t.home.ctaTitle }}</h2>
-  <p class="cta__text">{{ t.home.ctaText }}</p>
-  <div class="cta__actions">
-    <a class="btn btn--primary btn--lg" href="/{{ lang }}/contact/" data-track="cta_click" data-track-label="home_start_project">{{ t.cta.project }} <span class="arrow" aria-hidden="true">→</span></a>
-    {%- if site.cvFile[lang] %}
-    <a class="btn btn--ghost btn--lg" href="{{ site.cvFile[lang] }}" download data-track="cv_download">{{ t.cta.cv }}</a>
-    {%- endif %}
+{#- 5. Студия: портрет, текст, сноска, шаги -#}
+<section class="section container" id="studio" aria-labelledby="studio-label">
+  <div class="studio">
+    <figure class="studio__portrait reveal">
+      <div class="studio__photo"><img src="/assets/img/about/tania-portrait.webp" alt="{{ t.studio.portraitAlt }}" loading="lazy" decoding="async" width="900" height="1117"></div>
+      <figcaption class="mono mono--plain soft">{{ t.studio.caption }}</figcaption>
+    </figure>
+    <div class="studio__text">
+      <p class="mono soft" id="studio-label">{{ t.studio.label }}</p>
+      <p class="studio__statement">{{ t.studio.statement }}<sup class="mono mono--plain accent">1</sup></p>
+      <p class="studio__note mono mono--plain soft"><span class="accent">1</span> {{ t.studio.note }}</p>
+      <a class="mono link-plain" href="{{ home }}contact/">{{ t.studio.workWithMe }}</a>
+    </div>
+  </div>
+  <ol class="steps">
+    {%- for step in t.studio.steps %}
+    <li class="step reveal">
+      <span class="mono mono--plain accent">0{{ loop.index }}</span>
+      <h3 class="step__title">{{ step.title }}</h3>
+      <p class="soft">{{ step.text }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+{#- 6. Финальный экран: Contact -#}
+<section class="contact-band" aria-labelledby="contact-title">
+  <div class="container contact-band__grid">
+    <div class="contact-band__main">
+      <p class="mono">{{ t.contact.label }}</p>
+      <h2 class="contact-band__title" id="contact-title">{% for l in t.contact.titleLines %}<span class="contact-band__line">{{ l }}</span>{% endfor %}</h2>
+      <a class="btn btn--light btn--lg" href="{{ home }}contact/" data-track="cta_click" data-track-label="home_start_project">{{ t.contact.start }}
+        <span class="btn__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
+      </a>
+    </div>
+    <div class="contact-band__side">
+      <div class="person">
+        <img src="/assets/img/about/tania-avatar.webp" alt="" width="64" height="64" loading="lazy">
+        <span><strong>{{ site.author if lang != 'ru' else 'Таня Айсен' }}</strong><span class="mono mono--plain">{{ t.contact.founder }}</span></span>
+      </div>
+      {%- if site.showClock %}
+      <p class="clock" data-clock data-tz="{{ site.timezone }}">
+        <span class="mono">{{ t.contact.localTime }}</span>
+        <time class="clock__time" data-clock-time>--:--</time>
+        <span class="mono mono--plain" data-clock-zone></span>
+      </p>
+      {%- endif %}
+      <ul class="contact-band__links">
+        {%- for c in site.contacts %}
+        <li><a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %} data-track="cta_click" data-track-label="home_{{ c.label | slugify }}">{{ c.label }}{% if c.external %} ↗{% endif %}</a></li>
+        {%- endfor %}
+      </ul>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ t.contact.status }}</p>
+    </div>
   </div>
 </section>

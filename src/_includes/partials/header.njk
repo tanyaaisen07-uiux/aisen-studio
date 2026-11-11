@@ -1,29 +1,21 @@
-{%- set navItems = [
-  { key: "work", url: "/" + lang + "/work/" },
-  { key: "studio", url: "/" + lang + "/studio/" },
-  { key: "contact", url: "/" + lang + "/contact/" }
-] -%}
+{%- set home = "/" + lang + "/" -%}
 <header class="site-header" data-header>
   <div class="site-header__inner container">
-    <a class="logo" href="/{{ lang }}/">
-      <span class="logo__mark">Aisen</span><span class="logo__sub">Studio</span>
-    </a>
+    {#- Место под логотип: сам логотип закреплён в левом верхнем углу и на главной уменьшается при прокрутке -#}
+    <span class="site-header__logo-slot" aria-hidden="true"></span>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
-      <span class="menu-toggle__label" data-open-label="{{ t.nav.menu }}" data-close-label="{{ t.nav.close }}">{{ t.nav.menu }}</span>
-      <span class="menu-toggle__icon" aria-hidden="true"></span>
+      <span data-menu-label data-open="{{ t.nav.menu }}" data-close="{{ t.nav.close }}">{{ t.nav.menu }}</span>
+      <svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path class="menu-toggle__l1" d="M0 1h22"/><path class="menu-toggle__l2" d="M0 11h22"/></svg>
     </button>
 
     <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
       <ul class="site-nav__list">
-        {%- for item in navItems %}
-        <li>
-          <a class="site-nav__link" href="{{ item.url }}"
-             {%- if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}</a>
-        </li>
-        {%- endfor %}
+        <li><a class="site-nav__link" href="{{ home }}work/"{% if page.url.startsWith(home + 'work/') %} aria-current="page"{% endif %}>[ {{ t.nav.work }} ]</a></li>
+        <li><a class="site-nav__link" href="{{ home }}#expertise">[ {{ t.nav.expertise }} ]</a></li>
+        <li><a class="site-nav__link" href="{{ home }}#studio">[ {{ t.nav.studio }} ]</a></li>
+        <li><a class="site-nav__link" href="{{ home }}contact/"{% if page.url.startsWith(home + 'contact/') %} aria-current="page"{% endif %}>[ {{ t.nav.contact }} ]</a></li>
       </ul>
-
       {%- if site.languages.length > 1 %}
       <div class="lang-switch" role="group" aria-label="Language">
         {%- for l in site.languages %}
@@ -35,8 +27,10 @@
         {%- endfor %}
       </div>
       {%- endif %}
-
-      <a class="btn btn--primary btn--sm site-nav__cta" href="/{{ lang }}/contact/" data-track="cta_click" data-track-label="header_start_project">{{ t.cta.project }}</a>
     </nav>
   </div>
 </header>
+
+<a class="logo" href="{{ home }}" aria-label="{{ t.nav.home }}" data-logo>
+  <span class="logo__mark">AISEN</span><span class="logo__sub">STUDIO</span>
+</a>

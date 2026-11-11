@@ -1,42 +1,13 @@
+{%- set home = "/" + lang + "/" -%}
 <footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
-      <a class="logo logo--lg" href="/{{ lang }}/"><span class="logo__mark">Aisen</span><span class="logo__sub">Studio</span></a>
-      <p class="site-footer__sign mono">{{ t.signature }}</p>
-      <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ t.status }}</p>
-    </div>
-
-    <nav class="site-footer__nav" aria-label="Footer">
-      <ul>
-        <li><a href="/{{ lang }}/work/">{{ t.nav.work }}</a></li>
-        <li><a href="/{{ lang }}/studio/">{{ t.nav.studio }}</a></li>
-        <li><a href="/{{ lang }}/contact/">{{ t.nav.contact }}</a></li>
-      </ul>
-      <ul>
-        {%- for c in site.contacts %}
-        <li><a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %} data-track="cta_click" data-track-label="footer_{{ c.label | slugify }}">{{ c.label }}{% if c.external %} ↗{% endif %}</a></li>
-        {%- endfor %}
-      </ul>
-    </nav>
-
-    {%- if site.showClock %}
-    <div class="site-footer__clock">
-      <p class="mono label">{{ t.footer.localTime }}</p>
-      <p class="clock" data-clock data-tz="{{ site.timezone }}" data-lang="{{ lang }}">
-        <span class="clock__city">{{ site.location }}</span>
-        <time class="clock__time" data-clock-time>--:--</time>
-        <span class="clock__zone mono" data-clock-zone></span>
-      </p>
-    </div>
-    {%- endif %}
-  </div>
-
-  <div class="container site-footer__bottom mono">
-    <span>© {{ "" | year }} {{ site.name }} · {{ site.author }}</span>
+  <div class="container site-footer__inner">
+    <span>{{ t.footer.rights | replace("{year}", "" | year) }}</span>
+    <span>{{ t.footer.signature }}</span>
     {%- if site.languages.length > 1 %}
     <span class="lang-switch lang-switch--inline">
       {%- for l in site.languages %}
       {%- if l == lang %}<span class="is-active">{{ l | upper }}</span>{% else %}<a href="{{ page.url | swapLang(l) }}" hreflang="{{ l }}" data-lang-switch="{{ l }}">{{ l | upper }}</a>{% endif %}
+      {%- if not loop.last %}<span aria-hidden="true">·</span>{% endif %}
       {%- endfor %}
     </span>
     {%- endif %}

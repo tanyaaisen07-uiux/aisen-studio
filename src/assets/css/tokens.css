@@ -1,48 +1,56 @@
 /* ==========================================================================
    Aisen Studio · дизайн-токены
+   Палитра: молочный фон, тёплый графит, один акцент (терракота).
    Все цвета, шрифты, размеры и движение задаются только здесь.
    ========================================================================== */
 
 :root {
-  /* Палитра (базовые значения) */
-  --vanilla: #F0D7B3;
-  --espresso: #292421;
-  --brandy: #78382F;
-  --flamingo: #D98294;
-  --ivory: #F8F5EF;
-  --stone: #D8D5CB;
+  /* Палитра */
+  --milk: #F6F1E8;          /* основной фон */
+  --paper: #FBF8F2;         /* карточки, подложки */
+  --graphite: #2C2826;      /* текст, кнопки, тёмные секции */
+  --text-soft: #3D3732;     /* вторичный текст, ~10:1 на milk */
+  --line: #81766D;          /* только линии */
+  --terracotta: #A85544;    /* единственный акцент, 4,6:1 на milk */
+  --terracotta-light: #E9C4B6; /* подписи на тёмном, 9:1 на graphite */
 
-  /* Семантические цвета */
-  --color-bg: var(--vanilla);
-  --color-surface: var(--ivory);
-  --color-muted: var(--stone);
-  --color-ink: var(--espresso);
-  --color-ink-soft: color-mix(in srgb, var(--espresso) 72%, var(--vanilla));
-  --color-accent: var(--brandy);   /* текст и ссылки на светлом: ~6:1 */
-  --color-pop: var(--flamingo);    /* только декор на светлом; текст только на тёмном */
-  --color-line: color-mix(in srgb, var(--espresso) 18%, transparent);
-  --color-focus: var(--brandy);
-  --color-success: #3E6B48;
+  /* Семантика */
+  --color-bg: var(--milk);
+  --color-surface: var(--paper);
+  --color-ink: var(--graphite);
+  --color-ink-soft: var(--text-soft);
+  --color-accent: var(--terracotta);
+  --color-on-dark: var(--milk);
+  --color-on-dark-soft: var(--terracotta-light);
+  --color-rule: rgba(44, 40, 38, 0.32);
+  --color-rule-soft: rgba(44, 40, 38, 0.16);
+  --color-rule-dark: rgba(246, 241, 232, 0.22);
+  --color-focus: var(--terracotta);
   --color-error: #9B2C2C;
+  --color-success: #2F6B3F;
 
-  /* Шрифты */
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  /* Шрифты: только прямые начертания, без курсива */
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   /* Типографическая шкала (mobile → desktop) */
-  --fs-hero: clamp(3rem, 1.4rem + 7.2vw, 6.5rem);      /* 48 → 104 px */
-  --fs-h1: clamp(2.5rem, 1.6rem + 4vw, 4.75rem);       /* 40 → 76 px */
-  --fs-h2: clamp(2rem, 1.4rem + 2.6vw, 4rem);          /* 32 → 64 px */
-  --fs-h3: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);     /* 24 → 36 px */
-  --fs-lead: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);  /* 18 → 22 px */
-  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);   /* 16 → 18 px */
-  --fs-small: 0.875rem;                                /* 14 px */
-  --fs-label: 0.75rem;                                 /* 12 px */
+  --fs-hero: clamp(3rem, 1.2rem + 7.4vw, 7rem);       /* 48 → 112 px */
+  --fs-display: clamp(4rem, 1.5rem + 10vw, 11rem);    /* 64 → 176 px */
+  --fs-h1: clamp(2.75rem, 1.5rem + 5vw, 5rem);        /* 44 → 80 px */
+  --fs-h2: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);     /* 40 → 72 px */
+  --fs-h3: clamp(1.75rem, 1.3rem + 1.8vw, 3rem);      /* 28 → 48 px */
+  --fs-h4: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);   /* 24 → 30 px */
+  --fs-lead: clamp(1.375rem, 1.1rem + 1.1vw, 2.375rem); /* 22 → 38 px */
+  --fs-body: 1.125rem;                                /* 18 px */
+  --fs-small: 0.9375rem;                              /* 15 px */
+  --fs-label: 0.875rem;                               /* 14 px */
+  --fs-micro: 0.8125rem;                              /* 13 px */
 
-  --lh-tight: 1.02;
-  --lh-heading: 1.12;
+  --lh-tight: 1.0;
+  --lh-heading: 1.1;
   --lh-body: 1.6;
+  --tracking-label: 0.12em;  /* только для моноширинных меток */
 
   /* Отступы (шаг 4 px) */
   --space-1: 0.25rem;
@@ -54,28 +62,24 @@
   --space-7: 3rem;
   --space-8: 4rem;
   --space-9: 6rem;
-  --space-10: 8rem;
-  --section-gap: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --section-gap: clamp(5rem, 3rem + 6vw, 8.75rem);    /* 80 → 140 px */
 
   /* Сетка */
-  --container: 88rem;  /* 1408 px */
-  --gutter: clamp(1.25rem, 0.6rem + 3vw, 3.5rem);
+  --container: 90rem;                                  /* 1440 px */
+  --gutter: clamp(1.25rem, 4vw, 4rem);                 /* 20 → 64 px */
+  --header-h: 5.25rem;                                 /* 84 px */
 
-  /* Формы и радиусы */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.75rem;
+  /* Формы */
+  --radius-sm: 0.5rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.5rem;
   --radius-pill: 999px;
-  --border: 1px solid var(--color-line);
 
   /* Движение */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast: 180ms;
+  --dur-fast: 200ms;
   --dur-base: 320ms;
-  --dur-slow: 700ms;
-  --dur-reveal: 1000ms;
-
-  --header-h: 4.5rem;
+  --dur-slow: 800ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -83,6 +87,5 @@
     --dur-fast: 0ms;
     --dur-base: 0ms;
     --dur-slow: 0ms;
-    --dur-reveal: 0ms;
   }
 }

@@ -1,45 +1,17 @@
 [
   {
-    "slug": "lumia",
-    "title": "LUMIA",
-    "category": "web",
-    "year": 2026,
-    "type": "client",
-    "nameChanged": true,
-    "live": "https://lumia-web.netlify.app/",
-    "summary": {
-      "en": "E-commerce website for a flower shop, with A/B-tested homepage.",
-      "ru": "Сайт цветочного магазина с A/B-тестами главной страницы.",
-      "es": "Tienda online de flores con la página de inicio validada mediante tests A/B."
-    },
-    "tone": "brandy",
-    "categories": [
-      "web",
-      "uiux"
-    ],
-    "sites": [
-      "main",
-      "ru"
-    ],
-    "order": {
-      "main": 2,
-      "ru": 4
-    }
-  },
-  {
     "slug": "cohorta",
     "title": "Cohorta",
-    "category": "uiux",
+    "categories": [
+      "product"
+    ],
     "year": 2026,
     "type": "client",
     "nameChanged": true,
+    "hasCase": true,
     "live": "https://tanyaaisen07-uiux.github.io/cohorta/",
-    "summary": {
-      "en": "Learning platform with role-based access for students, mentors and admins.",
-      "ru": "Учебная платформа с ролями для студентов, менторов и администраторов.",
-      "es": "Plataforma de aprendizaje con roles para estudiantes, mentores y administradores."
-    },
-    "tone": "espresso",
+    "cover": "/assets/img/covers/cohorta-card.webp",
+    "coverPos": "center",
     "sites": [
       "main",
       "ru"
@@ -47,12 +19,108 @@
     "order": {
       "main": 1,
       "ru": 3
+    },
+    "summary": {
+      "en": "Learning platform for cohort-based schools: roles for students, instructors and admins, grading queue with AI drafts.",
+      "es": "Plataforma de aprendizaje para escuelas por cohortes: roles para estudiantes, docentes y administradores, cola de corrección con borradores de IA.",
+      "ru": "Учебная платформа для онлайн-школ с потоками: роли студентов, преподавателей и администраторов, очередь проверки с черновиками ИИ."
+    },
+    "case": {
+      "en": {
+        "label": "Case 01 · UI/UX · Product",
+        "lead": "An LMS for cohort-based online schools. Students, instructors, teaching assistants and admins work in one product, and each of them opens to their own next step.",
+        "platform": "Web app",
+        "decisions": [
+          {
+            "title": "One queue, sorted by priority",
+            "text": "Late work first, then the longest waiting."
+          },
+          {
+            "title": "AI drafts, human decisions",
+            "text": "A grade is released only after the instructor accepts, edits or discards the AI draft."
+          },
+          {
+            "title": "Each role opens to its next step",
+            "text": "The next lesson, the next submission to grade, the next course to publish."
+          }
+        ]
+      },
+      "es": {
+        "label": "Caso 01 · UI/UX · Producto",
+        "lead": "Un LMS para escuelas online por cohortes. Estudiantes, docentes, asistentes y administradores trabajan en un mismo producto, y cada uno empieza por su siguiente paso.",
+        "platform": "Aplicación web",
+        "decisions": [
+          {
+            "title": "Una sola cola, ordenada por prioridad",
+            "text": "Primero los trabajos con retraso, después los que llevan más tiempo esperando."
+          },
+          {
+            "title": "Borradores de IA, decisiones humanas",
+            "text": "La nota se publica solo cuando el docente acepta, edita o descarta el borrador de IA."
+          },
+          {
+            "title": "Cada rol empieza por su siguiente paso",
+            "text": "La siguiente lección, la siguiente entrega por corregir, el siguiente curso por publicar."
+          }
+        ]
+      },
+      "ru": {
+        "label": "Кейс 01 · UI/UX · Продукт",
+        "lead": "LMS для онлайн-школ с потоками. Студенты, преподаватели, ассистенты и администраторы работают в одном продукте, и каждый сразу видит свой следующий шаг.",
+        "platform": "Веб-приложение",
+        "decisions": [
+          {
+            "title": "Одна очередь по приоритету",
+            "text": "Сначала просроченные работы, потом те, что ждут дольше всех."
+          },
+          {
+            "title": "Черновик от ИИ, решение за человеком",
+            "text": "Оценка уходит студенту только после того, как преподаватель принял, изменил или отклонил черновик ИИ."
+          },
+          {
+            "title": "У каждой роли свой следующий шаг",
+            "text": "Следующий урок, следующая работа на проверку, следующий курс к публикации."
+          }
+        ]
+      }
+    },
+    "metaKeys": [
+      "uiux",
+      "product"
+    ]
+  },
+  {
+    "slug": "lumia",
+    "title": "LUMIA",
+    "categories": [
+      "web",
+      "product"
+    ],
+    "year": 2026,
+    "type": "client",
+    "nameChanged": true,
+    "hasCase": false,
+    "live": "https://lumia-web.netlify.app/",
+    "liveKind": "site",
+    "cover": "/assets/img/covers/lumia.webp",
+    "coverPos": "center",
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 2,
+      "ru": 4
+    },
+    "summary": {
+      "en": "E-commerce website for a flower shop in Spain, with an A/B-tested homepage.",
+      "es": "Tienda online de flores en España, con la página de inicio validada mediante tests A/B.",
+      "ru": "Интернет-магазин цветов с главной страницей, проверенной A/B-тестами."
     }
   },
   {
     "slug": "art-cook",
     "title": "Art Cook",
-    "category": "brand",
     "categories": [
       "brand",
       "web"
@@ -60,13 +128,11 @@
     "year": 2021,
     "type": "client",
     "nameChanged": false,
+    "hasCase": false,
     "live": "https://tanyaaisen07-uiux.github.io/art-cook/",
-    "summary": {
-      "en": "Brand identity and website for a culinary school in Almaty.",
-      "ru": "Айдентика и сайт кулинарной школы в Алматы.",
-      "es": "Identidad de marca y web para una escuela de cocina en Almaty."
-    },
-    "tone": "flamingo",
+    "liveKind": "site",
+    "cover": "/assets/img/covers/art-cook-mockup.webp",
+    "coverPos": "center",
     "sites": [
       "main",
       "ru"
@@ -74,22 +140,27 @@
     "order": {
       "main": 3,
       "ru": 1
+    },
+    "summary": {
+      "en": "Brand identity from scratch and a website for a culinary school in Almaty.",
+      "es": "Identidad de marca desde cero y web para una escuela de cocina en Almaty.",
+      "ru": "Айдентика с нуля и сайт кулинарной школы в Алматы."
     }
   },
   {
     "slug": "kun",
     "title": "Kün",
-    "category": "brand",
+    "categories": [
+      "brand"
+    ],
     "year": 2026,
     "type": "inProgress",
     "nameChanged": false,
-    "live": "",
-    "summary": {
-      "en": "Brand identity for a coffee and bakery with a Kazakh name.",
-      "ru": "Айдентика кофейни-пекарни с казахским названием.",
-      "es": "Identidad de marca para una cafetería y panadería con nombre kazajo."
-    },
-    "tone": "ivory",
+    "hasCase": false,
+    "live": "https://www.behance.net/tanyaaisen",
+    "liveKind": "behance",
+    "cover": "/assets/img/covers/kun.webp",
+    "coverPos": "center",
     "sites": [
       "main",
       "ru"
@@ -97,6 +168,11 @@
     "order": {
       "main": 4,
       "ru": 2
+    },
+    "summary": {
+      "en": "Brand identity for a coffee and bakery with a Kazakh name.",
+      "es": "Identidad de marca para una cafetería y panadería con nombre kazajo.",
+      "ru": "Айдентика кофейни-пекарни с казахским названием."
     }
   }
 ]
