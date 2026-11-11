@@ -26,7 +26,7 @@ jobs:
       - run: npm ci
       # Пока сайт живёт по адресу username.github.io/<repo>/, нужен префикс пути.
       # После подключения своего домена поменять на "/".
-      - run: npm run build
+      - run: npm run build:all
         env:
           PATH_PREFIX: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3

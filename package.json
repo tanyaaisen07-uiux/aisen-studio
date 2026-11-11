@@ -7,7 +7,8 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "build:ru": "SITE=ru eleventy --output=_site_ru",
-    "start:ru": "SITE=ru eleventy --serve --output=_site_ru"
+    "start:ru": "SITE=ru eleventy --serve --output=_site_ru",
+    "build:all": "eleventy && SITE=ru eleventy --output=_site_ru && rm -rf _site/ru && cp -r _site_ru/ru _site/ru"
   },
   "keywords": [],
   "author": "",
