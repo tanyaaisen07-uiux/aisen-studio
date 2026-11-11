@@ -155,9 +155,9 @@ body.menu-open .logo { transform: none !important; }
 .hero { position: relative; padding-top: var(--space-8); padding-bottom: var(--space-8); }
 .hero__label { color: var(--color-ink-soft); margin-bottom: var(--space-7); max-width: 40rem; }
 .hero { --shape-w: clamp(7rem, 20vw, 18.75rem); }
-.hero__title { font-size: var(--fs-hero); line-height: var(--lh-tight); max-width: min(14em, calc(100% - var(--shape-w) - 2rem)); }
+.hero__title { font-size: var(--fs-hero); line-height: var(--lh-tight); }
 /* В испанском строки длиннее: чуть меньший кегль, чтобы слоган не уходил под каплю */
-:lang(es) .hero__title { font-size: calc(var(--fs-hero) * 0.88); }
+:lang(es) .hero__title { font-size: calc(var(--fs-hero) * 0.82); }
 .hero__line { display: block; overflow: hidden; padding-bottom: 0.08em; }
 .hero__line-inner { display: inline-block; }
 .js .hero__line-inner { transform: translateY(110%); animation: line-up 1s var(--ease-out) forwards; animation-delay: calc(2300ms + var(--i) * 150ms); }
@@ -184,15 +184,13 @@ body.menu-open .logo { transform: none !important; }
 }
 .pill-word:hover { background: var(--graphite); color: var(--milk); }
 
-.hero__shape {
-  position: absolute;
-  right: var(--gutter);
-  top: var(--space-6);
-  width: var(--shape-w);
-  aspect-ratio: 1;
-  padding: 0; border: 0; background: none;
-  z-index: 0;
+.hero__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--shape-w);
+  gap: var(--space-6);
+  align-items: start;
 }
+.hero__shape { width: var(--shape-w); aspect-ratio: 1; margin-top: var(--space-6); }
 .hero__shape-inner {
   display: block; width: 100%; height: 100%;
   background: var(--color-accent);
@@ -201,15 +199,14 @@ body.menu-open .logo { transform: none !important; }
 }
 /* Деликатно: только при наведении, лёгкий поворот и чуть более мягкий угол */
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .hero__shape:hover .hero__shape-inner { transform: rotate(-8deg); border-radius: var(--drop-radius-hover); }
+  .hero__shape:hover .hero__shape-inner { transform: rotate(-6deg); }
 }
-.hero > *:not(.hero__shape):not(.intro-space) { position: relative; z-index: 1; }
 .js .hero__shape { opacity: 0; animation: fade-in 1.2s var(--ease-out) 2.4s forwards; }
 
 @media (max-width: 860px) {
   .hero { --shape-w: 4.5rem; }
-  .hero__title { max-width: none; }
-  .hero__label { max-width: calc(100% - var(--shape-w) - 1.25rem); }
+  .hero__top { gap: var(--space-4); }
+  .hero__shape { margin-top: 0; }
   .hero__bottom { grid-template-columns: 1fr; }
   .hero__main, .hero__side { grid-column: 1 / -1; }
 }

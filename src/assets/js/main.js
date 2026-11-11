@@ -32,7 +32,6 @@ const onHeaderScroll = () => header && header.classList.toggle("is-scrolled", wi
 const logo = $("[data-logo]");
 const hero = $("[data-hero]");
 const introSpace = $("[data-intro-space]");
-const shape = $("[data-hero-shape]");
 const intro = { on: false, S: 1, startY: 0, dist: 320 };
 
 function measureIntro() {
@@ -50,12 +49,6 @@ function measureIntro() {
   const heroContentTop = hero.offsetTop + parseFloat(cs.paddingTop);
   const need = headerH + 16 + h0 * intro.S + 32 - heroContentTop;
   introSpace.style.height = `${Math.max(0, Math.round(need))}px`;
-  if (shape) {
-    const label = $(".hero__label", hero);
-    shape.style.top = window.innerWidth <= 860 && label
-      ? `${label.offsetTop}px`
-      : `${Math.max(0, Math.round(need)) + 40}px`;
-  }
   intro.on = true;
   updateIntro();
 }

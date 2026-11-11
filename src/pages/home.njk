@@ -15,14 +15,17 @@ eleventyComputed:
 {#- 1. Hero: крупный AISEN STUDIO (логотип в шапке), заголовок, роль, слова-переключатели -#}
 <section class="hero container" id="top" data-hero>
   <div class="intro-space" data-intro-space aria-hidden="true"></div>
-  <div class="hero__shape" aria-hidden="true" data-hero-shape><span class="hero__shape-inner"></span></div>
-
-  <p class="hero__label mono">{{ t.home.label }}</p>
-  <h1 class="hero__title">
-    {%- for line in t.home.titleLines %}
-    <span class="hero__line"><span class="hero__line-inner{% if loop.last %} accent{% endif %}" style="--i: {{ loop.index0 }}">{{ line }}</span></span>
-    {%- endfor %}
-  </h1>
+  <div class="hero__top">
+    <div class="hero__head">
+      <p class="hero__label mono">{{ t.home.label }}</p>
+      <h1 class="hero__title">
+        {%- for line in t.home.titleLines %}
+        <span class="hero__line"><span class="hero__line-inner{% if loop.last %} accent{% endif %}" style="--i: {{ loop.index0 }}">{{ line }}</span></span>
+        {%- endfor %}
+      </h1>
+    </div>
+    <div class="hero__shape" aria-hidden="true"><span class="hero__shape-inner"></span></div>
+  </div>
 
   <div class="hero__bottom">
     <div class="hero__main">
