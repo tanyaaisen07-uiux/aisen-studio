@@ -1,0 +1,42 @@
+{%- set navItems = [
+  { key: "work", url: "/" + lang + "/work/" },
+  { key: "studio", url: "/" + lang + "/studio/" },
+  { key: "contact", url: "/" + lang + "/contact/" }
+] -%}
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="logo" href="/{{ lang }}/">
+      <span class="logo__mark">Aisen</span><span class="logo__sub">Studio</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="menu-toggle__label" data-open-label="{{ t.nav.menu }}" data-close-label="{{ t.nav.close }}">{{ t.nav.menu }}</span>
+      <span class="menu-toggle__icon" aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
+      <ul class="site-nav__list">
+        {%- for item in navItems %}
+        <li>
+          <a class="site-nav__link" href="{{ item.url }}"
+             {%- if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ t.nav[item.key] }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+
+      {%- if site.languages.length > 1 %}
+      <div class="lang-switch" role="group" aria-label="Language">
+        {%- for l in site.languages %}
+        {%- if l == lang %}
+        <span class="lang-switch__item is-active" aria-current="true">{{ l | upper }}</span>
+        {%- else %}
+        <a class="lang-switch__item" href="{{ page.url | swapLang(l) }}" hreflang="{{ l }}" lang="{{ l }}" data-lang-switch="{{ l }}">{{ l | upper }}</a>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+      {%- endif %}
+
+      <a class="btn btn--primary btn--sm site-nav__cta" href="/{{ lang }}/contact/" data-track="cta_click" data-track-label="header_start_project">{{ t.cta.project }}</a>
+    </nav>
+  </div>
+</header>

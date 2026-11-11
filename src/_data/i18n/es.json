@@ -1,0 +1,162 @@
+{
+  "langName": "Español",
+  "skip": "Ir al contenido",
+  "nav": {
+    "work": "Proyectos",
+    "studio": "Estudio",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "cta": {
+    "project": "Empezar un proyecto",
+    "work": "Proyectos destacados",
+    "cv": "Descargar CV",
+    "allWork": "Todos los proyectos",
+    "viewCase": "Ver caso",
+    "live": "Web en vivo"
+  },
+  "status": "Disponible para trabajo y nuevos proyectos",
+  "role": "Brand, Web & Product Designer",
+  "slogan": [
+    "Design with purpose.",
+    "Build with clarity."
+  ],
+  "signature": "Custom design, no templates.",
+  "categories": {
+    "all": "Todos",
+    "brand": "Marca y gráfica",
+    "web": "Diseño web",
+    "uiux": "UI/UX y producto"
+  },
+  "types": {
+    "client": "Proyecto para cliente",
+    "concept": "Concepto",
+    "team": "Proyecto en equipo",
+    "inProgress": "En curso"
+  },
+  "nameChanged": "Nombre del cliente cambiado por confidencialidad",
+  "home": {
+    "title": "Aisen Studio · Brand, Web & Product Designer",
+    "description": "Aisen Studio: identidad de marca, webs y productos digitales. Diseño a medida, sin plantillas.",
+    "intro": "Identidad de marca, webs y productos digitales para empresas y equipos.",
+    "workTitle": "Proyectos destacados",
+    "servicesTitle": "Qué hago",
+    "approachTitle": "Cómo trabajo",
+    "ctaTitle": "¿Tienes un proyecto en mente?",
+    "ctaText": "Cuéntamelo y vemos cómo puedo ayudarte."
+  },
+  "services": [
+    {
+      "key": "brand",
+      "title": "Diseño de marca y gráfico",
+      "items": [
+        "Identidad de marca",
+        "Logotipo, color y tipografía",
+        "Gráficos para redes sociales e impresión",
+        "Packaging"
+      ]
+    },
+    {
+      "key": "web",
+      "title": "Diseño y desarrollo web",
+      "items": [
+        "Webs y landing pages",
+        "Front-end responsive",
+        "Desarrollo en Webflow o a código",
+        "Tests A/B y analítica"
+      ]
+    },
+    {
+      "key": "uiux",
+      "title": "Diseño UI/UX y de producto",
+      "items": [
+        "Flujos de usuario",
+        "Wireframes y prototipos",
+        "UI para SaaS, paneles y e-commerce",
+        "Tests de usabilidad"
+      ]
+    }
+  ],
+  "approach": [
+    {
+      "title": "Entender",
+      "text": "Primero los objetivos, los usuarios y las limitaciones. Así el encargo queda claro para ambas partes."
+    },
+    {
+      "title": "Diseñar",
+      "text": "Estructura, flujos y sistema visual, comprobados con contenido real."
+    },
+    {
+      "title": "Construir",
+      "text": "Front-end responsive y accesible, o una entrega limpia al equipo de desarrollo."
+    },
+    {
+      "title": "Medir",
+      "text": "Analítica y tests A/B para ver qué funciona y mejorarlo."
+    }
+  ],
+  "work": {
+    "title": "Proyectos · Aisen Studio",
+    "description": "Proyectos de marca, web, UI/UX y producto.",
+    "heading": "Proyectos",
+    "filterLabel": "Filtrar proyectos",
+    "empty": "Todavía no hay proyectos en esta categoría."
+  },
+  "case": {
+    "role": "Rol",
+    "year": "Año",
+    "type": "Tipo",
+    "category": "Categoría",
+    "soon": "El caso completo estará disponible pronto.",
+    "next": "Siguiente proyecto"
+  },
+  "studio": {
+    "title": "Estudio · Aisen Studio",
+    "description": "Sobre Tania Aisen y Aisen Studio: servicios, enfoque y herramientas.",
+    "heading": "Estudio",
+    "about": [
+      "Soy Tania Aisen, diseñadora en España. Trabajo en identidad de marca, webs e interfaces, desde el primer boceto hasta el producto publicado.",
+      "Antes del diseño trabajé más de diez años en finanzas. Por eso diseño pensando también en el negocio: cifras, procesos y lo que el cliente necesita para ganar."
+    ],
+    "toolsTitle": "Herramientas",
+    "tools": [
+      "Figma",
+      "Miro",
+      "Notion",
+      "Webflow",
+      "HTML, CSS, JavaScript",
+      "PostHog",
+      "ChatGPT, Claude, Midjourney"
+    ],
+    "formatTitle": "Formato de trabajo",
+    "format": "En remoto, con clientes y equipos de distintos países. Empleo a tiempo completo y proyectos. Idiomas: inglés, español, ruso."
+  },
+  "contact": {
+    "title": "Contacto · Aisen Studio",
+    "description": "Empieza un proyecto con Aisen Studio o contacta con Tania Aisen.",
+    "heading": "Hablemos",
+    "text": "Cuéntame tu proyecto o el puesto que buscas cubrir.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Sobre el proyecto",
+      "send": "Enviar mensaje",
+      "sending": "Enviando…",
+      "success": "¡Gracias! Tu mensaje se ha enviado. Te responderé pronto.",
+      "error": "No se ha podido enviar. Inténtalo de nuevo o escríbeme por LinkedIn.",
+      "required": "Rellena este campo.",
+      "emailInvalid": "Introduce un email válido."
+    },
+    "elsewhere": "También estoy en"
+  },
+  "footer": {
+    "localTime": "Hora local",
+    "rights": "Todos los derechos reservados."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "Esta página no existe o se ha movido.",
+    "home": "Ir a la página de inicio"
+  }
+}

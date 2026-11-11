@@ -1,0 +1,23 @@
+{#- Карточка проекта. Ожидает: item (кейс), lang, t, size ("lg" для первой) -#}
+{%- set cats = item.categories or [item.category] -%}
+<article class="card{% if size == 'lg' %} card--lg{% endif %}" data-card data-categories="{{ cats | join(' ') }}">
+  <a class="card__link" href="/{{ lang }}/work/{{ item.slug }}/" data-track="project_open" data-track-label="{{ item.slug }}">
+    <div class="card__media" style="view-transition-name: cover-{{ item.slug }}">
+      {%- if item.cover %}
+      <img src="{{ item.cover }}" alt="" loading="lazy" width="1600" height="1000">
+      {%- else %}
+      <div class="card__placeholder card__placeholder--{{ item.tone }}" aria-hidden="true">
+        <span>{{ item.title }}</span>
+      </div>
+      {%- endif %}
+    </div>
+    <div class="card__body">
+      <p class="card__meta mono">
+        {%- for c in cats %}<span>{{ t.categories[c] }}</span>{% endfor %}<span>{{ item.year }}</span>
+      </p>
+      <h3 class="card__title">{{ item.title }}</h3>
+      <p class="card__summary">{{ item.summary[lang] }}</p>
+      <span class="card__more">{{ t.cta.viewCase }} <span class="arrow" aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

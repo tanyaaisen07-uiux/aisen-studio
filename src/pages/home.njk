@@ -1,0 +1,102 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/"
+layout: layouts/base.njk
+pageType: home
+eleventyComputed:
+  title: "{{ i18n[lang].home.title }}"
+  description: "{{ i18n[lang].home.description }}"
+---
+{#- 1. Hero -#}
+<section class="hero container" aria-labelledby="hero-title">
+  <p class="hero__label mono reveal">{{ site.name }} · {{ site.author }}</p>
+  <h1 class="hero__title" id="hero-title">
+    {%- for line in t.slogan %}
+    <span class="hero__line"><span class="hero__line-inner" style="--i: {{ loop.index0 }}">{{ line }}</span></span>
+    {%- endfor %}
+  </h1>
+  <div class="hero__bottom">
+    <p class="hero__role reveal">{{ t.role }}</p>
+    <p class="hero__intro reveal">{{ t.home.intro }}</p>
+    <p class="hero__sign mono reveal">{{ t.signature }}</p>
+  </div>
+  <a class="hero__scroll" href="#work" data-track="cta_click" data-track-label="hero_selected_work">
+    <span>{{ t.cta.work }}</span><span class="arrow arrow--down" aria-hidden="true">↓</span>
+  </a>
+  <div class="hero__shape" aria-hidden="true" data-hero-shape></div>
+</section>
+
+{#- 2. Selected Work -#}
+<section class="section container" id="work" aria-labelledby="work-title">
+  <header class="section__head">
+    <p class="section__index mono">01</p>
+    <h2 class="section__title" id="work-title">{{ t.home.workTitle }}</h2>
+    <a class="link-arrow" href="/{{ lang }}/work/">{{ t.cta.allWork }} <span class="arrow" aria-hidden="true">→</span></a>
+  </header>
+  <div class="work-grid work-grid--home">
+    {%- for item in cases %}
+    {%- set size = "lg" if loop.first else "" %}
+    {% include "partials/card.njk" %}
+    {%- endfor %}
+  </div>
+</section>
+
+{#- 3. Services -#}
+<section class="section container" aria-labelledby="services-title">
+  <header class="section__head">
+    <p class="section__index mono">02</p>
+    <h2 class="section__title" id="services-title">{{ t.home.servicesTitle }}</h2>
+  </header>
+  <div class="services">
+    {%- for s in t.services %}
+    <details class="service" {% if loop.first %}open{% endif %}>
+      <summary class="service__summary">
+        <span class="service__num mono">0{{ loop.index }}</span>
+        <span class="service__title">{{ s.title }}</span>
+        <span class="service__icon" aria-hidden="true"></span>
+      </summary>
+      <div class="service__body">
+        <ul class="service__list">
+          {%- for i in s.items %}<li>{{ i }}</li>{% endfor %}
+        </ul>
+        <a class="link-arrow" href="/{{ lang }}/work/?filter={{ s.key }}" data-track="filter_click" data-track-label="services_{{ s.key }}">{{ t.nav.work }}: {{ t.categories[s.key] }} <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </details>
+    {%- endfor %}
+  </div>
+</section>
+
+{#- 4. Approach + Studio -#}
+<section class="section section--dark" aria-labelledby="approach-title">
+  <div class="container">
+    <header class="section__head">
+      <p class="section__index mono">03</p>
+      <h2 class="section__title" id="approach-title">{{ t.home.approachTitle }}</h2>
+      <a class="link-arrow" href="/{{ lang }}/studio/">{{ t.nav.studio }} <span class="arrow" aria-hidden="true">→</span></a>
+    </header>
+    <ol class="steps">
+      {%- for step in t.approach %}
+      <li class="step reveal">
+        <span class="step__num mono">0{{ loop.index }}</span>
+        <h3 class="step__title">{{ step.title }}</h3>
+        <p class="step__text">{{ step.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{#- 5. Contact CTA -#}
+<section class="cta container" aria-labelledby="cta-title">
+  <h2 class="cta__title" id="cta-title">{{ t.home.ctaTitle }}</h2>
+  <p class="cta__text">{{ t.home.ctaText }}</p>
+  <div class="cta__actions">
+    <a class="btn btn--primary btn--lg" href="/{{ lang }}/contact/" data-track="cta_click" data-track-label="home_start_project">{{ t.cta.project }} <span class="arrow" aria-hidden="true">→</span></a>
+    {%- if site.cvFile[lang] %}
+    <a class="btn btn--ghost btn--lg" href="{{ site.cvFile[lang] }}" download data-track="cv_download">{{ t.cta.cv }}</a>
+    {%- endif %}
+  </div>
+</section>

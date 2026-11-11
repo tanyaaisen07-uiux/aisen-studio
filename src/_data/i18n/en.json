@@ -1,0 +1,162 @@
+{
+  "langName": "English",
+  "skip": "Skip to content",
+  "nav": {
+    "work": "Work",
+    "studio": "Studio",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "cta": {
+    "project": "Start a project",
+    "work": "Selected work",
+    "cv": "Download CV",
+    "allWork": "All work",
+    "viewCase": "View case",
+    "live": "Live site"
+  },
+  "status": "Open to work & new projects",
+  "role": "Brand, Web & Product Designer",
+  "slogan": [
+    "Design with purpose.",
+    "Build with clarity."
+  ],
+  "signature": "Custom design, no templates.",
+  "categories": {
+    "all": "All",
+    "brand": "Brand & Graphic",
+    "web": "Web Design",
+    "uiux": "UI/UX & Product"
+  },
+  "types": {
+    "client": "Client project",
+    "concept": "Concept",
+    "team": "Team project",
+    "inProgress": "In progress"
+  },
+  "nameChanged": "Client name changed for confidentiality",
+  "home": {
+    "title": "Aisen Studio · Brand, Web & Product Designer",
+    "description": "Aisen Studio: brand identity, websites and digital products. Custom design, no templates.",
+    "intro": "Brand identity, websites and digital products for businesses and teams.",
+    "workTitle": "Selected work",
+    "servicesTitle": "What I do",
+    "approachTitle": "How I work",
+    "ctaTitle": "Have a project in mind?",
+    "ctaText": "Tell me about it, and let's see how I can help."
+  },
+  "services": [
+    {
+      "key": "brand",
+      "title": "Brand & Graphic Design",
+      "items": [
+        "Brand identity",
+        "Logo, colour and type",
+        "Graphics for social media and print",
+        "Packaging"
+      ]
+    },
+    {
+      "key": "web",
+      "title": "Web Design & Development",
+      "items": [
+        "Websites and landing pages",
+        "Responsive front-end",
+        "Webflow or hand-coded build",
+        "A/B tests and analytics"
+      ]
+    },
+    {
+      "key": "uiux",
+      "title": "UI/UX & Product Design",
+      "items": [
+        "User flows",
+        "Wireframes and prototypes",
+        "UI for SaaS, dashboards and e-commerce",
+        "Usability testing"
+      ]
+    }
+  ],
+  "approach": [
+    {
+      "title": "Understand",
+      "text": "Goals, users and constraints first. Then the brief is clear for both sides."
+    },
+    {
+      "title": "Design",
+      "text": "Structure, flows and visual system, checked against real content."
+    },
+    {
+      "title": "Build",
+      "text": "Responsive, accessible front-end or a clean handoff to developers."
+    },
+    {
+      "title": "Measure",
+      "text": "Analytics and A/B tests to see what works and improve it."
+    }
+  ],
+  "work": {
+    "title": "Work · Aisen Studio",
+    "description": "Brand, web and UI/UX projects by Tania Aisen.",
+    "heading": "Work",
+    "filterLabel": "Filter projects",
+    "empty": "No projects in this category yet."
+  },
+  "case": {
+    "role": "Role",
+    "year": "Year",
+    "type": "Type",
+    "category": "Category",
+    "soon": "Full case study is coming soon.",
+    "next": "Next project"
+  },
+  "studio": {
+    "title": "Studio · Aisen Studio",
+    "description": "About Tania Aisen and Aisen Studio: services, approach and tools.",
+    "heading": "Studio",
+    "about": [
+      "I'm Tania Aisen, a designer based in Spain. I work on brand identity, websites and interfaces, from the first sketch to a live product.",
+      "Before design I spent more than ten years in finance. That helps me design with the business side in mind: numbers, processes and what a client needs to earn."
+    ],
+    "toolsTitle": "Tools",
+    "tools": [
+      "Figma",
+      "Miro",
+      "Notion",
+      "Webflow",
+      "HTML, CSS, JavaScript",
+      "PostHog",
+      "ChatGPT, Claude, Midjourney"
+    ],
+    "formatTitle": "Working format",
+    "format": "Remote, with clients and teams in different countries. Full-time roles and project work. Languages: English, Spanish, Russian."
+  },
+  "contact": {
+    "title": "Contact · Aisen Studio",
+    "description": "Start a project with Aisen Studio or get in touch with Tania Aisen.",
+    "heading": "Let's talk",
+    "text": "Tell me about your project or the role you are hiring for.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "About the project",
+      "send": "Send message",
+      "sending": "Sending…",
+      "success": "Thank you! Your message is sent. I'll reply soon.",
+      "error": "Something went wrong. Please try again or write on LinkedIn.",
+      "required": "Please fill in this field.",
+      "emailInvalid": "Please enter a valid email."
+    },
+    "elsewhere": "Elsewhere"
+  },
+  "footer": {
+    "localTime": "Local time",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page doesn't exist or has moved.",
+    "home": "Go to home page"
+  }
+}

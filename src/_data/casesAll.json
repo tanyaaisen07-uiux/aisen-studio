@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "lumia",
+    "title": "LUMIA",
+    "category": "web",
+    "year": 2026,
+    "type": "client",
+    "nameChanged": true,
+    "live": "https://lumia-web.netlify.app/",
+    "summary": {
+      "en": "E-commerce website for a flower shop, with A/B-tested homepage.",
+      "ru": "Сайт цветочного магазина с A/B-тестами главной страницы.",
+      "es": "Tienda online de flores con la página de inicio validada mediante tests A/B."
+    },
+    "tone": "brandy",
+    "categories": [
+      "web",
+      "uiux"
+    ],
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 2,
+      "ru": 4
+    }
+  },
+  {
+    "slug": "cohorta",
+    "title": "Cohorta",
+    "category": "uiux",
+    "year": 2026,
+    "type": "client",
+    "nameChanged": true,
+    "live": "https://tanyaaisen07-uiux.github.io/cohorta/",
+    "summary": {
+      "en": "Learning platform with role-based access for students, mentors and admins.",
+      "ru": "Учебная платформа с ролями для студентов, менторов и администраторов.",
+      "es": "Plataforma de aprendizaje con roles para estudiantes, mentores y administradores."
+    },
+    "tone": "espresso",
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 1,
+      "ru": 3
+    }
+  },
+  {
+    "slug": "art-cook",
+    "title": "Art Cook",
+    "category": "brand",
+    "categories": [
+      "brand",
+      "web"
+    ],
+    "year": 2021,
+    "type": "client",
+    "nameChanged": false,
+    "live": "https://tanyaaisen07-uiux.github.io/art-cook/",
+    "summary": {
+      "en": "Brand identity and website for a culinary school in Almaty.",
+      "ru": "Айдентика и сайт кулинарной школы в Алматы.",
+      "es": "Identidad de marca y web para una escuela de cocina en Almaty."
+    },
+    "tone": "flamingo",
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 3,
+      "ru": 1
+    }
+  },
+  {
+    "slug": "kun",
+    "title": "Kün",
+    "category": "brand",
+    "year": 2026,
+    "type": "inProgress",
+    "nameChanged": false,
+    "live": "",
+    "summary": {
+      "en": "Brand identity for a coffee and bakery with a Kazakh name.",
+      "ru": "Айдентика кофейни-пекарни с казахским названием.",
+      "es": "Identidad de marca para una cafetería y panadería con nombre kazajo."
+    },
+    "tone": "ivory",
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 4,
+      "ru": 2
+    }
+  }
+]

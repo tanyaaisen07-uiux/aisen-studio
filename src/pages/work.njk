@@ -1,0 +1,32 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/work/"
+layout: layouts/base.njk
+pageType: work
+eleventyComputed:
+  title: "{{ i18n[lang].work.title }}"
+  description: "{{ i18n[lang].work.description }}"
+---
+<section class="page-head container">
+  <h1 class="page-head__title">{{ t.work.heading }}</h1>
+  <p class="page-head__count mono"><span data-count>{{ cases.length }}</span> / {{ cases.length }}</p>
+</section>
+
+<section class="container" aria-label="{{ t.work.heading }}">
+  <div class="filters" role="group" aria-label="{{ t.work.filterLabel }}" data-filters>
+    {%- for key in ["all", "brand", "web", "uiux"] %}
+    <button class="filter" type="button" data-filter="{{ key }}" aria-pressed="{{ 'true' if key == 'all' else 'false' }}">{{ t.categories[key] }}</button>
+    {%- endfor %}
+  </div>
+
+  <div class="work-grid" data-grid aria-live="polite">
+    {%- for item in cases %}
+    {%- set size = "" %}
+    {% include "partials/card.njk" %}
+    {%- endfor %}
+  </div>
+  <p class="work-empty" data-empty hidden>{{ t.work.empty }}</p>
+</section>

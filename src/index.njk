@@ -1,0 +1,20 @@
+---
+permalink: "/index.html"
+---
+<!doctype html>
+<html lang="{{ site.defaultLang }}">
+<head>
+  <meta charset="utf-8">
+  <title>Aisen Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url={{ site.defaultLang }}/">
+  <link rel="canonical" href="/{{ site.defaultLang }}/">
+  <script>
+    // Ведём на язык браузера, если он есть на этом сайте, иначе на язык по умолчанию.
+    var langs = {{ site.languages | dump | safe }};
+    var b = (navigator.language || "").slice(0, 2).toLowerCase();
+    location.replace((langs.indexOf(b) !== -1 ? b : "{{ site.defaultLang }}") + "/");
+  </script>
+</head>
+<body><a href="/{{ site.defaultLang }}/">Aisen Studio</a></body>
+</html>

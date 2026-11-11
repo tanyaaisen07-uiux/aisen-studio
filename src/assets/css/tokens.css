@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Aisen Studio · дизайн-токены
+   Все цвета, шрифты, размеры и движение задаются только здесь.
+   ========================================================================== */
+
+:root {
+  /* Палитра (базовые значения) */
+  --vanilla: #F0D7B3;
+  --espresso: #292421;
+  --brandy: #78382F;
+  --flamingo: #D98294;
+  --ivory: #F8F5EF;
+  --stone: #D8D5CB;
+
+  /* Семантические цвета */
+  --color-bg: var(--vanilla);
+  --color-surface: var(--ivory);
+  --color-muted: var(--stone);
+  --color-ink: var(--espresso);
+  --color-ink-soft: color-mix(in srgb, var(--espresso) 72%, var(--vanilla));
+  --color-accent: var(--brandy);   /* текст и ссылки на светлом: ~6:1 */
+  --color-pop: var(--flamingo);    /* только декор на светлом; текст только на тёмном */
+  --color-line: color-mix(in srgb, var(--espresso) 18%, transparent);
+  --color-focus: var(--brandy);
+  --color-success: #3E6B48;
+  --color-error: #9B2C2C;
+
+  /* Шрифты */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Типографическая шкала (mobile → desktop) */
+  --fs-hero: clamp(3rem, 1.4rem + 7.2vw, 6.5rem);      /* 48 → 104 px */
+  --fs-h1: clamp(2.5rem, 1.6rem + 4vw, 4.75rem);       /* 40 → 76 px */
+  --fs-h2: clamp(2rem, 1.4rem + 2.6vw, 4rem);          /* 32 → 64 px */
+  --fs-h3: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);     /* 24 → 36 px */
+  --fs-lead: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);  /* 18 → 22 px */
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);   /* 16 → 18 px */
+  --fs-small: 0.875rem;                                /* 14 px */
+  --fs-label: 0.75rem;                                 /* 12 px */
+
+  --lh-tight: 1.02;
+  --lh-heading: 1.12;
+  --lh-body: 1.6;
+
+  /* Отступы (шаг 4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-gap: clamp(4.5rem, 3rem + 6vw, 9rem);
+
+  /* Сетка */
+  --container: 88rem;  /* 1408 px */
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 3.5rem);
+
+  /* Формы и радиусы */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-pill: 999px;
+  --border: 1px solid var(--color-line);
+
+  /* Движение */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 700ms;
+  --dur-reveal: 1000ms;
+
+  --header-h: 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-reveal: 0ms;
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="color-scheme" content="light">
+  <script>document.documentElement.classList.add("js")</script>
+  <meta name="theme-color" content="#F5E6D0">
+
+  {%- if site.languages.length > 1 %}
+  {%- for l in site.languages %}
+  <link rel="alternate" hreflang="{{ l }}" href="{{ page.url | swapLang(l) }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | swapLang(site.defaultLang) }}">
+  {%- endif %}
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:locale" content="{{ 'ru_RU' if lang == 'ru' else ('es_ES' if lang == 'es' else 'en_US') }}">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body class="page-{{ pageType or 'default' }}">
+  <a class="skip-link" href="#main">{{ t.skip }}</a>
+  {% include "partials/header.njk" %}
+  <main id="main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/main.js" type="module"></script>
+</body>
+</html>

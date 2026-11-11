@@ -1,0 +1,26 @@
+{
+  "name": "aisen-studio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "build:ru": "SITE=ru eleventy --output=_site_ru",
+    "start:ru": "SITE=ru eleventy --serve --output=_site_ru"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  },
+  "dependencies": {
+    "@fontsource-variable/source-serif-4": "^5.3.1",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0"
+  },
+  "type": "module",
+  "private": true
+}

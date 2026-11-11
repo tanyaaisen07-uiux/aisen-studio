@@ -1,0 +1,70 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/studio/"
+layout: layouts/base.njk
+pageType: studio
+eleventyComputed:
+  title: "{{ i18n[lang].studio.title }}"
+  description: "{{ i18n[lang].studio.description }}"
+---
+<section class="page-head container">
+  <h1 class="page-head__title">{{ t.studio.heading }}</h1>
+  <p class="page-head__role">{{ t.role }}</p>
+</section>
+
+<section class="container studio-about">
+  {%- for p in t.studio.about %}
+  <p class="{{ 'lead' if loop.first else '' }}">{{ p }}</p>
+  {%- endfor %}
+</section>
+
+<section class="section container" aria-labelledby="services-title">
+  <header class="section__head">
+    <p class="section__index mono">01</p>
+    <h2 class="section__title" id="services-title">{{ t.home.servicesTitle }}</h2>
+  </header>
+  <div class="services services--open">
+    {%- for s in t.services %}
+    <div class="service service--static">
+      <h3 class="service__summary"><span class="service__num mono">0{{ loop.index }}</span><span class="service__title">{{ s.title }}</span></h3>
+      <div class="service__body">
+        <ul class="service__list">{% for i in s.items %}<li>{{ i }}</li>{% endfor %}</ul>
+        <a class="link-arrow" href="/{{ lang }}/work/?filter={{ s.key }}">{{ t.nav.work }}: {{ t.categories[s.key] }} <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section container" aria-labelledby="approach-title">
+  <header class="section__head">
+    <p class="section__index mono">02</p>
+    <h2 class="section__title" id="approach-title">{{ t.home.approachTitle }}</h2>
+  </header>
+  <ol class="steps steps--light">
+    {%- for step in t.approach %}
+    <li class="step"><span class="step__num mono">0{{ loop.index }}</span><h3 class="step__title">{{ step.title }}</h3><p class="step__text">{{ step.text }}</p></li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="section container studio-facts">
+  <div>
+    <h2 class="mono label">{{ t.studio.toolsTitle }}</h2>
+    <ul class="chips">{% for tool in t.studio.tools %}<li class="chip">{{ tool }}</li>{% endfor %}</ul>
+  </div>
+  <div>
+    <h2 class="mono label">{{ t.studio.formatTitle }}</h2>
+    <p>{{ t.studio.format }}</p>
+  </div>
+</section>
+
+<section class="cta container">
+  <h2 class="cta__title">{{ t.home.ctaTitle }}</h2>
+  <div class="cta__actions">
+    <a class="btn btn--primary btn--lg" href="/{{ lang }}/contact/" data-track="cta_click" data-track-label="studio_start_project">{{ t.cta.project }} <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+pagination:
+  data: casePages
+  size: 1
+  alias: entry
+permalink: "/{{ entry.lang }}/work/{{ entry.item.slug }}/"
+layout: layouts/base.njk
+pageType: case
+eleventyComputed:
+  lang: "{{ entry.lang }}"
+  title: "{{ entry.item.title }} · Aisen Studio"
+  description: "{{ entry.item.summary[entry.lang] }}"
+---
+{%- set item = entry.item -%}
+{%- set cats = item.categories or [item.category] -%}
+<article class="case">
+  <header class="case__head container">
+    <p class="case__back mono"><a href="/{{ lang }}/work/">← {{ t.nav.work }}</a></p>
+    <h1 class="case__title">{{ item.title }}</h1>
+    <p class="case__summary">{{ item.summary[lang] }}</p>
+  </header>
+
+  <div class="case__cover container" style="view-transition-name: cover-{{ item.slug }}">
+    <div class="card__placeholder card__placeholder--{{ item.tone }}" aria-hidden="true"><span>{{ item.title }}</span></div>
+  </div>
+
+  <dl class="case__tldr container">
+    <div><dt class="mono">{{ t.case.category }}</dt><dd>{% for c in cats %}{{ t.categories[c] }}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+    <div><dt class="mono">{{ t.case.type }}</dt><dd>{{ t.types[item.type] }}</dd></div>
+    <div><dt class="mono">{{ t.case.year }}</dt><dd>{{ item.year }}</dd></div>
+    {%- if item.live %}
+    <div><dt class="mono">{{ t.cta.live }}</dt><dd><a href="{{ item.live }}" target="_blank" rel="noopener" data-track="live_demo_open" data-track-label="{{ item.slug }}">{{ item.live | replace("https://", "") }} ↗</a></dd></div>
+    {%- endif %}
+  </dl>
+  {%- if item.nameChanged %}
+  <p class="case__note container mono">{{ t.nameChanged }}</p>
+  {%- endif %}
+
+  <section class="case__body container">
+    <p class="case__soon">{{ t.case.soon }}</p>
+  </section>
+
+  <a class="case__next" href="/{{ lang }}/work/{{ entry.next.slug }}/" data-track="project_open" data-track-label="next_{{ entry.next.slug }}">
+    <span class="container case__next-inner">
+      <span class="mono">{{ t.case.next }}</span>
+      <span class="case__next-title">{{ entry.next.title }} <span class="arrow" aria-hidden="true">→</span></span>
+    </span>
+  </a>
+</article>

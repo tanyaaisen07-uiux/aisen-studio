@@ -1,0 +1,18 @@
+---
+permalink: "/404.html"
+layout: layouts/base.njk
+pageType: notfound
+title: "404 · Aisen Studio"
+description: "Page not found."
+eleventyComputed:
+  lang: "{{ site.defaultLang }}"
+---
+<section class="notfound container">
+  <p class="notfound__code">404</p>
+  <h1 class="page-head__title">{{ t.notFound.title }}</h1>
+  <p>{{ t.notFound.text }}</p>
+  <div class="cta__actions">
+    <a class="btn btn--primary" href="/{{ lang }}/">{{ t.notFound.home }}</a>
+    <a class="btn btn--ghost" href="/{{ lang }}/work/">{{ t.nav.work }}</a>
+  </div>
+</section>
