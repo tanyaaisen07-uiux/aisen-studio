@@ -18,6 +18,16 @@
   transform-origin: 0 0;
 }
 body.menu-open .logo { transform: none !important; }
+/* Буквы логотипа: каждая выезжает снизу из-под кромки, как на сцену (только на главной) */
+.logo__ch { display: inline-block; overflow: hidden; vertical-align: bottom; padding-top: 0.06em; }
+.logo__ch > span { display: inline-block; }
+.js .page-home .logo__ch > span {
+  transform: translateY(110%);
+  animation: letter-up 1.4s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation-delay: calc(100ms + var(--i) * 70ms);
+}
+@keyframes letter-up { to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js .page-home .logo__ch > span { transform: none; animation: none; } }
 .logo:hover { color: var(--color-ink); }
 .logo__mark { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; letter-spacing: 0.14em; line-height: 1.3; }
 .logo__sub { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.2em; }
@@ -145,7 +155,7 @@ body.menu-open .logo { transform: none !important; }
 .hero__title { font-size: var(--fs-hero); line-height: var(--lh-tight); max-width: 14em; }
 .hero__line { display: block; overflow: hidden; padding-bottom: 0.08em; }
 .hero__line-inner { display: inline-block; }
-.js .hero__line-inner { transform: translateY(110%); animation: line-up 1s var(--ease-out) forwards; animation-delay: calc(200ms + var(--i) * 150ms); }
+.js .hero__line-inner { transform: translateY(110%); animation: line-up 1s var(--ease-out) forwards; animation-delay: calc(1200ms + var(--i) * 150ms); }
 @keyframes line-up { to { transform: none; } }
 
 .hero__bottom { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-5); align-items: end; margin-top: var(--space-8); }
@@ -154,7 +164,7 @@ body.menu-open .logo { transform: none !important; }
 .hero__role { font-size: 1.25rem; font-weight: 600; }
 .hero__words { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .hero__intro { font-size: var(--fs-small); line-height: 1.65; color: var(--color-ink-soft); }
-.js .hero__bottom, .js .hero__label { opacity: 0; animation: fade-in 0.9s var(--ease-out) 0.6s forwards; }
+.js .hero__bottom, .js .hero__label { opacity: 0; animation: fade-in 0.9s var(--ease-out) 1.6s forwards; }
 @keyframes fade-in { to { opacity: 1; } }
 
 .pill-word {
@@ -186,7 +196,7 @@ body.menu-open .logo { transform: none !important; }
   transition: transform 0.9s var(--ease-out), border-radius 0.6s var(--ease-out);
 }
 .hero > *:not(.hero__shape):not(.intro-space) { position: relative; z-index: 1; }
-.js .hero__shape { opacity: 0; animation: fade-in 1.2s var(--ease-out) 0.3s forwards; }
+.js .hero__shape { opacity: 0; animation: fade-in 1.2s var(--ease-out) 1.3s forwards; }
 
 @media (max-width: 860px) {
   .hero__shape { width: 5rem; }

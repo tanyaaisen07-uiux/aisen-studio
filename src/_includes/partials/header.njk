@@ -32,5 +32,6 @@
 </header>
 
 <a class="logo" href="{{ home }}" aria-label="{{ t.nav.home }}" data-logo>
-  <span class="logo__mark">AISEN</span><span class="logo__sub">STUDIO</span>
+  <span class="logo__mark" aria-hidden="true">{% for ch in "AISEN" | list %}<span class="logo__ch"><span style="--i: {{ loop.index0 }}">{{ ch }}</span></span>{% endfor %}</span>
+  <span class="logo__sub" aria-hidden="true">{% for ch in "STUDIO" | list %}<span class="logo__ch"><span style="--i: {{ loop.index0 + 5 }}">{{ ch }}</span></span>{% endfor %}</span>
 </a>
