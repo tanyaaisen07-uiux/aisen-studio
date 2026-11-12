@@ -211,9 +211,9 @@
           "es": "Anillo halo: retoque y visual publicitario"
         },
         "text": {
-          "ru": "Задача: превратить предметную съёмку на тёмном фоне в премиальный рекламный кадр. Сделано: вырезка и чистка изделия, ретушь металла и бриллианта, замена тёмных отражений, раздельная коррекция розового и белого золота, генерация фона и сведение сцены через AI, финальная доводка света, теней и цвета в Photoshop. Исходник: Unsplash.",
-          "en": "Goal: turn a product shot on a dark background into a premium advertising image. Done: cut-out and cleanup, metal and diamond retouching, replacing dark reflections, separate correction of rose and white gold, AI background and scene compositing, final light, shadow and colour work in Photoshop. Source photo: Unsplash.",
-          "es": "Objetivo: convertir una foto de producto sobre fondo oscuro en una imagen publicitaria premium. Hecho: recorte y limpieza, retoque del metal y del diamante, sustitución de reflejos oscuros, corrección separada del oro rosa y blanco, fondo y composición con IA, ajuste final de luz, sombras y color en Photoshop. Foto original: Unsplash."
+          "ru": "Задача: превратить предметную съёмку на тёмном фоне в премиальный рекламный кадр. Сделано: вырезка и чистка изделия, ретушь металла и бриллианта, замена тёмных отражений, раздельная коррекция розового и белого золота, генерация фона и сведение сцены через AI, финальная доводка света, теней и цвета в Photoshop.",
+          "en": "Goal: turn a product shot on a dark background into a premium advertising image. Done: cut-out and cleanup, metal and diamond retouching, replacing dark reflections, separate correction of rose and white gold, AI background and scene compositing, final light, shadow and colour work in Photoshop.",
+          "es": "Objetivo: convertir una foto de producto sobre fondo oscuro en una imagen publicitaria premium. Hecho: recorte y limpieza, retoque del metal y del diamante, sustitución de reflejos oscuros, corrección separada del oro rosa y blanco, fondo y composición con IA, ajuste final de luz, sombras y color en Photoshop."
         }
       },
       {
@@ -226,9 +226,9 @@
           "es": "Anillo de topacios: traslado a una escena de estudio"
         },
         "text": {
-          "ru": "Задача: перенести кольцо с ткани в студийную сцену с постаментом и сохранить тёплый направленный свет. Сделано: вырезка изделия, цветовое сведение кольца со сценой, генерация фона через AI, имитация малой глубины резкости, контактная и падающая тени, финальная доводка в Photoshop. Исходник: Unsplash.",
-          "en": "Goal: move the ring from fabric into a studio scene with a pedestal while keeping the warm directional light. Done: cut-out, colour matching with the scene, AI background, shallow depth of field, contact and cast shadows, final work in Photoshop. Source photo: Unsplash.",
-          "es": "Objetivo: llevar el anillo de la tela a una escena de estudio con pedestal manteniendo la luz cálida direccional. Hecho: recorte, ajuste de color con la escena, fondo con IA, poca profundidad de campo, sombras de contacto y proyectadas, ajuste final en Photoshop. Foto original: Unsplash."
+          "ru": "Задача: перенести кольцо с ткани в студийную сцену с постаментом и сохранить тёплый направленный свет. Сделано: вырезка изделия, цветовое сведение кольца со сценой, генерация фона через AI, имитация малой глубины резкости, контактная и падающая тени, финальная доводка в Photoshop.",
+          "en": "Goal: move the ring from fabric into a studio scene with a pedestal while keeping the warm directional light. Done: cut-out, colour matching with the scene, AI background, shallow depth of field, contact and cast shadows, final work in Photoshop.",
+          "es": "Objetivo: llevar el anillo de la tela a una escena de estudio con pedestal manteniendo la luz cálida direccional. Hecho: recorte, ajuste de color con la escena, fondo con IA, poca profundidad de campo, sombras de contacto y proyectadas, ajuste final en Photoshop."
         }
       }
     ],

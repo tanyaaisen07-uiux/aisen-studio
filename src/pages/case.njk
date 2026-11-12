@@ -81,7 +81,7 @@ eleventyComputed:
   {%- if item.beforeAfter %}
   {#- До и после: слайдеры сравнения (кейс с ретушью) -#}
   {%- set ba = t.case.beforeAfter -%}
-  <section class="container case__section" aria-labelledby="ba-label">
+  <section class="container case__section case__section--last" aria-labelledby="ba-label">
     <div class="case__grid">
       <p class="mono accent case__side" id="ba-label">01 · {{ ba.label }}</p>
       <p class="case__statement">{{ ba.lead }}</p>

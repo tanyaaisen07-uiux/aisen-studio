@@ -229,7 +229,7 @@
     "next": "Siguiente proyecto",
     "beforeAfter": {
       "label": "Antes y después",
-      "lead": "Arrastra el control para comparar la foto original con el resultado.",
+      "lead": "Desliza el control para comparar la foto original con el resultado.",
       "before": "Antes",
       "after": "Después",
       "aria": "Comparación antes y después"
