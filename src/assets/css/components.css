@@ -242,25 +242,25 @@ body.menu-open .logo { transform: none !important; }
 .section__count { font-size: 1rem; vertical-align: super; color: var(--color-accent); }
 
 /* ---------- Галерея работ (главная) ---------- */
-.gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-5); align-items: start; }
-.gallery__list { grid-column: 1 / span 6; border-top: 1px solid var(--color-rule); }
+.gallery { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--space-7); align-items: start; }
+.gallery__list { border-top: 1px solid var(--color-rule); }
 .gallery__row {
   display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: var(--space-4);
-  padding: 1.75rem 0;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--color-rule);
   text-decoration: none; color: var(--color-ink);
-  opacity: 0.62;
+  opacity: 0.7;
   transition: opacity var(--dur-base), padding var(--dur-base) var(--ease-out);
 }
 .gallery__row.is-active, .gallery__row:hover, .gallery__row:focus-visible { opacity: 1; padding-left: 1rem; color: var(--color-ink); }
 .gallery__num { color: var(--color-ink-soft); font-size: var(--fs-label); }
 .gallery__text { display: flex; flex-direction: column; gap: 0.4rem; }
-.gallery__title { font-family: var(--font-display); font-size: clamp(2rem, 1.4rem + 1.8vw, 3rem); line-height: 1.05; }
+.gallery__title { font-family: var(--font-display); font-size: clamp(2.25rem, 1.2rem + 2.8vw, 4rem); line-height: 1; }
 .gallery__meta { color: var(--color-ink-soft); }
 .gallery__arrow { transition: transform var(--dur-base) var(--ease-out); }
 .gallery__row.is-active .gallery__arrow, .gallery__row:hover .gallery__arrow { transform: translateX(6px) rotate(-45deg); }
 
-.gallery__preview { grid-column: 7 / span 6; position: sticky; top: calc(var(--header-h) + var(--space-5)); display: grid; gap: var(--space-4); }
+.gallery__preview { position: sticky; top: calc(var(--header-h) + var(--space-5)); display: grid; gap: var(--space-4); }
 .gallery__frame { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-md); overflow: hidden; background: var(--paper); }
 .gallery__slide { position: absolute; inset: 0; margin: 0; opacity: 0; transform: scale(1.04); transition: opacity 0.6s var(--ease-out), transform 0.9s var(--ease-out); }
 .gallery__slide.is-active { opacity: 1; transform: none; }
