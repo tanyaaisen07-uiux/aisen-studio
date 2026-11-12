@@ -44,18 +44,18 @@
       "Дизайн со смыслом.",
       "Решения с ясностью."
     ],
-    "role": "Brand, Web & Product Designer",
+    "role": "Дизайнер: бренд, веб, продукт",
     "words": [
       {
-        "label": "Brand",
+        "label": "Бренд",
         "tab": "brand"
       },
       {
-        "label": "Digital",
+        "label": "Веб",
         "tab": "web"
       },
       {
-        "label": "Product",
+        "label": "Продукт",
         "tab": "product"
       }
     ],
@@ -227,7 +227,7 @@
     "next": "Следующий проект"
   },
   "footer": {
-    "signature": "Custom design, no templates.",
+    "signature": "Авторский дизайн, без шаблонов.",
     "rights": "© {year} Aisen Studio"
   },
   "notFound": {

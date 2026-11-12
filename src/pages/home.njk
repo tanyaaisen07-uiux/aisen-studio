@@ -166,7 +166,7 @@ eleventyComputed:
   <div class="container contact-band__grid">
     <div class="contact-band__main">
       <p class="mono">{{ t.contact.label }}</p>
-      <h2 class="contact-band__title" id="contact-title">{% for l in t.contact.titleLines %}<span class="contact-band__line">{{ l }}</span>{% endfor %}</h2>
+      <h2 class="contact-band__title" id="contact-title">{% for l in t.contact.titleLines %}<span class="contact-band__line">{{ l }}</span>{% if not loop.last %} {% endif %}{% endfor %}</h2>
       <a class="btn btn--light btn--lg" href="{{ home }}contact/" data-track="cta_click" data-track-label="home_start_project">{{ t.contact.start }}
         <span class="btn__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
       </a>
