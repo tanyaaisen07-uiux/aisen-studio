@@ -14,13 +14,15 @@
     "all": "All",
     "brand": "Brand",
     "web": "Web",
-    "product": "Product"
+    "product": "Product",
+    "visual": "Visual"
   },
   "catMeta": {
     "brand": "Brand",
     "web": "Web",
     "product": "Product",
-    "uiux": "UI/UX"
+    "uiux": "UI/UX",
+    "visual": "Visual"
   },
   "types": {
     "client": "Client project",
@@ -224,7 +226,14 @@
     "decisionsLabel": "Key decisions",
     "decisionsLead": "Three decisions that shaped the product.",
     "demoCta": "Explore the live demo",
-    "next": "Next project"
+    "next": "Next project",
+    "beforeAfter": {
+      "label": "Before and after",
+      "lead": "Drag the handle to compare the original photo with the result.",
+      "before": "Before",
+      "after": "After",
+      "aria": "Before and after comparison"
+    }
   },
   "footer": {
     "signature": "Custom design, no templates.",

@@ -78,6 +78,36 @@ eleventyComputed:
   </section>
   {%- endif %}
 
+  {%- if item.beforeAfter %}
+  {#- До и после: слайдеры сравнения (кейс с ретушью) -#}
+  {%- set ba = t.case.beforeAfter -%}
+  <section class="container case__section" aria-labelledby="ba-label">
+    <div class="case__grid">
+      <p class="mono accent case__side" id="ba-label">01 · {{ ba.label }}</p>
+      <p class="case__statement">{{ ba.lead }}</p>
+    </div>
+    <div class="ba-list">
+      {%- for pair in item.beforeAfter %}
+      <article class="ba-item reveal">
+        <div class="ba" style="--pos: 50%; --ar: {{ pair.ratio }}" data-ba tabindex="0" role="slider"
+             aria-label="{{ ba.aria }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="ba__img" src="{{ pair.after }}" alt="{{ ba.after }}: {{ pair.title[lang] }}" loading="lazy" decoding="async">
+          <img class="ba__img ba__img--before" src="{{ pair.before }}" alt="{{ ba.before }}: {{ pair.title[lang] }}" loading="lazy" decoding="async">
+          <span class="ba__tag ba__tag--before mono mono--plain">{{ ba.before }}</span>
+          <span class="ba__tag ba__tag--after mono mono--plain">{{ ba.after }}</span>
+          <span class="ba__handle" aria-hidden="true"><span class="ba__knob">‹ ›</span></span>
+        </div>
+        <div class="ba-item__text">
+          <span class="mono mono--plain accent">0{{ loop.index }}</span>
+          <h3 class="decision__title">{{ pair.title[lang] }}</h3>
+          <p class="soft">{{ pair.text[lang] }}</p>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
   {%- if c.decisions %}
   <section class="container case__section" aria-labelledby="dec-label">
     <div class="case__grid">

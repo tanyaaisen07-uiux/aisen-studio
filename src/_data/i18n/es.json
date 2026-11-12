@@ -14,13 +14,15 @@
     "all": "Todos",
     "brand": "Marca",
     "web": "Web",
-    "product": "Producto"
+    "product": "Producto",
+    "visual": "Visual"
   },
   "catMeta": {
     "brand": "Marca",
     "web": "Web",
     "product": "Producto",
-    "uiux": "UI/UX"
+    "uiux": "UI/UX",
+    "visual": "Visual"
   },
   "types": {
     "client": "Proyecto para cliente",
@@ -224,7 +226,14 @@
     "decisionsLabel": "Decisiones clave",
     "decisionsLead": "Tres decisiones que dieron forma al producto.",
     "demoCta": "Explorar la demo",
-    "next": "Siguiente proyecto"
+    "next": "Siguiente proyecto",
+    "beforeAfter": {
+      "label": "Antes y después",
+      "lead": "Arrastra el control para comparar la foto original con el resultado.",
+      "before": "Antes",
+      "after": "Después",
+      "aria": "Comparación antes y después"
+    }
   },
   "footer": {
     "signature": "Custom design, no templates.",

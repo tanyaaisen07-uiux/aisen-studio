@@ -174,5 +174,83 @@
       "es": "Identidad de marca para una cafetería y panadería con nombre kazajo.",
       "ru": "Айдентика кофейни-пекарни с казахским названием."
     }
+  },
+  {
+    "slug": "jewelry-visuals",
+    "title": "Jewelry Visuals",
+    "categories": [
+      "visual"
+    ],
+    "year": 2026,
+    "type": "concept",
+    "nameChanged": false,
+    "hasCase": true,
+    "cover": "/assets/img/covers/jewelry.webp",
+    "coverPos": "center",
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 5,
+      "ru": 5
+    },
+    "summary": {
+      "en": "Jewelry retouching and AI compositing: real product photos turned into advertising scenes.",
+      "es": "Retoque de joyería y composición con IA: fotos reales de producto convertidas en escenas publicitarias.",
+      "ru": "Ретушь и композитинг украшений: реальные предметные фото превращены в рекламные сцены с AI-фоном."
+    },
+    "beforeAfter": [
+      {
+        "before": "/assets/img/jewelry/halo-before.webp",
+        "after": "/assets/img/jewelry/halo-after.webp",
+        "ratio": "1 / 1",
+        "title": {
+          "ru": "Кольцо с ореолом: ретушь и рекламный визуал",
+          "en": "Halo ring: retouching and advertising visual",
+          "es": "Anillo halo: retoque y visual publicitario"
+        },
+        "text": {
+          "ru": "Задача: превратить предметную съёмку на тёмном фоне в премиальный рекламный кадр. Сделано: вырезка и чистка изделия, ретушь металла и бриллианта, замена тёмных отражений, раздельная коррекция розового и белого золота, генерация фона и сведение сцены через AI, финальная доводка света, теней и цвета в Photoshop. Исходник: Unsplash.",
+          "en": "Goal: turn a product shot on a dark background into a premium advertising image. Done: cut-out and cleanup, metal and diamond retouching, replacing dark reflections, separate correction of rose and white gold, AI background and scene compositing, final light, shadow and colour work in Photoshop. Source photo: Unsplash.",
+          "es": "Objetivo: convertir una foto de producto sobre fondo oscuro en una imagen publicitaria premium. Hecho: recorte y limpieza, retoque del metal y del diamante, sustitución de reflejos oscuros, corrección separada del oro rosa y blanco, fondo y composición con IA, ajuste final de luz, sombras y color en Photoshop. Foto original: Unsplash."
+        }
+      },
+      {
+        "before": "/assets/img/jewelry/topaz-before.webp",
+        "after": "/assets/img/jewelry/topaz-after.webp",
+        "ratio": "4 / 5",
+        "title": {
+          "ru": "Кольцо с топазами: перенос в студийную сцену",
+          "en": "Topaz ring: moved into a studio scene",
+          "es": "Anillo de topacios: traslado a una escena de estudio"
+        },
+        "text": {
+          "ru": "Задача: перенести кольцо с ткани в студийную сцену с постаментом и сохранить тёплый направленный свет. Сделано: вырезка изделия, цветовое сведение кольца со сценой, генерация фона через AI, имитация малой глубины резкости, контактная и падающая тени, финальная доводка в Photoshop. Исходник: Unsplash.",
+          "en": "Goal: move the ring from fabric into a studio scene with a pedestal while keeping the warm directional light. Done: cut-out, colour matching with the scene, AI background, shallow depth of field, contact and cast shadows, final work in Photoshop. Source photo: Unsplash.",
+          "es": "Objetivo: llevar el anillo de la tela a una escena de estudio con pedestal manteniendo la luz cálida direccional. Hecho: recorte, ajuste de color con la escena, fondo con IA, poca profundidad de campo, sombras de contacto y proyectadas, ajuste final en Photoshop. Foto original: Unsplash."
+        }
+      }
+    ],
+    "case": {
+      "ru": {
+        "label": "Кейс · Ретушь · AI-композитинг",
+        "lead": "Ретушь и композитинг ювелирных изделий. Реальные предметные фото переношу в рекламные сцены: AI-фон, сведение по свету, теням и цвету в Photoshop.",
+        "platform": "Photoshop + AI"
+      },
+      "en": {
+        "label": "Case · Retouching · AI compositing",
+        "lead": "Jewelry retouching and compositing. Real product photos moved into advertising scenes: AI backgrounds, light, shadow and colour matched in Photoshop.",
+        "platform": "Photoshop + AI"
+      },
+      "es": {
+        "label": "Caso · Retoque · Composición con IA",
+        "lead": "Retoque y composición de joyería. Fotos reales de producto llevadas a escenas publicitarias: fondos con IA, luz, sombras y color ajustados en Photoshop.",
+        "platform": "Photoshop + IA"
+      }
+    },
+    "metaKeys": [
+      "visual"
+    ]
   }
 ]

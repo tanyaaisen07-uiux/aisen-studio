@@ -19,7 +19,7 @@ eleventyComputed:
   </div>
 
   <div class="filters" role="group" aria-label="{{ t.work.filterLabel }}" data-filters>
-    {%- for key in ["all", "brand", "web", "product"] %}
+    {%- for key in ["all", "brand", "web", "product", "visual"] %}
     <button class="filter" type="button" data-filter="{{ key }}" aria-pressed="{{ 'true' if key == 'all' else 'false' }}">
       {{ t.categories[key] }} <span class="filter__n mono mono--plain" data-filter-count="{{ key }}"></span>
     </button>

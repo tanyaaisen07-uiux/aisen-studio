@@ -323,3 +323,28 @@ if (form) {
     }
   });
 }
+
+/* ---------- До / после: слайдер сравнения (кейс Jewelry Visuals) ---------- */
+$$("[data-ba]").forEach((ba) => {
+  let dragging = false;
+  let tracked = false;
+  const set = (p) => {
+    p = Math.max(0, Math.min(100, p));
+    ba.style.setProperty("--pos", p + "%");
+    ba.setAttribute("aria-valuenow", String(Math.round(p)));
+  };
+  const fromX = (x) => {
+    const r = ba.getBoundingClientRect();
+    set(((x - r.left) / r.width) * 100);
+  };
+  const once = () => { if (!tracked) { tracked = true; track("before_after_drag"); } };
+  ba.addEventListener("pointerdown", (e) => { dragging = true; ba.setPointerCapture(e.pointerId); fromX(e.clientX); once(); });
+  ba.addEventListener("pointermove", (e) => { if (dragging) fromX(e.clientX); });
+  ba.addEventListener("pointerup", () => { dragging = false; });
+  ba.addEventListener("pointercancel", () => { dragging = false; });
+  ba.addEventListener("keydown", (e) => {
+    const v = Number(ba.getAttribute("aria-valuenow"));
+    if (e.key === "ArrowLeft") { set(v - 5); e.preventDefault(); once(); }
+    if (e.key === "ArrowRight") { set(v + 5); e.preventDefault(); once(); }
+  });
+});
