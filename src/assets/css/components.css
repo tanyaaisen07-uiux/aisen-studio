@@ -519,9 +519,9 @@ body.menu-open .logo { transform: none !important; }
 
 /* ---------- До / после (слайдер сравнения) ---------- */
 .ba-list { display: grid; gap: var(--space-9); }
-.ba-item { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-5); align-items: end; }
+.ba-item { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-5); align-items: start; }
 .ba-item .ba { grid-column: 1 / span 7; }
-.ba-item__text { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: var(--space-4); }
+.ba-item__text { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: var(--space-4); position: sticky; top: calc(var(--header-h) + var(--space-5)); }
 .ba {
   position: relative; aspect-ratio: var(--ar, 1 / 1); border-radius: var(--radius-lg); overflow: hidden;
   background: var(--paper); cursor: ew-resize; user-select: none; touch-action: pan-y;
@@ -543,5 +543,6 @@ body.menu-open .logo { transform: none !important; }
 }
 @media (max-width: 860px) {
   .ba-item .ba, .ba-item__text { grid-column: 1 / -1; }
+  .ba-item__text { position: static; }
   .ba-list { gap: var(--space-8); }
 }
