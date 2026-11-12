@@ -6,7 +6,7 @@
      data-track="{{ 'project_open' if item.hasCase else 'live_demo_open' }}" data-track-label="{{ item.slug }}">
     <div class="card__media" style="view-transition-name: cover-{{ item.slug }}">
       <img src="{{ item.cover }}" alt="{{ item.title }}" loading="lazy" decoding="async" style="object-position: {{ item.coverPos }}">
-      <span class="card__tag mono">{{ t.types[item.type] }}</span>
+      {%- if item.type %}<span class="card__tag mono">{{ t.types[item.type] }}</span>{% endif %}
       <span class="card__cta">{{ cta }}</span>
     </div>
     <div class="card__body">

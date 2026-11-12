@@ -84,7 +84,7 @@ eleventyComputed:
         {%- for item in cases %}
         <figure class="gallery__slide{% if loop.first %} is-active{% endif %}" data-gallery-slide="{{ loop.index0 }}">
           <img src="{{ item.cover }}" alt="" {% if not loop.first %}loading="lazy" {% endif %}decoding="async" style="object-position: {{ item.coverPos }}">
-          <span class="card__tag mono">{{ t.types[item.type] }}</span>
+          {%- if item.type %}<span class="card__tag mono">{{ t.types[item.type] }}</span>{% endif %}
         </figure>
         {%- endfor %}
       </div>

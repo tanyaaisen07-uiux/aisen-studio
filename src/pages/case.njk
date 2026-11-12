@@ -23,7 +23,9 @@ eleventyComputed:
     <p class="case__lead">{{ c.lead }}</p>
     <dl class="case__tldr">
       <div><dt class="mono">{{ t.case.platform }}</dt><dd>{{ c.platform }}</dd></div>
+      {%- if item.type %}
       <div><dt class="mono">{{ t.case.type }}</dt><dd>{{ t.types[item.type] }}</dd></div>
+      {%- endif %}
       <div><dt class="mono">{{ t.case.year }}</dt><dd>{{ item.year }}</dd></div>
       {%- if item.live %}
       <div><dt class="mono">{{ t.case.demo }}</dt><dd><a href="{{ item.live }}" target="_blank" rel="noopener" data-track="live_demo_open" data-track-label="{{ item.slug }}">{{ t.links.demo }}</a></dd></div>
