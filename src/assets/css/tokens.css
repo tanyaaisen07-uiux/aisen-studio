@@ -8,9 +8,9 @@
   /* Капля: одна форма для всех размеров */
   --drop-radius: 50% 50% 50% 0;
   /* Палитра: светлая тема. Акцент выбирается из пяти цветов (data-accent). */
-  --a-fill: #FFE066;        /* заливки на светлой теме */
-  --a-deep: #8A6A00;        /* акцентный текст и линии на светлой теме */
-  --a-neon: #FFE600;        /* акцент на тёмной теме */
+  --a-fill: #9BE7C4;        /* заливки на светлой теме */
+  --a-deep: #0B7A55;        /* акцентный текст и линии на светлой теме */
+  --a-neon: #3DFFB0;        /* акцент на тёмной теме */
   --milk: #FFFFFF;          /* основной фон */
   --paper: #F6F6F4;         /* карточки, подложки */
   --graphite: #151917;      /* текст, кнопки */
@@ -93,7 +93,7 @@
 }
 
 /* Акцентные цвета */
-:root[data-accent="mint"]     { --a-fill: #9BE7C4; --a-deep: #0B7A55; --a-neon: #3DFFB0; }
+:root[data-accent="yellow"]     { --a-fill: #FFE066; --a-deep: #8A6A00; --a-neon: #FFE600; }
 :root[data-accent="lavender"] { --a-fill: #C9B8FF; --a-deep: #5B3FD6; --a-neon: #B79CFF; }
 :root[data-accent="blue"]     { --a-fill: #A9D4FF; --a-deep: #1F5FBF; --a-neon: #5CB8FF; }
 :root[data-accent="pink"]     { --a-fill: #FFB8D2; --a-deep: #B4235F; --a-neon: #FF6FA8; }

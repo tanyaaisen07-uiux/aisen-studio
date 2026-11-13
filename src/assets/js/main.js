@@ -356,12 +356,12 @@ $$("[data-ba]").forEach((ba) => {
   const save = (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* хранилище недоступно */ } };
   const swatches = $$("[data-accent-set]");
   const syncAccent = () => {
-    const cur = root.getAttribute("data-accent") || "yellow";
+    const cur = root.getAttribute("data-accent") || "mint";
     swatches.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.accentSet === cur)));
   };
   swatches.forEach((b) => b.addEventListener("click", () => {
     const v = b.dataset.accentSet;
-    if (v === "yellow") root.removeAttribute("data-accent"); else root.setAttribute("data-accent", v);
+    if (v === "mint") root.removeAttribute("data-accent"); else root.setAttribute("data-accent", v);
     save("aisen-accent", v); syncAccent(); track("accent_change", { accent: v });
   }));
   syncAccent();

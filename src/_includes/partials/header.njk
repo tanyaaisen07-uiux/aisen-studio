@@ -28,7 +28,7 @@
       </div>
       {%- endif %}
       <div class="theme-ctl" role="group" aria-label="{{ t.theme.label }}">
-        {%- for sw in [["yellow","#FFE066","#FFE600"],["mint","#9BE7C4","#3DFFB0"],["lavender","#C9B8FF","#B79CFF"],["blue","#A9D4FF","#5CB8FF"],["pink","#FFB8D2","#FF6FA8"]] %}
+        {%- for sw in [["mint","#9BE7C4","#3DFFB0"],["yellow","#FFE066","#FFE600"],["lavender","#C9B8FF","#B79CFF"],["blue","#A9D4FF","#5CB8FF"],["pink","#FFB8D2","#FF6FA8"]] %}
         <button class="swatch" type="button" data-accent-set="{{ sw[0] }}" style="--sw-l: {{ sw[1] }}; --sw-d: {{ sw[2] }}" aria-pressed="false" aria-label="{{ t.theme.colors[sw[0]] }}"></button>
         {%- endfor %}
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="{{ t.theme.toggle }}">
