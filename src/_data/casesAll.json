@@ -99,7 +99,7 @@
     "year": 2026,
     "type": "client",
     "nameChanged": true,
-    "hasCase": false,
+    "hasCase": true,
     "live": "https://lumia-web.netlify.app/",
     "liveKind": "site",
     "cover": "/assets/img/covers/lumia.webp",
@@ -116,6 +116,65 @@
       "en": "E-commerce website for a flower shop in Spain, with an A/B-tested homepage.",
       "es": "Tienda online de flores en España, con la página de inicio validada mediante tests A/B.",
       "ru": "Интернет-магазин цветов с главной страницей, проверенной A/B-тестами."
+    },
+    "case": {
+      "ru": {
+        "label": "Кейс · Веб · E-commerce",
+        "platform": "Сайт на Webflow",
+        "lead": "Интернет-магазин цветов в Испании: сайт на двух языках, айдентика и упаковка. Главную страницу выбрали по тесту, а не на вкус: 7 из 8 пользователей предпочли вариант с блоком бестселлеров.",
+        "decisions": [
+          {
+            "title": "Бестселлеры на первом экране",
+            "text": "Покупатель сразу видит букеты, которые берут чаще всего, и не листает весь каталог."
+          },
+          {
+            "title": "Две версии главной, 8 пользователей",
+            "text": "Версии A и B сравнили на людях. 7 из 8 сказали, что в версии B найти нужный букет проще, её и внедрили."
+          },
+          {
+            "title": "Один стиль от сайта до упаковки",
+            "text": "Логотип, цвета и шрифты одинаковы на сайте, в соцсетях и на коробке."
+          }
+        ]
+      },
+      "en": {
+        "label": "Case · Web · E-commerce",
+        "platform": "Webflow website",
+        "lead": "An online flower shop in Spain: a bilingual website, brand identity and packaging. The homepage was chosen by a test, not by taste: 7 of 8 users preferred the version with a bestsellers block.",
+        "decisions": [
+          {
+            "title": "Bestsellers on the first screen",
+            "text": "Shoppers see the most popular bouquets right away instead of scrolling the whole catalogue."
+          },
+          {
+            "title": "Two homepage versions, 8 users",
+            "text": "Versions A and B were compared with real people. 7 of 8 found the right bouquet more easily in version B, so it went live."
+          },
+          {
+            "title": "One style from website to packaging",
+            "text": "The same logo, colours and type on the site, on social media and on the box."
+          }
+        ]
+      },
+      "es": {
+        "label": "Caso · Web · E-commerce",
+        "platform": "Web en Webflow",
+        "lead": "Una tienda online de flores en España: web bilingüe, identidad de marca y packaging. La página de inicio se eligió con un test, no por gusto: 7 de 8 usuarios prefirieron la versión con el bloque «Más vendidos».",
+        "decisions": [
+          {
+            "title": "Los más vendidos en la primera pantalla",
+            "text": "El cliente ve enseguida los ramos más populares sin recorrer todo el catálogo."
+          },
+          {
+            "title": "Dos versiones de la home, 8 usuarios",
+            "text": "Las versiones A y B se compararon con personas reales. 7 de 8 encontraron antes su ramo en la versión B, y esa es la que se publicó."
+          },
+          {
+            "title": "Un mismo estilo de la web al packaging",
+            "text": "El mismo logo, colores y tipografía en la web, en redes sociales y en la caja."
+          }
+        ]
+      }
     }
   },
   {
@@ -128,7 +187,7 @@
     "year": 2021,
     "type": "client",
     "nameChanged": false,
-    "hasCase": false,
+    "hasCase": true,
     "live": "https://tanyaaisen07-uiux.github.io/art-cook/",
     "liveKind": "site",
     "cover": "/assets/img/covers/art-cook-mockup.webp",
@@ -145,6 +204,65 @@
       "en": "Brand identity from scratch and a website for a culinary school in Almaty.",
       "es": "Identidad de marca desde cero y web para una escuela de cocina en Almaty.",
       "ru": "Айдентика с нуля и сайт кулинарной школы в Алматы."
+    },
+    "case": {
+      "ru": {
+        "label": "Кейс · Бренд · Веб",
+        "platform": "Сайт и айдентика",
+        "lead": "Кулинарная школа в Алматы. Основатель пришёл за сайтом, но продавать было нечего: курсы и мастер-классы шли без программы и расписания. Сначала собрали предложение, потом бренд и сайт. Спрос на мастер-классы вырос примерно с 4 до 40 желающих в неделю.",
+        "decisions": [
+          {
+            "title": "Сначала предложение, потом дизайн",
+            "text": "Курсы разделены по тематикам, мастер-классы шефа вынесены в отдельный продукт."
+          },
+          {
+            "title": "Календарь программ и подарочный сертификат",
+            "text": "У каждого занятия появилась дата, а мастер-класс можно купить в подарок. Занятия перешли на расписание 2 раза в неделю."
+          },
+          {
+            "title": "Бренд с нуля",
+            "text": "Логотип, палитра и типографика работают на сайте, в материалах курсов и в наружной рекламе."
+          }
+        ]
+      },
+      "en": {
+        "label": "Case · Brand · Web",
+        "platform": "Website and brand identity",
+        "lead": "A culinary school in Almaty. The founder came for a website, but there was nothing clear to sell: courses and masterclasses ran without a programme or a schedule. The offer came first, then the brand and the site. Masterclass demand grew from about 4 to about 40 interested customers a week.",
+        "decisions": [
+          {
+            "title": "Offer first, design second",
+            "text": "Courses grouped by theme, the chef's masterclasses turned into a separate product."
+          },
+          {
+            "title": "Programme calendar and gift voucher",
+            "text": "Every class got a date, and a masterclass can be bought as a gift. Classes moved to a twice-a-week schedule."
+          },
+          {
+            "title": "Brand from scratch",
+            "text": "Logo, palette and typography work on the website, in course materials and in outdoor advertising."
+          }
+        ]
+      },
+      "es": {
+        "label": "Caso · Marca · Web",
+        "platform": "Web e identidad de marca",
+        "lead": "Una escuela de cocina en Almaty. El fundador vino a por una web, pero no había una oferta clara que vender: los cursos y las masterclasses funcionaban sin programa ni calendario. Primero definimos la oferta, después la marca y la web. La demanda de masterclasses pasó de unas 4 a unas 40 personas interesadas por semana.",
+        "decisions": [
+          {
+            "title": "Primero la oferta, después el diseño",
+            "text": "Cursos agrupados por temática y las masterclasses del chef convertidas en un producto aparte."
+          },
+          {
+            "title": "Calendario de programas y tarjeta regalo",
+            "text": "Cada clase tiene fecha y la masterclass se puede regalar. Las clases pasaron a impartirse 2 veces por semana."
+          },
+          {
+            "title": "Marca desde cero",
+            "text": "Logo, paleta y tipografía funcionan en la web, en los materiales de los cursos y en la publicidad exterior."
+          }
+        ]
+      }
     }
   },
   {

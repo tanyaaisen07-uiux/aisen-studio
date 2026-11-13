@@ -41,7 +41,7 @@
   "home": {
     "title": "Aisen Studio · Brand, Web & Product Designer",
     "description": "Aisen Studio: identidad de marca, webs y productos digitales. Diseño a medida, sin plantillas.",
-    "label": "Práctica creativa independiente de Tania Aisen",
+    "label": "Estudio de diseño independiente de Tania Aisen",
     "titleLines": [
       "Diseñar con propósito.",
       "Construir con claridad."
@@ -49,7 +49,7 @@
     "role": "Brand, Web & Product Designer",
     "words": [
       {
-        "label": "Brand",
+        "label": "Marca",
         "tab": "brand"
       },
       {
@@ -57,7 +57,7 @@
         "tab": "web"
       },
       {
-        "label": "Product",
+        "label": "Producto",
         "tab": "product"
       }
     ],
@@ -71,7 +71,7 @@
       "Diseño de producto",
       "Sistemas de diseño"
     ],
-    "capsLabel": "Capacidades",
+    "capsLabel": "Especialidades",
     "workTitle": "Proyectos destacados"
   },
   "expertise": {
@@ -87,7 +87,7 @@
           "Logotipo, color, tipografía",
           "Sistemas visuales",
           "Packaging",
-          "Gráficos para redes e impresión",
+          "Gráfica para redes sociales e impresión",
           "Manual de marca"
         ],
         "projects": [
@@ -98,12 +98,12 @@
       {
         "key": "web",
         "title": "Web",
-        "lead": "Webs a medida que trabajan duro: estructura clara, páginas rápidas, resultados medibles.",
+        "lead": "Webs a medida que rinden: estructura clara, páginas rápidas y resultados medibles.",
         "items": [
           "Webs y landing pages",
           "Diseño responsive",
           "Webflow y Framer",
-          "Front-end a código",
+          "Maquetación en código",
           "Tests A/B",
           "Configuración de analítica"
         ],
@@ -115,12 +115,12 @@
       {
         "key": "product",
         "title": "Producto",
-        "lead": "Interfaces para el trabajo real: flujos, roles, tablas, estados y el sistema que los une.",
+        "lead": "Interfaces para el trabajo diario: flujos, roles, tablas, estados y el sistema que los une.",
         "items": [
           "Investigación UX",
           "Flujos de usuario",
           "Wireframes y prototipos",
-          "UI para SaaS y paneles",
+          "UI para SaaS y paneles de administración",
           "Sistemas de diseño",
           "Entrega a desarrollo"
         ],
@@ -133,8 +133,8 @@
   },
   "studio": {
     "label": "Estudio · Fundadora y diseñadora",
-    "statement": "Aisen Studio es una pequeña práctica independiente. Una diseñadora del encargo al lanzamiento: marca, web e interfaz de producto hablan el mismo idioma, y cada decisión tiene una razón de negocio.",
-    "note": "Antes del diseño: más de diez años en finanzas. Cifras, procesos y márgenes forman parte de cómo se hace el trabajo.",
+    "statement": "Aisen Studio es un pequeño estudio independiente. Una sola diseñadora, del encargo al lanzamiento: marca, web e interfaz de producto hablan el mismo idioma, y cada decisión tiene una razón de negocio.",
+    "note": "Antes del diseño, más de diez años en finanzas. Cifras, procesos y márgenes forman parte de cada decisión.",
     "caption": "Tania Aisen · España",
     "portraitAlt": "Retrato de Tania Aisen",
     "workWithMe": "[ Trabajemos juntos ]",
@@ -149,11 +149,11 @@
       },
       {
         "title": "Construir",
-        "text": "Front-end responsive o una entrega limpia con componentes y estados."
+        "text": "Maquetación responsive o una entrega limpia a desarrollo, con componentes y estados."
       },
       {
         "title": "Medir",
-        "text": "La analítica y los tests A/B muestran qué funciona, y después mejora."
+        "text": "La analítica y los tests A/B muestran qué funciona, y a partir de ahí se mejora."
       }
     ]
   },
@@ -166,7 +166,7 @@
     "start": "Empezar un proyecto",
     "localTime": "Hora local · España",
     "founder": "Fundadora, Aisen Studio",
-    "status": "Disponible para trabajo y nuevos proyectos",
+    "status": "Disponible para empleo y nuevos proyectos",
     "pageTitle": "Contacto · Aisen Studio",
     "pageDescription": "Empieza un proyecto con Aisen Studio.",
     "heading": "Hablemos",
@@ -236,7 +236,7 @@
     }
   },
   "footer": {
-    "signature": "Custom design, no templates.",
+    "signature": "Diseño a medida, sin plantillas.",
     "rights": "© {year} Aisen Studio"
   },
   "notFound": {
