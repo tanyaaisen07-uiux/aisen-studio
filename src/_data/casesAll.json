@@ -32,16 +32,16 @@
         "platform": "Web app",
         "decisions": [
           {
-            "title": "One queue, sorted by priority",
-            "text": "Late work first, then the longest waiting."
+            "title": "Problem",
+            "text": "Instructors drown in grading, and students do not know what to do today."
           },
           {
-            "title": "AI drafts, human decisions",
-            "text": "A grade is released only after the instructor accepts, edits or discards the AI draft."
+            "title": "Solution",
+            "text": "Four roles with their own flows and a grading queue where AI drafts a grade against the rubric."
           },
           {
-            "title": "Each role opens to its next step",
-            "text": "The next lesson, the next submission to grade, the next course to publish."
+            "title": "Result",
+            "text": "No grade reaches a student until a person accepts, edits or discards it. A working prototype in code was delivered."
           }
         ]
       },
@@ -51,16 +51,16 @@
         "platform": "Aplicación web",
         "decisions": [
           {
-            "title": "Una sola cola, ordenada por prioridad",
-            "text": "Primero los trabajos con retraso, después los que llevan más tiempo esperando."
+            "title": "Problema",
+            "text": "Los docentes se ahogan en correcciones y los estudiantes no saben qué hacer hoy."
           },
           {
-            "title": "Borradores de IA, decisiones humanas",
-            "text": "La nota se publica solo cuando el docente acepta, edita o descarta el borrador de IA."
+            "title": "Solución",
+            "text": "Cuatro roles con sus propios flujos y una cola de corrección donde la IA propone la nota según la rúbrica."
           },
           {
-            "title": "Cada rol empieza por su siguiente paso",
-            "text": "La siguiente lección, la siguiente entrega por corregir, el siguiente curso por publicar."
+            "title": "Resultado",
+            "text": "Ninguna nota llega al estudiante hasta que una persona la acepta, edita o descarta. Se entregó un prototipo funcional en código."
           }
         ]
       },
@@ -70,16 +70,16 @@
         "platform": "Веб-приложение",
         "decisions": [
           {
-            "title": "Одна очередь по приоритету",
-            "text": "Сначала просроченные работы, потом те, что ждут дольше всех."
+            "title": "Проблема",
+            "text": "Преподаватели тонут в проверке работ, а студенты не понимают, что делать сегодня."
           },
           {
-            "title": "Черновик от ИИ, решение за человеком",
-            "text": "Оценка уходит студенту только после того, как преподаватель принял, изменил или отклонил черновик ИИ."
+            "title": "Решение",
+            "text": "Четыре роли со своими сценариями и очередь проверки, где ИИ готовит черновик оценки по рубрике."
           },
           {
-            "title": "У каждой роли свой следующий шаг",
-            "text": "Следующий урок, следующая работа на проверку, следующий курс к публикации."
+            "title": "Результат",
+            "text": "Оценка не уходит студенту, пока её не принял, не изменил или не отклонил человек. Сдан рабочий прототип в коде."
           }
         ]
       }
@@ -124,16 +124,16 @@
         "lead": "Интернет-магазин цветов в Испании: сайт на двух языках, айдентика и упаковка. Главную страницу выбрали по тесту, а не на вкус: 7 из 8 пользователей предпочли вариант с блоком бестселлеров.",
         "decisions": [
           {
-            "title": "Бестселлеры на первом экране",
-            "text": "Покупатель сразу видит букеты, которые берут чаще всего, и не листает весь каталог."
+            "title": "Проблема",
+            "text": "Главная страница не помогала выбрать: чтобы найти букет, покупатель листал весь каталог."
           },
           {
-            "title": "Две версии главной, 8 пользователей",
-            "text": "Версии A и B сравнили на людях. 7 из 8 сказали, что в версии B найти нужный букет проще, её и внедрили."
+            "title": "Решение",
+            "text": "Две версии главной сравнили на восьми пользователях. В версии B бестселлеры стоят на первом экране."
           },
           {
-            "title": "Один стиль от сайта до упаковки",
-            "text": "Логотип, цвета и шрифты одинаковы на сайте, в соцсетях и на коробке."
+            "title": "Результат",
+            "text": "7 из 8 выбрали версию B: в ней нужный букет находят быстрее. Она внедрена, сайт и упаковка оформлены в одном стиле."
           }
         ]
       },
@@ -143,16 +143,16 @@
         "lead": "An online flower shop in Spain: a bilingual website, brand identity and packaging. The homepage was chosen by a test, not by taste: 7 of 8 users preferred the version with a bestsellers block.",
         "decisions": [
           {
-            "title": "Bestsellers on the first screen",
-            "text": "Shoppers see the most popular bouquets right away instead of scrolling the whole catalogue."
+            "title": "Problem",
+            "text": "The homepage did not help people choose: shoppers scrolled the whole catalogue to find a bouquet."
           },
           {
-            "title": "Two homepage versions, 8 users",
-            "text": "Versions A and B were compared with real people. 7 of 8 found the right bouquet more easily in version B, so it went live."
+            "title": "Solution",
+            "text": "Two homepage versions were compared with eight users. Version B puts the bestsellers on the first screen."
           },
           {
-            "title": "One style from website to packaging",
-            "text": "The same logo, colours and type on the site, on social media and on the box."
+            "title": "Result",
+            "text": "7 of 8 chose version B because the right bouquet is easier to find. It went live, with the website and packaging in one style."
           }
         ]
       },
@@ -162,16 +162,16 @@
         "lead": "Una tienda online de flores en España: web bilingüe, identidad de marca y packaging. La página de inicio se eligió con un test, no por gusto: 7 de 8 usuarios prefirieron la versión con el bloque «Más vendidos».",
         "decisions": [
           {
-            "title": "Los más vendidos en la primera pantalla",
-            "text": "El cliente ve enseguida los ramos más populares sin recorrer todo el catálogo."
+            "title": "Problema",
+            "text": "La página de inicio no ayudaba a elegir: el cliente recorría todo el catálogo para encontrar un ramo."
           },
           {
-            "title": "Dos versiones de la home, 8 usuarios",
-            "text": "Las versiones A y B se compararon con personas reales. 7 de 8 encontraron antes su ramo en la versión B, y esa es la que se publicó."
+            "title": "Solución",
+            "text": "Se compararon dos versiones de la home con ocho usuarios. La versión B muestra los más vendidos en la primera pantalla."
           },
           {
-            "title": "Un mismo estilo de la web al packaging",
-            "text": "El mismo logo, colores y tipografía en la web, en redes sociales y en la caja."
+            "title": "Resultado",
+            "text": "7 de 8 eligieron la versión B porque el ramo se encuentra antes. Es la que se publicó, con la web y el packaging en un mismo estilo."
           }
         ]
       }
@@ -212,16 +212,16 @@
         "lead": "Кулинарная школа в Алматы. Основатель пришёл за сайтом, но продавать было нечего: курсы и мастер-классы шли без программы и расписания. Сначала собрали предложение, потом бренд и сайт. Спрос на мастер-классы вырос примерно с 4 до 40 желающих в неделю.",
         "decisions": [
           {
-            "title": "Сначала предложение, потом дизайн",
-            "text": "Курсы разделены по тематикам, мастер-классы шефа вынесены в отдельный продукт."
+            "title": "Проблема",
+            "text": "Основатель пришёл за сайтом, но продавать было нечего: курсы и мастер-классы шли без программы и расписания."
           },
           {
-            "title": "Календарь программ и подарочный сертификат",
-            "text": "У каждого занятия появилась дата, а мастер-класс можно купить в подарок. Занятия перешли на расписание 2 раза в неделю."
+            "title": "Решение",
+            "text": "Курсы разделены по тематикам, мастер-классы вынесены в отдельный продукт. Появились календарь программ, подарочный сертификат, бренд и сайт."
           },
           {
-            "title": "Бренд с нуля",
-            "text": "Логотип, палитра и типографика работают на сайте, в материалах курсов и в наружной рекламе."
+            "title": "Результат",
+            "text": "Спрос на мастер-классы вырос примерно с 4 до 40 желающих в неделю, занятия идут два раза в неделю. На курсы набираются группы до 10 человек в месяц."
           }
         ]
       },
@@ -231,16 +231,16 @@
         "lead": "A culinary school in Almaty. The founder came for a website, but there was nothing clear to sell: courses and masterclasses ran without a programme or a schedule. The offer came first, then the brand and the site. Masterclass demand grew from about 4 to about 40 interested customers a week.",
         "decisions": [
           {
-            "title": "Offer first, design second",
-            "text": "Courses grouped by theme, the chef's masterclasses turned into a separate product."
+            "title": "Problem",
+            "text": "The founder came for a website, but there was nothing clear to sell: courses and masterclasses ran without a programme or a schedule."
           },
           {
-            "title": "Programme calendar and gift voucher",
-            "text": "Every class got a date, and a masterclass can be bought as a gift. Classes moved to a twice-a-week schedule."
+            "title": "Solution",
+            "text": "Courses grouped by theme, masterclasses turned into a separate product. A programme calendar, a gift voucher, the brand and the website followed."
           },
           {
-            "title": "Brand from scratch",
-            "text": "Logo, palette and typography work on the website, in course materials and in outdoor advertising."
+            "title": "Result",
+            "text": "Masterclass demand grew from about 4 to about 40 interested customers a week, with classes twice a week. Courses now fill groups of up to 10 people a month."
           }
         ]
       },
@@ -250,16 +250,16 @@
         "lead": "Una escuela de cocina en Almaty. El fundador vino a por una web, pero no había una oferta clara que vender: los cursos y las masterclasses funcionaban sin programa ni calendario. Primero definimos la oferta, después la marca y la web. La demanda de masterclasses pasó de unas 4 a unas 40 personas interesadas por semana.",
         "decisions": [
           {
-            "title": "Primero la oferta, después el diseño",
-            "text": "Cursos agrupados por temática y las masterclasses del chef convertidas en un producto aparte."
+            "title": "Problema",
+            "text": "El fundador vino a por una web, pero no había una oferta clara que vender: los cursos y las masterclasses funcionaban sin programa ni calendario."
           },
           {
-            "title": "Calendario de programas y tarjeta regalo",
-            "text": "Cada clase tiene fecha y la masterclass se puede regalar. Las clases pasaron a impartirse 2 veces por semana."
+            "title": "Solución",
+            "text": "Cursos agrupados por temática y masterclasses como producto aparte. Después llegaron el calendario de programas, la tarjeta regalo, la marca y la web."
           },
           {
-            "title": "Marca desde cero",
-            "text": "Logo, paleta y tipografía funcionan en la web, en los materiales de los cursos y en la publicidad exterior."
+            "title": "Resultado",
+            "text": "La demanda de masterclasses pasó de unas 4 a unas 40 personas interesadas por semana, con clases dos veces por semana. Los cursos llenan grupos de hasta 10 personas al mes."
           }
         ]
       }

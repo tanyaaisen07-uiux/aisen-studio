@@ -155,6 +155,24 @@
         "title": "Medir",
         "text": "La analítica y los tests A/B muestran qué funciona, y a partir de ahí se mejora."
       }
+    ],
+    "xpLabel": "Experiencia",
+    "xp": [
+      {
+        "years": "2021 - Actualidad",
+        "place": "Aisen Studio",
+        "role": "Diseñadora web y UI/UX"
+      },
+      {
+        "years": "2021 - 2026",
+        "place": "Ella",
+        "role": "Product Designer, diseñadora UI/UX"
+      },
+      {
+        "years": "2004 - 2019",
+        "place": "Finanzas",
+        "role": "Finance Manager, jefa de contabilidad"
+      }
     ]
   },
   "contact": {
@@ -223,8 +241,8 @@
       },
       "caption": "Pantallas simplificadas con datos de ejemplo. Los flujos completos están en la demo."
     },
-    "decisionsLabel": "Decisiones clave",
-    "decisionsLead": "Tres decisiones que dieron forma al producto.",
+    "decisionsLabel": "Problema y resultado",
+    "decisionsLead": "Problema, solución y resultado.",
     "demoCta": "Explorar la demo",
     "next": "Siguiente proyecto",
     "beforeAfter": {
@@ -243,5 +261,59 @@
     "title": "Página no encontrada",
     "text": "Esta página no existe o se ha movido.",
     "home": "Ir a la página de inicio"
+  },
+  "theme": {
+    "label": "Tema y color de acento",
+    "toggle": "Cambiar entre tema claro y oscuro",
+    "colors": {
+      "yellow": "Acento: amarillo",
+      "mint": "Acento: menta",
+      "lavender": "Acento: lavanda",
+      "blue": "Acento: azul",
+      "pink": "Acento: rosa"
+    }
+  },
+  "tools": {
+    "label": "Herramientas",
+    "rows": [
+      {
+        "title": "Investigación e ideas",
+        "items": [
+          "Claude",
+          "ChatGPT",
+          "Gemini",
+          "Miro"
+        ]
+      },
+      {
+        "title": "Diseño",
+        "items": [
+          "Figma",
+          "Photoshop",
+          "Illustrator",
+          "After Effects",
+          "Midjourney",
+          "Recraft"
+        ]
+      },
+      {
+        "title": "Prototipos con IA",
+        "items": [
+          "Claude Code",
+          "Cursor",
+          "Codex"
+        ]
+      },
+      {
+        "title": "Desarrollo web",
+        "items": [
+          "Webflow",
+          "Framer",
+          "Shopify",
+          "Tilda",
+          "HTML y CSS"
+        ]
+      }
+    ]
   }
 }

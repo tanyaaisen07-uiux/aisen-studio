@@ -155,6 +155,24 @@
         "title": "Measure",
         "text": "Analytics and A/B tests show what works, then it gets better."
       }
+    ],
+    "xpLabel": "Experience",
+    "xp": [
+      {
+        "years": "2021 - Present",
+        "place": "Aisen Studio",
+        "role": "Web & UI/UX Designer"
+      },
+      {
+        "years": "2021 - 2026",
+        "place": "Ella",
+        "role": "Product Designer, UI/UX Designer"
+      },
+      {
+        "years": "2004 - 2019",
+        "place": "Finance",
+        "role": "Finance Manager, Chief Accountant"
+      }
     ]
   },
   "contact": {
@@ -223,8 +241,8 @@
       },
       "caption": "Simplified concept screens with sample data. The full flows are in the live demo."
     },
-    "decisionsLabel": "Key decisions",
-    "decisionsLead": "Three decisions that shaped the product.",
+    "decisionsLabel": "Problem and result",
+    "decisionsLead": "Problem, solution and result.",
     "demoCta": "Explore the live demo",
     "next": "Next project",
     "beforeAfter": {
@@ -243,5 +261,59 @@
     "title": "Page not found",
     "text": "This page doesn't exist or has moved.",
     "home": "Go to home page"
+  },
+  "theme": {
+    "label": "Theme and accent colour",
+    "toggle": "Switch between light and dark theme",
+    "colors": {
+      "yellow": "Accent: yellow",
+      "mint": "Accent: mint",
+      "lavender": "Accent: lavender",
+      "blue": "Accent: blue",
+      "pink": "Accent: pink"
+    }
+  },
+  "tools": {
+    "label": "Tool stack",
+    "rows": [
+      {
+        "title": "Research & ideas",
+        "items": [
+          "Claude",
+          "ChatGPT",
+          "Gemini",
+          "Miro"
+        ]
+      },
+      {
+        "title": "Design",
+        "items": [
+          "Figma",
+          "Photoshop",
+          "Illustrator",
+          "After Effects",
+          "Midjourney",
+          "Recraft"
+        ]
+      },
+      {
+        "title": "AI prototyping",
+        "items": [
+          "Claude Code",
+          "Cursor",
+          "Codex"
+        ]
+      },
+      {
+        "title": "Web build",
+        "items": [
+          "Webflow",
+          "Framer",
+          "Shopify",
+          "Tilda",
+          "HTML & CSS"
+        ]
+      }
+    ]
   }
 }

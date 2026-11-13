@@ -348,3 +348,30 @@ $$("[data-ba]").forEach((ba) => {
     if (e.key === "ArrowRight") { set(v + 5); e.preventDefault(); once(); }
   });
 });
+
+/* ---------- Тема и акцентный цвет ----------
+   Выбор хранится в localStorage; без него сайт остаётся светлым с жёлтым акцентом. */
+(() => {
+  const root = document.documentElement;
+  const save = (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* хранилище недоступно */ } };
+  const swatches = $$("[data-accent-set]");
+  const syncAccent = () => {
+    const cur = root.getAttribute("data-accent") || "yellow";
+    swatches.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.accentSet === cur)));
+  };
+  swatches.forEach((b) => b.addEventListener("click", () => {
+    const v = b.dataset.accentSet;
+    if (v === "yellow") root.removeAttribute("data-accent"); else root.setAttribute("data-accent", v);
+    save("aisen-accent", v); syncAccent(); track("accent_change", { accent: v });
+  }));
+  syncAccent();
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const syncTheme = () => { if (meta) meta.content = root.getAttribute("data-theme") === "dark" ? "#0C0D0E" : "#F4F5F2"; };
+  const toggle = $("[data-theme-toggle]");
+  if (toggle) toggle.addEventListener("click", () => {
+    const dark = root.getAttribute("data-theme") === "dark";
+    if (dark) root.removeAttribute("data-theme"); else root.setAttribute("data-theme", "dark");
+    save("aisen-theme", dark ? "light" : "dark"); syncTheme(); track("theme_change", { theme: dark ? "light" : "dark" });
+  });
+  syncTheme();
+})();

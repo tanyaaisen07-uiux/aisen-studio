@@ -147,6 +147,11 @@ eleventyComputed:
       <p class="mono soft" id="studio-label">{{ t.studio.label }}</p>
       <p class="studio__statement">{{ t.studio.statement }}<sup class="mono mono--plain accent">1</sup></p>
       <p class="studio__note mono mono--plain soft"><span class="accent">1</span> {{ t.studio.note }}</p>
+      <div class="xp" aria-label="{{ t.studio.xpLabel }}">
+        {%- for x in t.studio.xp %}
+        <p class="xp__row"><span class="mono mono--plain soft">{{ x.years }}</span><span><strong>{{ x.place }}</strong> · {{ x.role }}</span></p>
+        {%- endfor %}
+      </div>
       <a class="mono link-plain" href="{{ home }}contact/">{{ t.studio.workWithMe }}</a>
     </div>
   </div>
@@ -159,6 +164,18 @@ eleventyComputed:
     </li>
     {%- endfor %}
   </ol>
+
+  {#- Инструменты -#}
+  <div class="tools" id="tools">
+    <p class="mono soft tools__label">{{ t.tools.label }}</p>
+    {%- for row in t.tools.rows %}
+    <div class="tools__row reveal">
+      <span class="mono mono--plain accent">0{{ loop.index }}</span>
+      <span class="tools__title">{{ row.title }}</span>
+      <span class="tools__chips">{% for it in row.items %}<span class="tool">{{ it }}</span>{% endfor %}</span>
+    </div>
+    {%- endfor %}
+  </div>
 </section>
 
 {#- 6. Финальный экран: Contact -#}

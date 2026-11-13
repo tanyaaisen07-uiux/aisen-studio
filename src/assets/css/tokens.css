@@ -1,33 +1,41 @@
 /* ==========================================================================
    Aisen Studio · дизайн-токены
-   Палитра: молочный фон, тёплый графит, один акцент (терракота).
+   Палитра: светлая и тёмная тема, пять акцентных цветов на выбор.
    Все цвета, шрифты, размеры и движение задаются только здесь.
    ========================================================================== */
 
 :root {
   /* Капля: одна форма для всех размеров */
   --drop-radius: 50% 50% 50% 0;
-  /* Палитра */
-  --milk: #F6F1E8;          /* основной фон */
-  --paper: #FBF8F2;         /* карточки, подложки */
-  --graphite: #2C2826;      /* текст, кнопки, тёмные секции */
-  --text-soft: #3D3732;     /* вторичный текст, ~10:1 на milk */
-  --line: #81766D;          /* только линии */
-  --terracotta: #A85544;    /* единственный акцент, 4,6:1 на milk */
-  --terracotta-light: #E9C4B6; /* подписи на тёмном, 9:1 на graphite */
+  /* Палитра: светлая тема. Акцент выбирается из пяти цветов (data-accent). */
+  --a-fill: #FFE066;        /* заливки на светлой теме */
+  --a-deep: #8A6A00;        /* акцентный текст и линии на светлой теме */
+  --a-neon: #FFE600;        /* акцент на тёмной теме */
+  --milk: #F4F5F2;          /* основной фон */
+  --paper: #FCFCFA;         /* карточки, подложки */
+  --graphite: #151917;      /* текст, кнопки */
+  --text-soft: #3A423E;     /* вторичный текст */
+  --line: #7B837E;          /* только линии */
+  --accent-text: var(--a-deep);
+  --accent-fill: var(--a-fill);
+  --on-accent: #151917;     /* текст на акцентной заливке */
+  --dark-bg: #151917;       /* тёмные секции */
+  --dark-fg: #F4F5F2;
+  --terracotta: var(--accent-text);      /* историческое имя: акцентный текст */
+  --terracotta-light: var(--a-fill);     /* подписи на тёмных секциях */
 
   /* Семантика */
   --color-bg: var(--milk);
   --color-surface: var(--paper);
   --color-ink: var(--graphite);
   --color-ink-soft: var(--text-soft);
-  --color-accent: var(--terracotta);
-  --color-on-dark: var(--milk);
+  --color-accent: var(--accent-text);
+  --color-on-dark: var(--dark-fg);
   --color-on-dark-soft: var(--terracotta-light);
-  --color-rule: rgba(44, 40, 38, 0.32);
-  --color-rule-soft: rgba(44, 40, 38, 0.16);
-  --color-rule-dark: rgba(246, 241, 232, 0.22);
-  --color-focus: var(--terracotta);
+  --color-rule: color-mix(in srgb, var(--graphite) 32%, transparent);
+  --color-rule-soft: color-mix(in srgb, var(--graphite) 16%, transparent);
+  --color-rule-dark: color-mix(in srgb, var(--dark-fg) 22%, transparent);
+  --color-focus: var(--accent-text);
   --color-error: #9B2C2C;
   --color-success: #2F6B3F;
 
@@ -82,6 +90,30 @@
   --dur-fast: 200ms;
   --dur-base: 320ms;
   --dur-slow: 800ms;
+}
+
+/* Акцентные цвета */
+:root[data-accent="mint"]     { --a-fill: #9BE7C4; --a-deep: #0B7A55; --a-neon: #3DFFB0; }
+:root[data-accent="lavender"] { --a-fill: #C9B8FF; --a-deep: #5B3FD6; --a-neon: #B79CFF; }
+:root[data-accent="blue"]     { --a-fill: #A9D4FF; --a-deep: #1F5FBF; --a-neon: #5CB8FF; }
+:root[data-accent="pink"]     { --a-fill: #FFB8D2; --a-deep: #B4235F; --a-neon: #FF6FA8; }
+
+/* Тёмная тема */
+:root[data-theme="dark"] {
+  --milk: #0C0D0E;
+  --paper: #17191B;
+  --graphite: #F1F3F0;
+  --text-soft: #C4CAC6;
+  --line: #7E8682;
+  --accent-text: var(--a-neon);
+  --accent-fill: var(--a-neon);
+  --on-accent: #0C0D0E;
+  --dark-bg: #17191B;
+  --dark-fg: #F1F3F0;
+  --terracotta-light: var(--a-neon);
+  --color-error: #FF8A8A;
+  --color-success: #7FD79A;
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title | safe }}</title>
   <meta name="description" content="{{ description }}">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#F6F1E8">
-  <script>document.documentElement.classList.add("js")</script>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F4F5F2">
+  <script>document.documentElement.classList.add("js");try{var d=document.documentElement,th=localStorage.getItem("aisen-theme"),ac=localStorage.getItem("aisen-accent");if(th==="dark")d.setAttribute("data-theme","dark");if(ac&&/^(mint|lavender|blue|pink)$/.test(ac))d.setAttribute("data-accent",ac)}catch(e){}</script>
 
   {%- if site.languages.length > 1 %}
   {%- for l in site.languages %}
