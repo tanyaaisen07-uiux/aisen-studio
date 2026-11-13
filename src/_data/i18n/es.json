@@ -39,14 +39,14 @@
     "demo": "Abrir demo ↗"
   },
   "home": {
-    "title": "Aisen Studio · Brand, Web & Product Designer",
+    "title": "Aisen Studio · Diseñadora de marca, web y producto digital",
     "description": "Aisen Studio: identidad de marca, webs y productos digitales. Diseño a medida, sin plantillas.",
     "label": "Estudio de diseño independiente de Tania Aisen",
     "titleLines": [
       "Diseñar con propósito.",
       "Construir con claridad."
     ],
-    "role": "Brand, Web & Product Designer",
+    "role": "Diseñadora de marca, web y producto digital",
     "words": [
       {
         "label": "Marca",
@@ -104,7 +104,7 @@
           "Diseño responsive",
           "Webflow y Framer",
           "Maquetación en código",
-          "Tests A/B",
+          "Pruebas A/B",
           "Configuración de analítica"
         ],
         "projects": [
@@ -133,7 +133,7 @@
   },
   "studio": {
     "label": "Estudio · Fundadora y diseñadora",
-    "statement": "Aisen Studio es un pequeño estudio independiente. Una sola diseñadora, del encargo al lanzamiento: marca, web e interfaz de producto hablan el mismo idioma, y cada decisión tiene una razón de negocio.",
+    "statement": "Aisen Studio es un estudio independiente en el que una misma diseñadora acompaña cada proyecto del encargo al lanzamiento: marca, web e interfaz de producto hablan el mismo idioma, y cada decisión tiene una razón de negocio.",
     "note": "Antes del diseño, más de diez años en finanzas. Cifras, procesos y márgenes forman parte de cada decisión.",
     "caption": "Tania Aisen · España",
     "portraitAlt": "Retrato de Tania Aisen",
@@ -149,11 +149,11 @@
       },
       {
         "title": "Construir",
-        "text": "Maquetación responsive o una entrega limpia a desarrollo, con componentes y estados."
+        "text": "Diseño y desarrollo web adaptables a todos los dispositivos, o una entrega limpia a desarrollo, con componentes y estados."
       },
       {
         "title": "Medir",
-        "text": "La analítica y los tests A/B muestran qué funciona, y a partir de ahí se mejora."
+        "text": "La analítica y las pruebas A/B muestran qué funciona, y a partir de ahí se mejora."
       }
     ],
     "xpLabel": "Experiencia",
@@ -184,7 +184,7 @@
     "start": "Empezar un proyecto",
     "localTime": "Hora local · España",
     "founder": "Fundadora, Aisen Studio",
-    "status": "Abierta a ofertas de empleo y nuevos proyectos",
+    "status": "Disponible para nuevas oportunidades y proyectos",
     "pageTitle": "Contacto · Aisen Studio",
     "pageDescription": "Empieza un proyecto con Aisen Studio.",
     "heading": "Hablemos",

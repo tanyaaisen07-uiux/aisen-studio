@@ -114,7 +114,7 @@
     },
     "summary": {
       "en": "E-commerce website for a flower shop in Spain, with a homepage chosen through a user test.",
-      "es": "Tienda online de flores en España, con la página de inicio elegida mediante un test con usuarios.",
+      "es": "Tienda online de flores en España, con la página de inicio elegida mediante una prueba con usuarios.",
       "ru": "Интернет-магазин цветов с главной страницей, выбранной по тесту с пользователями."
     },
     "case": {
@@ -159,7 +159,7 @@
       "es": {
         "label": "Caso · Web · E-commerce",
         "platform": "Web en Webflow",
-        "lead": "Una tienda online de flores en España: web bilingüe, identidad de marca y packaging. La página de inicio se eligió con un test, no por gusto: 7 de 8 usuarios prefirieron la versión con el bloque «Más vendidos».",
+        "lead": "Una tienda online de flores en España: web bilingüe, identidad de marca y packaging. La página de inicio se eligió con una prueba con usuarios, no por gusto: 7 de 8 usuarios prefirieron la versión con el bloque «Más vendidos».",
         "decisions": [
           {
             "title": "Problema",
