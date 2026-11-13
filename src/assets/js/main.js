@@ -366,7 +366,7 @@ $$("[data-ba]").forEach((ba) => {
   }));
   syncAccent();
   const meta = document.querySelector('meta[name="theme-color"]');
-  const syncTheme = () => { if (meta) meta.content = root.getAttribute("data-theme") === "dark" ? "#0C0D0E" : "#F4F5F2"; };
+  const syncTheme = () => { if (meta) meta.content = root.getAttribute("data-theme") === "dark" ? "#0C0D0E" : "#FFFFFF"; };
   const toggle = $("[data-theme-toggle]");
   if (toggle) toggle.addEventListener("click", () => {
     const dark = root.getAttribute("data-theme") === "dark";
