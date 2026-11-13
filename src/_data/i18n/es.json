@@ -33,7 +33,7 @@
   "nameChanged": "Nombre del cliente cambiado por confidencialidad",
   "links": {
     "openCase": "Ver caso",
-    "site": "Web en vivo ↗",
+    "site": "Ver la web ↗",
     "behance": "En Behance ↗",
     "allWork": "[ Ver todos los proyectos ]",
     "demo": "Abrir demo ↗"
@@ -171,7 +171,7 @@
       {
         "years": "2004 - 2019",
         "place": "Finanzas",
-        "role": "Finance Manager, jefa de contabilidad"
+        "role": "Responsable financiera, jefa de contabilidad"
       }
     ]
   },
@@ -184,7 +184,7 @@
     "start": "Empezar un proyecto",
     "localTime": "Hora local · España",
     "founder": "Fundadora, Aisen Studio",
-    "status": "Disponible para empleo y nuevos proyectos",
+    "status": "Abierta a ofertas de empleo y nuevos proyectos",
     "pageTitle": "Contacto · Aisen Studio",
     "pageDescription": "Empieza un proyecto con Aisen Studio.",
     "heading": "Hablemos",

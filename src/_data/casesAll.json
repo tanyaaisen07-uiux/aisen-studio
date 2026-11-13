@@ -113,9 +113,9 @@
       "ru": 4
     },
     "summary": {
-      "en": "E-commerce website for a flower shop in Spain, with an A/B-tested homepage.",
-      "es": "Tienda online de flores en España, con la página de inicio validada mediante tests A/B.",
-      "ru": "Интернет-магазин цветов с главной страницей, проверенной A/B-тестами."
+      "en": "E-commerce website for a flower shop in Spain, with a homepage chosen through a user test.",
+      "es": "Tienda online de flores en España, con la página de inicio elegida mediante un test con usuarios.",
+      "ru": "Интернет-магазин цветов с главной страницей, выбранной по тесту с пользователями."
     },
     "case": {
       "ru": {
