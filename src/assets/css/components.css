@@ -198,8 +198,11 @@ body.menu-open .logo { transform: none !important; }
   display: block; width: 100%; height: 100%;
   background: var(--accent-fill);
   border-radius: var(--drop-radius);
+  overflow: hidden;
+  box-shadow: clamp(5px, 0.9vw, 12px) clamp(5px, 0.9vw, 12px) 0 var(--accent-fill);
   transition: transform 1.2s var(--ease-out), border-radius 1.2s var(--ease-out);
 }
+.hero__shape-inner img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
 /* Деликатно: только при наведении, лёгкий поворот и чуть более мягкий угол */
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .hero__shape:hover .hero__shape-inner { transform: rotate(-6deg); }
