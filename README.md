@@ -32,7 +32,7 @@ src/
 
 | Ссылка | Для каких вакансий | Кейсы |
 |---|---|---|
-| `/ru/`, `/en/` | общая (студия) | Cohorta, Duescape, LUMIA, Art Cook |
+| `/ru/`, `/en/` | общая (студия) | Cohorta, Duescape, LUMIA, Art Cook, Kün |
 | `/ru/web/` | веб-дизайн, UI/UX | LUMIA, Art Cook, Cohorta, Kün |
 | `/ru/product/` | продуктовый дизайн | Cohorta, Duescape, LUMIA |
 | `/ru/brand/` | айдентика, графика | Art Cook, Kün |
