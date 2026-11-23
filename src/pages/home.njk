@@ -30,14 +30,6 @@ eleventyComputed:
         {%- endfor %}
       </h1>
     </div>
-    {#- Вместо портрета: обложки кейсов этого профиля сменяют друг друга -#}
-    <a class="hero__shape" href="#work" aria-label="{{ t.home.toWork }}" data-hero-covers>
-      <span class="hero__shape-inner">
-        {%- for item in cases %}
-        <img class="hero__cover{% if loop.first %} is-on{% endif %}" src="{{ item.cover }}" alt="" decoding="async"{% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %} style="object-position: {{ item.coverPos }}">
-        {%- endfor %}
-      </span>
-    </a>
   </div>
 
   <div class="hero__bottom">
@@ -74,44 +66,20 @@ eleventyComputed:
     <a class="mono link-plain" href="{{ home }}work/">{{ t.links.allWork }}</a>
   </header>
 
-  <div class="gallery" data-gallery>
-    <ul class="gallery__list" role="list">
-      {%- for item in cases %}
-      {%- set href = (home + "work/" + item.slug + "/") if item.hasCase else item.live %}
-      <li>
-        <a class="gallery__row{% if loop.first %} is-active{% endif %}" href="{{ href }}"{% if not item.hasCase %} target="_blank" rel="noopener"{% endif %}
-           data-gallery-row="{{ loop.index0 }}" data-track="{{ 'project_open' if item.hasCase else 'live_demo_open' }}" data-track-label="{{ item.slug }}">
-          <span class="gallery__num mono mono--plain">0{{ loop.index }}</span>
-          <span class="gallery__text">
-            <span class="gallery__title">{{ item.title }}</span>
-            <span class="gallery__meta mono">{% for c in (item.metaKeys or item.categories) %}{{ t.catMeta[c] }}{% if not loop.last %} · {% endif %}{% endfor %} · {{ item.year }}</span>
-          </span>
-          <svg class="gallery__arrow" width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
-        </a>
-      </li>
-      {%- endfor %}
-    </ul>
-
-    <div class="gallery__preview" aria-hidden="true">
-      <div class="gallery__frame">
-        {%- for item in cases %}
-        <figure class="gallery__slide{% if loop.first %} is-active{% endif %}" data-gallery-slide="{{ loop.index0 }}">
-          <img src="{{ item.cover }}" alt="" {% if not loop.first %}loading="lazy" {% endif %}decoding="async" style="object-position: {{ item.coverPos }}">
-          {%- if item.type %}<span class="card__tag mono">{{ t.types[item.type] }}</span>{% endif %}
-        </figure>
-        {%- endfor %}
-      </div>
-      {%- for item in cases %}
-      <p class="gallery__caption{% if loop.first %} is-active{% endif %}" data-gallery-caption="{{ loop.index0 }}">{{ item.summary[lang] }}</p>
-      {%- endfor %}
-    </div>
-  </div>
-
-  <div class="gallery-cards">
+  {#- Список проектов: название * контекст, год. При наведении рядом с годом появляется превью -#}
+  <ul class="plist" role="list">
     {%- for item in cases %}
-    {% include "partials/card.njk" %}
+    {%- set href = (home + "work/" + item.slug + "/") if item.hasCase else item.live %}
+    <li>
+      <a class="plist__row" href="{{ href }}"{% if not item.hasCase %} target="_blank" rel="noopener"{% endif %}
+         data-track="{{ 'project_open' if item.hasCase else 'live_demo_open' }}" data-track-label="{{ item.slug }}">
+        <span class="plist__title">{{ item.title }}{% if item.tagline %}<span class="plist__sep" aria-hidden="true">*</span><span class="plist__ctx">{{ item.tagline[lang] }}</span>{% endif %}{% if not item.hasCase %} ↗{% endif %}</span>
+        <span class="plist__thumb" aria-hidden="true"><img src="{{ item.cover }}" alt="" loading="lazy" decoding="async" style="object-position: {{ item.coverPos }}"></span>
+        <span class="plist__year mono mono--plain">{{ item.year }}</span>
+      </a>
+    </li>
     {%- endfor %}
-  </div>
+  </ul>
 </section>
 
 {#- 4. Экспертиза: три вкладки -#}

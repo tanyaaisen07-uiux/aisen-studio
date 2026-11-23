@@ -87,7 +87,12 @@
     "metaKeys": [
       "uiux",
       "product"
-    ]
+    ],
+    "tagline": {
+      "en": "learning platform",
+      "es": "plataforma educativa",
+      "ru": "учебная платформа"
+    }
   },
   {
     "slug": "duescape",
@@ -95,7 +100,7 @@
     "categories": [
       "product"
     ],
-    "year": 2026,
+    "year": 2025,
     "type": "concept",
     "nameChanged": false,
     "hasCase": true,
@@ -220,7 +225,12 @@
     "metaKeys": [
       "uiux",
       "product"
-    ]
+    ],
+    "tagline": {
+      "en": "subscription app",
+      "es": "app de suscripciones",
+      "ru": "трекер подписок"
+    }
   },
   {
     "slug": "lumia",
@@ -308,6 +318,11 @@
           }
         ]
       }
+    },
+    "tagline": {
+      "en": "flower shop",
+      "es": "floristería",
+      "ru": "цветочный магазин"
     }
   },
   {
@@ -433,7 +448,12 @@
           "ru": "Сначала структура: хлебные крошки, место под фото, ключевые факты (длительность, цена, расписание), программа по занятиям и одна кнопка записи. Дизайн сохранил эту сетку и добавил бренд: логотип, терракотовый акцент на фактах и кнопке, фото, которое продаёт занятие."
         }
       }
-    ]
+    ],
+    "tagline": {
+      "en": "culinary school",
+      "es": "escuela de cocina",
+      "ru": "кулинарная школа"
+    }
   },
   {
     "slug": "kun",
@@ -461,6 +481,11 @@
       "en": "Brand identity for a coffee and bakery with a Kazakh name.",
       "es": "Identidad de marca para una cafetería y panadería con nombre kazajo.",
       "ru": "Айдентика кофейни-пекарни с казахским названием."
+    },
+    "tagline": {
+      "en": "coffee & bakery",
+      "es": "café y panadería",
+      "ru": "кофейня и пекарня"
     }
   },
   {
@@ -538,6 +563,11 @@
     },
     "metaKeys": [
       "visual"
-    ]
+    ],
+    "tagline": {
+      "en": "jewelry retouching",
+      "es": "retoque de joyería",
+      "ru": "ретушь украшений"
+    }
   }
 ]
