@@ -1,35 +1,48 @@
 ---
 pagination:
-  data: site.languages
+  data: homePages
   size: 1
-  alias: lang
-permalink: "/{{ lang }}/"
+  alias: entry
+permalink: "{{ entry.url }}"
 layout: layouts/base.njk
 pageType: home
 eleventyComputed:
-  title: "{{ i18n[lang].home.title }}"
-  description: "{{ i18n[lang].home.description }}"
+  lang: "{{ entry.lang }}"
+  homeUrl: "{{ entry.url }}"
+  profile: "{{ entry.profile or '' }}"
+  title: "{{ ('Aisen Studio · ' + entry.copy.role) if entry.copy.role else i18n[entry.lang].home.title }}"
+  description: "{{ entry.copy.intro or i18n[entry.lang].home.description }}"
 ---
+{#- Модульная главная: общие блоки + модульные (роль, интро, компетенции, кейсы, вкладка экспертизы) из profiles.js -#}
 {%- set home = "/" + lang + "/" -%}
+{%- set cases = entry.cases -%}
+{%- set copy = entry.copy -%}
 
 {#- 1. Hero: крупный AISEN STUDIO (логотип в шапке), заголовок, роль, слова-переключатели -#}
 <section class="hero container" id="top" data-hero>
   <div class="intro-space" data-intro-space aria-hidden="true"></div>
   <div class="hero__top">
     <div class="hero__head">
-      <p class="hero__label mono">{{ t.home.label }}</p>
+      <p class="hero__label mono">{{ t.home.label }}<span class="hero__for" data-for data-prefix="{{ t.home.forPrefix }}" hidden></span></p>
       <h1 class="hero__title">
         {%- for line in t.home.titleLines %}
         <span class="hero__line"><span class="hero__line-inner{% if loop.last %} accent{% endif %}" style="--i: {{ loop.index0 }}">{{ line }}</span></span>
         {%- endfor %}
       </h1>
     </div>
-    <div class="hero__shape"><span class="hero__shape-inner"><img src="/assets/img/about/tania-portrait.webp" alt="{{ t.studio.portraitAlt }}" width="900" height="1117" decoding="async" fetchpriority="high"></span></div>
+    {#- Вместо портрета: обложки кейсов этого профиля сменяют друг друга -#}
+    <a class="hero__shape" href="#work" aria-label="{{ t.home.toWork }}" data-hero-covers>
+      <span class="hero__shape-inner">
+        {%- for item in cases %}
+        <img class="hero__cover{% if loop.first %} is-on{% endif %}" src="{{ item.cover }}" alt="" decoding="async"{% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %} style="object-position: {{ item.coverPos }}">
+        {%- endfor %}
+      </span>
+    </a>
   </div>
 
   <div class="hero__bottom">
     <div class="hero__main">
-      <p class="hero__role">{{ t.home.role }}</p>
+      <p class="hero__role">{{ copy.role or t.home.role }}</p>
       <div class="hero__words">
         {%- for w in t.home.words %}
         <a class="pill-word" href="#expertise" data-tab-link="{{ w.tab }}">{{ w.label }}</a>
@@ -37,7 +50,7 @@ eleventyComputed:
       </div>
     </div>
     <div class="hero__side">
-      <p class="hero__intro mono mono--plain">{{ t.home.intro }}</p>
+      <p class="hero__intro mono mono--plain">{{ copy.intro or t.home.intro }}</p>
       <a class="btn btn--dark" href="#work" data-track="cta_click" data-track-label="hero_selected_work">{{ t.home.toWork }}
         <span class="btn__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v12M3 9l5 5 5-5"/></svg></span>
       </a>
@@ -48,8 +61,8 @@ eleventyComputed:
 {#- 2. Плашка компетенций -#}
 <section class="container" aria-label="{{ t.home.capsLabel }}">
   <ul class="caps">
-    {%- for c in t.home.caps %}
-    <li class="cap"><span class="cap__num mono">0{{ loop.index }}</span><span class="cap__label">{{ c }}</span></li>
+    {%- for i in entry.caps %}
+    <li class="cap"><span class="cap__num mono">0{{ loop.index }}</span><span class="cap__label">{{ t.home.caps[i] }}</span></li>
     {%- endfor %}
   </ul>
 </section>
@@ -107,16 +120,17 @@ eleventyComputed:
     <p class="mono on-dark-soft" id="expertise-label">{{ t.expertise.label }}</p>
     <div class="expertise" data-tabs>
       <div class="expertise__tabs" role="tablist" aria-labelledby="expertise-label">
-        {%- for tab in t.expertise.tabs %}
+        {%- for key in entry.tabs %}{% for tab in t.expertise.tabs %}{% if tab.key == key %}
         <button class="expertise__tab" type="button" role="tab" id="tab-{{ tab.key }}" aria-controls="panel-{{ tab.key }}"
-                aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}" data-tab="{{ tab.key }}">
-          <span class="expertise__num mono mono--plain">0{{ loop.index }}</span>
+                aria-selected="{{ 'true' if key == entry.tabs[0] else 'false' }}" tabindex="{{ '0' if key == entry.tabs[0] else '-1' }}" data-tab="{{ tab.key }}">
+          <span class="expertise__num mono mono--plain">0{{ entry.tabs.indexOf(key) + 1 }}</span>
           <span class="expertise__title">{{ tab.title }}</span>
         </button>
-        {%- endfor %}
+        {%- endif %}{% endfor %}{% endfor %}
       </div>
-      {%- for tab in t.expertise.tabs %}
-      <div class="expertise__panel" role="tabpanel" id="panel-{{ tab.key }}" aria-labelledby="tab-{{ tab.key }}" tabindex="0"{% if not loop.first %} hidden{% endif %}>
+      {%- for key in entry.tabs %}{% for tab in t.expertise.tabs %}{% if tab.key == key %}
+      {%- set first = (key == entry.tabs[0]) %}
+      <div class="expertise__panel" role="tabpanel" id="panel-{{ tab.key }}" aria-labelledby="tab-{{ tab.key }}" tabindex="0"{% if not first %} hidden{% endif %}>
         <p class="expertise__lead">{{ tab.lead }}</p>
         <ul class="expertise__items">
           {%- for it in tab.items %}<li>{{ it }}</li>{% endfor %}
@@ -131,18 +145,14 @@ eleventyComputed:
           {%- endfor %}
         </div>
       </div>
-      {%- endfor %}
+      {%- endif %}{% endfor %}{% endfor %}
     </div>
   </div>
 </section>
 
 {#- 5. Студия: портрет, текст, сноска, шаги -#}
 <section class="section container" id="studio" aria-labelledby="studio-label">
-  <div class="studio">
-    <figure class="studio__portrait reveal">
-      <div class="studio__photo"><img src="/assets/img/about/tania-portrait.webp" alt="{{ t.studio.portraitAlt }}" loading="lazy" decoding="async" width="900" height="1117"></div>
-      <figcaption class="mono mono--plain soft">{{ t.studio.caption }}</figcaption>
-    </figure>
+  <div class="studio studio--text">
     <div class="studio__text">
       <p class="mono soft" id="studio-label">{{ t.studio.label }}</p>
       <p class="studio__statement">{{ t.studio.statement }}<sup class="mono mono--plain accent">1</sup></p>
@@ -190,7 +200,6 @@ eleventyComputed:
     </div>
     <div class="contact-band__side">
       <div class="person">
-        <img src="/assets/img/about/tania-avatar.webp" alt="" width="64" height="64" loading="lazy">
         <span><strong>{{ site.author if lang != 'ru' else 'Таня Айсен' }}</strong><span class="mono mono--plain">{{ t.contact.founder }}</span></span>
       </div>
       {%- if site.showClock %}

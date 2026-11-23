@@ -72,7 +72,8 @@
       "Sistemas de diseño"
     ],
     "capsLabel": "Especialidades",
-    "workTitle": "Proyectos destacados"
+    "workTitle": "Proyectos destacados",
+    "forPrefix": "Portafolio para "
   },
   "expertise": {
     "label": "Servicios",

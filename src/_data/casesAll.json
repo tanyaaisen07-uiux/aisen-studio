@@ -90,6 +90,139 @@
     ]
   },
   {
+    "slug": "duescape",
+    "title": "Duescape",
+    "categories": [
+      "product"
+    ],
+    "year": 2026,
+    "type": "concept",
+    "nameChanged": false,
+    "hasCase": true,
+    "draft": true,
+    "live": "https://www.behance.net/gallery/257842959/Duescape-Subscription-Tracker-App-UIUX-Case-Study",
+    "liveKind": "behance",
+    "cover": "/assets/img/covers/duescape.webp",
+    "coverPos": "center",
+    "sites": [
+      "main",
+      "ru"
+    ],
+    "order": {
+      "main": 2,
+      "ru": 4
+    },
+    "summary": {
+      "en": "Subscription tracker app that tells you what to cancel, not only what you pay: one total, one honest recommendation and a button to act on it.",
+      "es": "App de suscripciones que te dice qué cancelar, no solo cuánto pagas: un total, una recomendación honesta y un botón para actuar.",
+      "ru": "Трекер подписок, который подсказывает, что отменить, а не только сколько вы платите: одна сумма, одна честная рекомендация и кнопка, чтобы действовать."
+    },
+    "flashlight": {
+      "ratio": "393 / 852",
+      "screens": [
+        {
+          "dark": "/assets/img/duescape/home-dark.webp",
+          "light": "/assets/img/duescape/home-light.webp",
+          "alt": {
+            "en": "Home",
+            "es": "Inicio",
+            "ru": "Главная"
+          }
+        },
+        {
+          "dark": "/assets/img/duescape/subs-dark.webp",
+          "light": "/assets/img/duescape/subs-light.webp",
+          "alt": {
+            "en": "Subscriptions",
+            "es": "Suscripciones",
+            "ru": "Подписки"
+          }
+        },
+        {
+          "dark": "/assets/img/duescape/insights-dark.webp",
+          "light": "/assets/img/duescape/insights-light.webp",
+          "alt": {
+            "en": "Insights",
+            "es": "Análisis",
+            "ru": "Аналитика"
+          }
+        }
+      ]
+    },
+    "case": {
+      "en": {
+        "label": "Case · UI/UX · Mobile app",
+        "platform": "iOS app · Light and Dark",
+        "lead": "A mobile app for people who pay for 8 to 12 subscriptions and cancel nothing, because each one is buried inside its own service. The home screen puts the total first, the next charge second and one recommendation third, then gives that recommendation a button.",
+        "flLabel": "Light and Dark",
+        "flLead": "Move the cursor over the screens. The flashlight shows the same screen in the light theme: one layout, one set of components, only the token values change.",
+        "flHint": "Drag a finger across the screens",
+        "decisions": [
+          {
+            "title": "Problem",
+            "text": "Subscriptions are easy to start and easy to forget. Payments sit on different cards, nothing warns you before a renewal, and cancelling means visiting each service separately."
+          },
+          {
+            "title": "Solution",
+            "text": "One screen with the monthly total, the next charge and one recommendation with a button. Pause and cancel flows never auto-advance and end with the saving in money. Labelled navigation instead of five icons, and green reserved for status only."
+          },
+          {
+            "title": "Result",
+            "text": "33 screens in Light and Dark on one token layer: 55 primitives, 28 semantic tokens, 36 components with 111 variants, WCAG AA on every text pair, and a prototype with 118 connections and no dead ends."
+          }
+        ]
+      },
+      "es": {
+        "label": "Caso · UI/UX · App móvil",
+        "platform": "App iOS · Claro y oscuro",
+        "lead": "Una app móvil para quien paga entre 8 y 12 suscripciones y no cancela ninguna, porque cada una está escondida dentro de su propio servicio. La pantalla de inicio muestra primero el total, después el próximo cargo y en tercer lugar una recomendación con su botón.",
+        "flLabel": "Claro y oscuro",
+        "flLead": "Pasa el cursor por las pantallas. La linterna muestra la misma pantalla en el tema claro: una sola maquetación, los mismos componentes, solo cambian los valores de los tokens.",
+        "flHint": "Desliza el dedo por las pantallas",
+        "decisions": [
+          {
+            "title": "Problema",
+            "text": "Las suscripciones son fáciles de empezar y fáciles de olvidar. Los pagos van a tarjetas distintas, nada avisa antes de una renovación y cancelar obliga a entrar en cada servicio por separado."
+          },
+          {
+            "title": "Solución",
+            "text": "Una pantalla con el total mensual, el próximo cargo y una recomendación con botón. Los flujos de pausa y cancelación nunca avanzan solos y terminan mostrando el ahorro en dinero. Navegación con etiquetas en lugar de cinco iconos y el verde reservado solo para estados."
+          },
+          {
+            "title": "Resultado",
+            "text": "33 pantallas en claro y oscuro sobre una sola capa de tokens: 55 primitivos, 28 tokens semánticos, 36 componentes con 111 variantes, WCAG AA en cada par de texto y un prototipo con 118 conexiones sin callejones sin salida."
+          }
+        ]
+      },
+      "ru": {
+        "label": "Кейс · UI/UX · Мобильное приложение",
+        "platform": "iOS-приложение · светлая и тёмная темы",
+        "lead": "Мобильное приложение для тех, кто платит за 8-12 подписок и ничего не отменяет, потому что каждая спрятана в своём сервисе. Главный экран показывает сначала общую сумму, потом ближайшее списание, а третьим одну рекомендацию с кнопкой.",
+        "flLabel": "Светлая и тёмная тема",
+        "flLead": "Проведите курсором по экранам. Фонарик показывает тот же экран в светлой теме: одна раскладка, одни компоненты, меняются только значения токенов.",
+        "flHint": "Проведите пальцем по экранам",
+        "decisions": [
+          {
+            "title": "Проблема",
+            "text": "Подписку легко оформить и легко забыть. Платежи идут с разных карт, перед продлением никто не предупреждает, а чтобы отменить, нужно заходить в каждый сервис отдельно."
+          },
+          {
+            "title": "Решение",
+            "text": "Один экран: сумма за месяц, ближайшее списание и одна рекомендация с кнопкой. Сценарии паузы и отмены не перескакивают дальше сами и заканчиваются экономией в деньгах. Навигация с подписями вместо пяти иконок, зелёный цвет оставлен только для статусов."
+          },
+          {
+            "title": "Результат",
+            "text": "33 экрана в светлой и тёмной теме на одном слое токенов: 55 примитивов, 28 семантических токенов, 36 компонентов со 111 вариантами, WCAG AA для всех пар текста и прототип со 118 связями без тупиков."
+          }
+        ]
+      }
+    },
+    "metaKeys": [
+      "uiux",
+      "product"
+    ]
+  },
+  {
     "slug": "lumia",
     "title": "LUMIA",
     "categories": [
@@ -109,7 +242,7 @@
       "ru"
     ],
     "order": {
-      "main": 2,
+      "main": 3,
       "ru": 4
     },
     "summary": {
@@ -197,7 +330,7 @@
       "ru"
     ],
     "order": {
-      "main": 3,
+      "main": 4,
       "ru": 1
     },
     "summary": {
@@ -223,7 +356,9 @@
             "title": "Результат",
             "text": "Спрос на мастер-классы вырос примерно с 4 до 40 желающих в неделю, занятия идут два раза в неделю. На курсы набираются группы до 10 человек в месяц."
           }
-        ]
+        ],
+        "baLabel": "От вайрфрейма к дизайну",
+        "baLead": "Передвиньте ползунок: та же страница курса в виде вайрфрейма и в финальном дизайне с новым брендом."
       },
       "en": {
         "label": "Case · Brand · Web",
@@ -242,7 +377,9 @@
             "title": "Result",
             "text": "Masterclass demand grew from about 4 to about 40 interested customers a week, with classes twice a week. Courses now fill groups of up to 10 people a month."
           }
-        ]
+        ],
+        "baLabel": "From wireframe to design",
+        "baLead": "Drag the slider: the same course page as a wireframe and as the final design with the new brand."
       },
       "es": {
         "label": "Caso · Marca · Web",
@@ -261,9 +398,42 @@
             "title": "Resultado",
             "text": "La demanda de masterclasses pasó de unas 4 a unas 40 personas interesadas por semana, con clases dos veces por semana. Los cursos llenan grupos de hasta 10 personas al mes."
           }
-        ]
+        ],
+        "baLabel": "Del wireframe al diseño",
+        "baLead": "Mueve el control: la misma página del curso como wireframe y como diseño final con la nueva marca."
       }
-    }
+    },
+    "beforeAfter": [
+      {
+        "before": "/assets/img/art-cook/course-wireframe.webp",
+        "after": "/assets/img/art-cook/course-design.webp",
+        "ratio": "1166 / 971",
+        "frame": "browser",
+        "url": "art-cook / courses / essential-cooking",
+        "labels": {
+          "before": {
+            "en": "Wireframe",
+            "es": "Wireframe",
+            "ru": "Вайрфрейм"
+          },
+          "after": {
+            "en": "Design",
+            "es": "Diseño",
+            "ru": "Дизайн"
+          }
+        },
+        "title": {
+          "en": "Course page: from structure to brand",
+          "es": "Página del curso: de la estructura a la marca",
+          "ru": "Страница курса: от структуры к бренду"
+        },
+        "text": {
+          "en": "The structure came first: breadcrumbs, a photo slot, the key facts (duration, price, schedule), the programme by session and one booking button. The design kept that grid and added the brand: the logo, a terracotta accent on the facts and the call to action, and food photography that sells the class.",
+          "es": "Primero la estructura: migas de pan, hueco para la foto, los datos clave (duración, precio, horario), el programa por sesiones y un solo botón de reserva. El diseño mantuvo esa retícula y añadió la marca: el logotipo, un acento terracota en los datos y en la llamada a la acción, y una fotografía que vende la clase.",
+          "ru": "Сначала структура: хлебные крошки, место под фото, ключевые факты (длительность, цена, расписание), программа по занятиям и одна кнопка записи. Дизайн сохранил эту сетку и добавил бренд: логотип, терракотовый акцент на фактах и кнопке, фото, которое продаёт занятие."
+        }
+      }
+    ]
   },
   {
     "slug": "kun",
@@ -284,7 +454,7 @@
       "ru"
     ],
     "order": {
-      "main": 4,
+      "main": 5,
       "ru": 2
     },
     "summary": {
@@ -309,7 +479,7 @@
       "ru"
     ],
     "order": {
-      "main": 5,
+      "main": 6,
       "ru": 5
     },
     "summary": {

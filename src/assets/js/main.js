@@ -375,3 +375,97 @@ $$("[data-ba]").forEach((ba) => {
   });
   syncTheme();
 })();
+
+/* ---------- Фонарик: курсор высвечивает светлую тему (кейс Duescape) ----------
+   Мышь: круг следует за курсором и плавно гаснет, когда курсор уходит.
+   Тач: палец двигает круг. Пока никто не трогает, круг сам медленно гуляет по экранам. */
+$$("[data-flash]").forEach((el) => {
+  const layer = $(".flash__layer--light", el);
+  if (!layer) return;
+  const R = () => Math.max(70, Math.min(170, el.clientWidth * 0.13));
+  let x = 0.5, y = 0.4, tx = x, ty = y, r = 0, tr = R(), active = false, tracked = false, t0 = performance.now(), visible = false;
+  const apply = () => {
+    el.style.setProperty("--x", (x * 100).toFixed(2) + "%");
+    el.style.setProperty("--y", (y * 100).toFixed(2) + "%");
+    el.style.setProperty("--r", r.toFixed(1) + "px");
+  };
+  if (reduceMotion) { r = R(); apply(); }
+  const point = (e) => {
+    const b = layer.getBoundingClientRect();
+    tx = (e.clientX - b.left) / b.width; ty = (e.clientY - b.top) / b.height;
+    active = true; tr = R();
+    if (!tracked) { tracked = true; track("flashlight_use"); }
+  };
+  el.addEventListener("pointermove", point);
+  el.addEventListener("pointerdown", point);
+  el.addEventListener("pointerleave", () => { active = false; t0 = performance.now(); });
+  const loop = (now) => {
+    if (!active) {
+      // Автопрогулка: медленная восьмёрка по трём экранам
+      const s = (now - t0) / 1000;
+      tx = 0.5 + 0.38 * Math.sin(s * 0.55); ty = 0.42 + 0.22 * Math.sin(s * 1.1);
+      tr = R() * 0.85;
+    }
+    const k = active ? 0.22 : 0.05;
+    x += (tx - x) * k; y += (ty - y) * k; r += (tr - r) * 0.12;
+    apply();
+    if (visible) requestAnimationFrame(loop);
+  };
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    new IntersectionObserver(([en]) => {
+      const was = visible; visible = en.isIntersecting;
+      if (visible && !was) requestAnimationFrame(loop);
+    }).observe(el);
+  }
+});
+
+/* ---------- Hero: обложки кейсов сменяют друг друга вместо портрета ---------- */
+(() => {
+  const box = $("[data-hero-covers]");
+  if (!box || reduceMotion) return;
+  const imgs = $$(".hero__cover", box);
+  if (imgs.length < 2) return;
+  let i = 0;
+  setInterval(() => {
+    if (document.hidden) return;
+    imgs[i].classList.remove("is-on");
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add("is-on");
+  }, 2600);
+})();
+
+/* ---------- Модульное портфолио ----------
+   ?for=Компания показывает строку «Портфолио для …» в hero.
+   Профиль (например /ru/web/) запоминается на время визита: логотип и пункты меню
+   со страниц кейсов ведут обратно в него, а не на общую главную. */
+(() => {
+  const forEl = $("[data-for]");
+  const params = new URLSearchParams(location.search);
+  const company = (params.get("for") || "").trim().slice(0, 40);
+  if (forEl && company) {
+    forEl.textContent = forEl.dataset.prefix + company;
+    forEl.hidden = false;
+    track("portfolio_for", { company, path: location.pathname });
+  }
+  const lang = document.documentElement.lang;
+  const KEY = "aisen-home-" + lang;
+  try {
+    if (document.body.classList.contains("page-home")) {
+      sessionStorage.setItem(KEY, location.pathname + location.search);
+    } else {
+      const saved = sessionStorage.getItem(KEY);
+      const base = "/" + lang + "/";
+      if (saved) {
+        const savedPath = saved.split("?")[0];
+        $$("a[href]").forEach((a) => {
+          const u = new URL(a.href, location.href);
+          if (u.origin !== location.origin) return;
+          if (u.pathname.endsWith(base) && savedPath.endsWith(base)) return;
+          if (u.pathname.endsWith(base) && (u.hash === "#expertise" || u.hash === "#studio" || u.hash === "" || u.hash === "#work")) {
+            a.href = saved.split("?")[0] + (saved.includes("?") ? "?" + saved.split("?")[1] : "") + u.hash;
+          }
+        });
+      }
+    }
+  } catch (e) { /* хранилище недоступно */ }
+})();

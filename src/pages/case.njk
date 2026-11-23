@@ -80,24 +80,75 @@ eleventyComputed:
   </section>
   {%- endif %}
 
-  {%- if item.beforeAfter %}
-  {#- До и после: слайдеры сравнения (кейс с ретушью) -#}
-  {%- set ba = t.case.beforeAfter -%}
-  <section class="container case__section case__section--last" aria-labelledby="ba-label">
+  {%- if item.flashlight %}
+  {#- Фонарик: тёмная тема, курсор высвечивает светлую (кейс Duescape) -#}
+  {%- set fl = item.flashlight -%}
+  <section class="container case__section" aria-labelledby="fl-label">
     <div class="case__grid">
-      <p class="mono accent case__side" id="ba-label">01 · {{ ba.label }}</p>
-      <p class="case__statement">{{ ba.lead }}</p>
+      <p class="mono accent case__side" id="fl-label">01 · {{ c.flLabel }}</p>
+      <p class="case__statement">{{ c.flLead }}</p>
+    </div>
+    <div class="flash" data-flash style="--ar: {{ fl.ratio }}">
+      <div class="flash__stage">
+      <div class="flash__layer flash__layer--dark">
+        {%- for s in fl.screens %}<img class="flash__screen" src="{{ s.dark }}" alt="{{ s.alt[lang] }}" loading="lazy" decoding="async">{% endfor %}
+      </div>
+      <div class="flash__layer flash__layer--light" aria-hidden="true">
+        {%- for s in fl.screens %}<img class="flash__screen" src="{{ s.light }}" alt="" loading="lazy" decoding="async">{% endfor %}
+      </div>
+      </div>
+    </div>
+    <p class="flash__hint mono mono--plain soft">{{ c.flHint }}</p>
+  </section>
+  {%- endif %}
+
+  {%- if item.media %}
+  {#- Короткое видео / гифка (например, Cohorta: как было и как стало) -#}
+  <section class="container case__section" aria-labelledby="media-label">
+    <div class="case__grid">
+      <p class="mono accent case__side" id="media-label">01 · {{ c.mediaLabel }}</p>
+      <p class="case__statement">{{ c.mediaLead }}</p>
+    </div>
+    <div class="media-list">
+      {%- for m in item.media %}
+      <figure class="media reveal" style="--ar: {{ m.ratio or '16 / 10' }}">
+        {%- if m.src.endsWith('.mp4') or m.src.endsWith('.webm') %}
+        <video class="media__el" src="{{ m.src }}"{% if m.poster %} poster="{{ m.poster }}"{% endif %} autoplay muted loop playsinline preload="metadata" aria-label="{{ m.caption[lang] }}"></video>
+        {%- else %}
+        <img class="media__el" src="{{ m.src }}" alt="{{ m.caption[lang] }}" loading="lazy" decoding="async">
+        {%- endif %}
+        {%- if m.caption %}<figcaption class="mono mono--plain soft">{{ m.caption[lang] }}</figcaption>{% endif %}
+      </figure>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if item.beforeAfter %}
+  {#- До и после: слайдер сравнения. frame: "browser" рисует окно браузера (веб-кейсы) -#}
+  {%- set ba = t.case.beforeAfter -%}
+  <section class="container case__section{% if not c.decisions %} case__section--last{% endif %}" aria-labelledby="ba-label">
+    <div class="case__grid">
+      <p class="mono accent case__side" id="ba-label">01 · {{ c.baLabel or ba.label }}</p>
+      <p class="case__statement">{{ c.baLead or ba.lead }}</p>
     </div>
     <div class="ba-list">
       {%- for pair in item.beforeAfter %}
+      {%- set lb = pair.labels.before[lang] if pair.labels else ba.before -%}
+      {%- set la = pair.labels.after[lang] if pair.labels else ba.after -%}
       <article class="ba-item reveal">
-        <div class="ba" style="--pos: 50%; --ar: {{ pair.ratio }}" data-ba tabindex="0" role="slider"
-             aria-label="{{ ba.aria }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-          <img class="ba__img" src="{{ pair.after }}" alt="{{ ba.after }}: {{ pair.title[lang] }}" loading="lazy" decoding="async">
-          <img class="ba__img ba__img--before" src="{{ pair.before }}" alt="{{ ba.before }}: {{ pair.title[lang] }}" loading="lazy" decoding="async">
-          <span class="ba__tag ba__tag--before mono mono--plain">{{ ba.before }}</span>
-          <span class="ba__tag ba__tag--after mono mono--plain">{{ ba.after }}</span>
-          <span class="ba__handle" aria-hidden="true"><span class="ba__knob">‹ ›</span></span>
+        <div class="ba-wrap{% if pair.frame == 'browser' %} ba-wrap--browser{% endif %}">
+          {%- if pair.frame == 'browser' %}
+          <div class="browser-bar" aria-hidden="true"><span class="browser-bar__dots"><i></i><i></i><i></i></span><span class="browser-bar__url mono mono--plain">{{ pair.url }}</span></div>
+          {%- endif %}
+          <div class="ba" style="--pos: 50%; --ar: {{ pair.ratio }}" data-ba tabindex="0" role="slider"
+               aria-label="{{ ba.aria }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <img class="ba__img" src="{{ pair.after }}" alt="{{ la }}: {{ pair.title[lang] }}" loading="lazy" decoding="async">
+            <img class="ba__img ba__img--before" src="{{ pair.before }}" alt="{{ lb }}: {{ pair.title[lang] }}" loading="lazy" decoding="async">
+            <span class="ba__tag ba__tag--before mono mono--plain">{{ lb }}</span>
+            <span class="ba__tag ba__tag--after mono mono--plain">{{ la }}</span>
+            <span class="ba__handle" aria-hidden="true"><span class="ba__knob">‹ ›</span></span>
+          </div>
         </div>
         <div class="ba-item__text">
           <span class="mono mono--plain accent">0{{ loop.index }}</span>

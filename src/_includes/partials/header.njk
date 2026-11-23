@@ -1,4 +1,5 @@
 {%- set home = "/" + lang + "/" -%}
+{%- set anchorHome = homeUrl or home -%}
 <header class="site-header" data-header>
   <div class="site-header__inner container">
     {#- Место под логотип: сам логотип закреплён в левом верхнем углу и на главной уменьшается при прокрутке -#}
@@ -12,8 +13,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
       <ul class="site-nav__list">
         <li><a class="site-nav__link" href="{{ home }}work/"{% if page.url.startsWith(home + 'work/') %} aria-current="page"{% endif %}>[ {{ t.nav.work }} ]</a></li>
-        <li><a class="site-nav__link" href="{{ home }}#expertise">[ {{ t.nav.expertise }} ]</a></li>
-        <li><a class="site-nav__link" href="{{ home }}#studio">[ {{ t.nav.studio }} ]</a></li>
+        <li><a class="site-nav__link" href="{{ anchorHome }}#expertise">[ {{ t.nav.expertise }} ]</a></li>
+        <li><a class="site-nav__link" href="{{ anchorHome }}#studio">[ {{ t.nav.studio }} ]</a></li>
         <li><a class="site-nav__link" href="{{ home }}contact/"{% if page.url.startsWith(home + 'contact/') %} aria-current="page"{% endif %}>[ {{ t.nav.contact }} ]</a></li>
       </ul>
       {%- if site.languages.length > 1 %}

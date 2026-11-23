@@ -72,7 +72,8 @@
       "Design systems"
     ],
     "capsLabel": "Capabilities",
-    "workTitle": "Selected work"
+    "workTitle": "Selected work",
+    "forPrefix": "Portfolio for "
   },
   "expertise": {
     "label": "Expertise",
