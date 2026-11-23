@@ -43,8 +43,8 @@ eleventyComputed:
     </div>
   </div>
 
-  {%- if item.slug == "cohorta" %}
-  {#- Product UI playground: настоящие переключатели роли, темы и состояния -#}
+  {%- if item.playground %}
+  {#- Product UI playground (выключена: в Cohorta её заменил слайдер «прототип → продукт»): настоящие переключатели роли, темы и состояния -#}
   <section class="container case__section" aria-labelledby="pg-label">
     <div class="case__grid">
       <p class="mono accent case__side" id="pg-label">01 · {{ p.label }}</p>

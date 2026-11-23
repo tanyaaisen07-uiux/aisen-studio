@@ -44,7 +44,9 @@
             "text": "No grade reaches a student until a person accepts, edits or discards it. A working prototype in code was delivered."
           }
         ],
-        "role": "UX/UI design and front-end"
+        "role": "UX/UI design and front-end",
+        "baLabel": "From prototype to product",
+        "baLead": "Drag the slider: the same page as a prototype and in the live demo built in code."
       },
       "es": {
         "label": "Caso 01 · UI/UX · Producto",
@@ -64,7 +66,9 @@
             "text": "Ninguna nota llega al estudiante hasta que una persona la acepta, edita o descarta. Se entregó un prototipo funcional en código."
           }
         ],
-        "role": "Diseño UX/UI y front-end"
+        "role": "Diseño UX/UI y front-end",
+        "baLabel": "Del prototipo al producto",
+        "baLead": "Mueve el control: la misma página como prototipo y en la demo real hecha en código."
       },
       "ru": {
         "label": "Кейс 01 · UI/UX · Продукт",
@@ -84,7 +88,9 @@
             "text": "Оценка не уходит студенту, пока её не принял, не изменил или не отклонил человек. Сдан рабочий прототип в коде."
           }
         ],
-        "role": "UX/UI-дизайн и фронтенд"
+        "role": "UX/UI-дизайн и фронтенд",
+        "baLabel": "От прототипа к продукту",
+        "baLead": "Передвиньте ползунок: та же страница в виде прототипа и в живом демо, собранном в коде."
       }
     },
     "metaKeys": [
@@ -95,7 +101,96 @@
       "en": "learning platform",
       "es": "plataforma educativa",
       "ru": "учебная платформа"
-    }
+    },
+    "beforeAfter": [
+      {
+        "before": "/assets/img/cohorta/queue-prototype.webp",
+        "after": "/assets/img/cohorta/queue-live.webp",
+        "ratio": "16 / 10",
+        "frame": "browser",
+        "url": "cohorta / instructor / grading queue",
+        "labels": {
+          "before": {
+            "en": "Prototype",
+            "es": "Prototipo",
+            "ru": "Прототип"
+          },
+          "after": {
+            "en": "Live product",
+            "es": "Producto real",
+            "ru": "Живой продукт"
+          }
+        },
+        "title": {
+          "en": "Instructor: grading queue",
+          "es": "Docente: cola de corrección",
+          "ru": "Преподаватель: очередь проверки"
+        },
+        "text": {
+          "en": "The structure set the order of work: status filters on top, the list by priority on the left, quick review on the right. In the live product the right panel gained the AI draft against the rubric and the instructor's decision: accept, edit or discard.",
+          "es": "La estructura marcó el orden de trabajo: filtros por estado arriba, la lista por prioridad a la izquierda y la revisión rápida a la derecha. En el producto real el panel derecho incorporó el borrador de la IA según la rúbrica y la decisión del docente: aceptar, editar o descartar.",
+          "ru": "Структура задала порядок работы: фильтры по статусу сверху, список по приоритету слева, быстрая проверка справа. В живом продукте в правой панели появились черновик оценки от ИИ по рубрике и решение преподавателя: принять, изменить или отклонить."
+        }
+      },
+      {
+        "before": "/assets/img/cohorta/student-prototype.webp",
+        "after": "/assets/img/cohorta/student-live.webp",
+        "ratio": "16 / 10",
+        "frame": "browser",
+        "url": "cohorta / student / home",
+        "labels": {
+          "before": {
+            "en": "Prototype",
+            "es": "Prototipo",
+            "ru": "Прототип"
+          },
+          "after": {
+            "en": "Live product",
+            "es": "Producto real",
+            "ru": "Живой продукт"
+          }
+        },
+        "title": {
+          "en": "Student: one next step",
+          "es": "Estudiante: un siguiente paso",
+          "ru": "Студент: один следующий шаг"
+        },
+        "text": {
+          "en": "In the prototype the home page is built around a single Continue block. In the product it is the next lesson with module progress, deadlines and the latest instructor feedback beside it, and locked lessons are clearly marked.",
+          "es": "En el prototipo la página de inicio gira en torno a un único bloque Continuar. En el producto es la siguiente lección con el progreso del módulo, los plazos y el último comentario del docente al lado, y las lecciones bloqueadas están bien marcadas.",
+          "ru": "В прототипе главная собрана вокруг одного блока «Продолжить». В продукте это следующий урок с прогрессом модуля, рядом дедлайны и последний отзыв преподавателя, а закрытые уроки честно помечены замком."
+        }
+      },
+      {
+        "before": "/assets/img/cohorta/admin-prototype.webp",
+        "after": "/assets/img/cohorta/admin-live.webp",
+        "ratio": "16 / 10",
+        "frame": "browser",
+        "url": "cohorta / admin / enrolments",
+        "labels": {
+          "before": {
+            "en": "Prototype",
+            "es": "Prototipo",
+            "ru": "Прототип"
+          },
+          "after": {
+            "en": "Live product",
+            "es": "Producto real",
+            "ru": "Живой продукт"
+          }
+        },
+        "title": {
+          "en": "Admin: enrolments",
+          "es": "Administración: matrículas",
+          "ru": "Администратор: записи на курсы"
+        },
+        "text": {
+          "en": "A table for 257 students across 6 cohorts: status filters, search and bulk actions. In the product every row shows status in colour and progress as a bar, so students at risk are visible without opening a profile.",
+          "es": "Una tabla para 257 estudiantes en 6 cohortes: filtros por estado, búsqueda y acciones masivas. En el producto cada fila muestra el estado en color y el progreso en una barra, así que los estudiantes en riesgo se ven sin abrir su ficha.",
+          "ru": "Таблица на 257 студентов в 6 потоках: фильтры по статусу, поиск и массовые действия. В продукте у каждой строки статус цветом и прогресс полосой, поэтому студентов, которые отстают, видно без открытия карточки."
+        }
+      }
+    ]
   },
   {
     "slug": "duescape",
