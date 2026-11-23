@@ -42,7 +42,7 @@ eleventyComputed:
       </div>
     </div>
     <div class="hero__side">
-      <p class="hero__intro mono mono--plain">{{ copy.intro or t.home.intro }}</p>
+      <p class="hero__intro">{{ copy.intro or t.home.intro }}</p>
       <a class="btn btn--dark" href="#work" data-track="cta_click" data-track-label="hero_selected_work">{{ t.home.toWork }}
         <span class="btn__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v12M3 9l5 5 5-5"/></svg></span>
       </a>
@@ -85,7 +85,7 @@ eleventyComputed:
 {#- 4. Экспертиза: три вкладки -#}
 <section class="section section--dark" id="expertise" aria-labelledby="expertise-label">
   <div class="container">
-    <p class="mono on-dark-soft" id="expertise-label">{{ t.expertise.label }}</p>
+    <h2 class="section__title section__title--dark" id="expertise-label">{{ t.expertise.label }}</h2>
     <div class="expertise" data-tabs>
       <div class="expertise__tabs" role="tablist" aria-labelledby="expertise-label">
         {%- for key in entry.tabs %}{% for tab in t.expertise.tabs %}{% if tab.key == key %}
