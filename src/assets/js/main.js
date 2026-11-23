@@ -42,7 +42,8 @@ function measureIntro() {
   const cs = getComputedStyle(hero);
   const avail = hero.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
   const headerH = header ? header.offsetHeight : 84;
-  intro.S = Math.max(1, avail / w0);
+  // Логотип на первом экране не во всю ширину, а примерно на 60%: предложение и кнопка видны сразу
+  intro.S = Math.max(1, (avail * 0.6) / w0);
   intro.startY = headerH + 16 - logo.offsetTop;
   intro.dist = Math.max(240, intro.startY + h0 * intro.S * 0.6);
   // место под крупный логотип внутри hero
