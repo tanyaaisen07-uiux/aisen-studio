@@ -471,11 +471,13 @@ $$("[data-flash]").forEach((el) => {
 })();
 
 /* ---------- Буквы перемешиваются при наведении (кнопки и ссылки) ----------
-   Как на ggdesign.it: буквы того же слова тасуются 4-5 кадров и встают на место слева направо.
+   Как на ggdesign.it: сразу при наведении все буквы слова тасуются целиком,
+   три разных перемешивания примерно по 110 мс, потом слово встаёт на место (~0,35 с).
    Пробелы, скобки и знаки остаются на своих местах. Скринридеры читают исходный текст (aria-label). */
 (() => {
   if (reduceMotion || !finePointer) return;
   const SEL = ".btn, .site-nav__link, .link-plain, .chip, .pill-word, .contact-band__links a, .lang-switch__item";
+  const SHUFFLES = 3, STEP = 110;
   const isChar = (ch) => /[\p{L}\p{N}]/u.test(ch);
   const textNodes = (el) => {
     const out = [];
@@ -486,32 +488,39 @@ $$("[data-flash]").forEach((el) => {
     return out;
   };
   const shuffle = (arr) => { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; };
-  const frame = (orig, fixed) => {
+  // Перемешивает только буквы и цифры; повторяет, пока результат не отличается от исходника и прошлого кадра
+  const scramble = (orig, prev) => {
     const chars = [...orig];
     const pos = chars.map((c, i) => (isChar(c) ? i : -1)).filter((i) => i >= 0);
-    const free = pos.slice(fixed);
-    const pool = shuffle(free.map((i) => chars[i]));
-    free.forEach((i, k) => { chars[i] = pool[k]; });
-    return chars.join("");
+    const letters = pos.map((i) => chars[i]);
+    if (new Set(letters).size < 2) return orig;
+    let out = orig;
+    for (let tries = 0; tries < 8 && (out === orig || out === prev); tries++) {
+      const pool = shuffle(letters.slice());
+      const next = chars.slice();
+      pos.forEach((i, k) => { next[i] = pool[k]; });
+      out = next.join("");
+    }
+    return out;
   };
   $$(SEL).forEach((el) => {
     const nodes = textNodes(el);
     if (!nodes.length) return;
     const originals = nodes.map((n) => n.nodeValue);
     if (!el.hasAttribute("aria-label")) el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
-    let timer = null;
+    let timer = null, running = false;
+    const finish = () => { clearInterval(timer); running = false; nodes.forEach((n, i) => { n.nodeValue = originals[i]; }); };
     el.addEventListener("mouseenter", () => {
-      clearInterval(timer);
-      const STEPS = 5;
+      if (running) return; // не перезапускаем, пока идёт анимация: без дёрганья при быстром движении мыши
+      running = true;
       let f = 0;
-      timer = setInterval(() => {
+      const tick = () => {
+        if (f >= SHUFFLES) return finish();
+        nodes.forEach((n, i) => { n.nodeValue = scramble(originals[i], n.nodeValue); });
         f++;
-        nodes.forEach((n, i) => {
-          const total = [...originals[i]].filter(isChar).length;
-          n.nodeValue = f >= STEPS ? originals[i] : frame(originals[i], Math.floor((total * f) / STEPS));
-        });
-        if (f >= STEPS) clearInterval(timer);
-      }, 55);
+      };
+      tick(); // первый кадр сразу, как у референса
+      timer = setInterval(tick, STEP);
     });
   });
 })();
