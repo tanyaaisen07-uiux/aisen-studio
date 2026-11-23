@@ -104,11 +104,11 @@
       "product"
     ],
     "year": 2025,
-    "nameChanged": false,
+    "nameChanged": true,
     "hasCase": true,
     "draft": true,
-    "live": "https://www.behance.net/gallery/257842959/Duescape-Subscription-Tracker-App-UIUX-Case-Study",
-    "liveKind": "behance",
+    "live": "https://tanyaaisen07-uiux.github.io/duescape-design-system/",
+    "liveKind": "site",
     "cover": "/assets/img/covers/duescape.webp",
     "coverPos": "center",
     "sites": [
@@ -235,7 +235,8 @@
       "en": "subscription app",
       "es": "app de suscripciones",
       "ru": "трекер подписок"
-    }
+    },
+    "type": "client"
   },
   {
     "slug": "lumia",
