@@ -701,3 +701,19 @@ body, .site-header, .section--dark, .contact-band, .site-footer { transition: ba
 .contact-band { border-radius: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem) 0 0; margin-inline: clamp(0.5rem, 1.2vw, 1.25rem); }
 .page-home .site-footer { margin-inline: clamp(0.5rem, 1.2vw, 1.25rem); }
 .section__title--dark { color: var(--dark-fg); }
+
+/* ---------- Первый экран на телефоне: плотнее ----------
+   Заголовок в две строки, услуги в одну строку, под ролью только первое предложение. */
+@media (max-width: 600px) {
+  .hero { padding-top: var(--space-5); padding-bottom: var(--space-6); }
+  .hero__label { margin-bottom: var(--space-5); }
+  .hero__title, :lang(es) .hero__title { font-size: clamp(1.9rem, 8.6vw, 2.6rem); line-height: 1.08; }
+  .hero__bottom { margin-top: var(--space-6); gap: var(--space-4); }
+  .hero__main, .hero__side { gap: var(--space-4); }
+  .hero__role { font-size: 1.15rem; }
+  .hero__words { gap: var(--space-2); flex-wrap: nowrap; }
+  .pill-word { min-height: 38px; padding: 0.3rem 0.95rem; font-size: 1.1rem; }
+  .hero__intro { font-size: 1rem; }
+  .hero__intro-more { display: none; }
+  .cap { padding: 1rem 0; }
+}

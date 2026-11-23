@@ -42,7 +42,10 @@ eleventyComputed:
       </div>
     </div>
     <div class="hero__side">
-      <p class="hero__intro">{{ copy.intro or t.home.intro }}</p>
+      {%- set introText = copy.intro or t.home.intro -%}
+      {%- set introParts = introText.split(". ") -%}
+      {#- На телефоне показываем только первое предложение, чтобы первый экран был короче -#}
+      <p class="hero__intro">{{ introParts[0] }}{% if introParts.length > 1 %}.<span class="hero__intro-more"> {{ introParts.slice(1).join(". ") }}</span>{% endif %}</p>
       <a class="btn btn--dark" href="#work" data-track="cta_click" data-track-label="hero_selected_work">{{ t.home.toWork }}
         <span class="btn__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v12M3 9l5 5 5-5"/></svg></span>
       </a>
