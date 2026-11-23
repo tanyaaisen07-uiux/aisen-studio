@@ -7,13 +7,14 @@
 // Ссылка под конкретную компанию: /ru/web/?for=MARTA
 // в hero появится строка «Портфолио для MARTA».
 //
-// caps: порядковые номера из i18n home.caps (0 Айдентика, 1 Веб, 2 UI/UX, 3 Продукт, 4 Дизайн-системы).
+// Профили под вакансии показывают статус «Открыта к работе», общая главная: «Беру новые проекты».
+// caps: три главных направления, порядковые номера из i18n home.caps (0 Айдентика, 1 Веб, 2 UI/UX, 3 Продукт, 4 Дизайн-системы).
 
 export default {
   web: {
     cases: ["lumia", "art-cook", "cohorta", "kun"],
     tab: "web",
-    caps: [1, 2, 0, 3, 4],
+    caps: [1, 2, 0],
     copy: {
       en: {
         role: "Web & UI/UX Designer",
@@ -32,7 +33,7 @@ export default {
   product: {
     cases: ["cohorta", "duescape", "lumia"],
     tab: "product",
-    caps: [3, 2, 4, 1, 0],
+    caps: [3, 2, 1],
     copy: {
       en: {
         role: "Product Designer · UI/UX",
@@ -51,7 +52,7 @@ export default {
   brand: {
     cases: ["art-cook", "kun"],
     tab: "brand",
-    caps: [0, 1, 2, 3, 4],
+    caps: [0, 1, 2],
     copy: {
       en: {
         role: "Brand & Graphic Designer",

@@ -43,7 +43,8 @@
             "title": "Result",
             "text": "No grade reaches a student until a person accepts, edits or discards it. A working prototype in code was delivered."
           }
-        ]
+        ],
+        "role": "UX/UI design and front-end"
       },
       "es": {
         "label": "Caso 01 · UI/UX · Producto",
@@ -62,7 +63,8 @@
             "title": "Resultado",
             "text": "Ninguna nota llega al estudiante hasta que una persona la acepta, edita o descarta. Se entregó un prototipo funcional en código."
           }
-        ]
+        ],
+        "role": "Diseño UX/UI y front-end"
       },
       "ru": {
         "label": "Кейс 01 · UI/UX · Продукт",
@@ -81,7 +83,8 @@
             "title": "Результат",
             "text": "Оценка не уходит студенту, пока её не принял, не изменил или не отклонил человек. Сдан рабочий прототип в коде."
           }
-        ]
+        ],
+        "role": "UX/UI-дизайн и фронтенд"
       }
     },
     "metaKeys": [
@@ -174,7 +177,8 @@
             "title": "Result",
             "text": "33 screens in Light and Dark on one token layer: 55 primitives, 28 semantic tokens, 36 components with 111 variants, WCAG AA on every text pair, and a prototype with 118 connections and no dead ends."
           }
-        ]
+        ],
+        "role": "Product design: UI, UX, design system"
       },
       "es": {
         "label": "Caso · UI/UX · App móvil",
@@ -196,7 +200,8 @@
             "title": "Resultado",
             "text": "33 pantallas en claro y oscuro sobre una sola capa de tokens: 55 primitivos, 28 tokens semánticos, 36 componentes con 111 variantes, WCAG AA en cada par de texto y un prototipo con 118 conexiones sin callejones sin salida."
           }
-        ]
+        ],
+        "role": "Diseño de producto: UI, UX, sistema de diseño"
       },
       "ru": {
         "label": "Кейс · UI/UX · Мобильное приложение",
@@ -218,7 +223,8 @@
             "title": "Результат",
             "text": "33 экрана в светлой и тёмной теме на одном слое токенов: 55 примитивов, 28 семантических токенов, 36 компонентов со 111 вариантами, WCAG AA для всех пар текста и прототип со 118 связями без тупиков."
           }
-        ]
+        ],
+        "role": "Продуктовый дизайн: UI, UX, дизайн-система"
       }
     },
     "metaKeys": [
@@ -277,7 +283,8 @@
             "title": "Результат",
             "text": "7 из 8 выбрали версию B: в ней нужный букет находят быстрее. Она внедрена, сайт и упаковка оформлены в одном стиле."
           }
-        ]
+        ],
+        "role": "Веб-дизайн, сборка в Webflow, A/B-тесты"
       },
       "en": {
         "label": "Case · Web · E-commerce",
@@ -296,7 +303,8 @@
             "title": "Result",
             "text": "7 of 8 chose version B because the right bouquet is easier to find. It went live, with the website and packaging in one style."
           }
-        ]
+        ],
+        "role": "Web design, Webflow build, A/B tests"
       },
       "es": {
         "label": "Caso · Web · E-commerce",
@@ -315,7 +323,8 @@
             "title": "Resultado",
             "text": "7 de 8 eligieron la versión B porque el ramo se encuentra antes. Es la que se publicó, con la web y el packaging en un mismo estilo."
           }
-        ]
+        ],
+        "role": "Diseño web, desarrollo en Webflow, tests A/B"
       }
     },
     "tagline": {
@@ -372,7 +381,8 @@
           }
         ],
         "baLabel": "От вайрфрейма к дизайну",
-        "baLead": "Передвиньте ползунок: та же страница курса в виде вайрфрейма и в финальном дизайне с новым брендом."
+        "baLead": "Передвиньте ползунок: та же страница курса в виде вайрфрейма и в финальном дизайне с новым брендом.",
+        "role": "Предложение, айдентика и сайт"
       },
       "en": {
         "label": "Case · Brand · Web",
@@ -393,7 +403,8 @@
           }
         ],
         "baLabel": "From wireframe to design",
-        "baLead": "Drag the slider: the same course page as a wireframe and as the final design with the new brand."
+        "baLead": "Drag the slider: the same course page as a wireframe and as the final design with the new brand.",
+        "role": "Offer, brand identity and website"
       },
       "es": {
         "label": "Caso · Marca · Web",
@@ -414,7 +425,8 @@
           }
         ],
         "baLabel": "Del wireframe al diseño",
-        "baLead": "Mueve el control: la misma página del curso como wireframe y como diseño final con la nueva marca."
+        "baLead": "Mueve el control: la misma página del curso como wireframe y como diseño final con la nueva marca.",
+        "role": "Oferta, identidad de marca y web"
       }
     },
     "beforeAfter": [

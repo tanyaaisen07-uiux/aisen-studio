@@ -46,7 +46,7 @@
       "Diseñar con propósito.",
       "Construir con claridad."
     ],
-    "role": "Diseñadora de marca, web y producto digital",
+    "role": "Diseñadora de marca y web · UI/UX",
     "words": [
       {
         "label": "Marca",
@@ -61,7 +61,7 @@
         "tab": "product"
       }
     ],
-    "intro": "Identidad de marca, webs y productos digitales para empresas y equipos. Diseño a medida, sin plantillas.",
+    "intro": "Identidad de marca y webs para pequeños negocios independientes: del primer logotipo a una web que trae reservas y pedidos.",
     "toWork": "Proyectos destacados",
     "shapeLabel": "Cambiar la forma",
     "caps": [
@@ -202,7 +202,8 @@
       "required": "Rellena este campo.",
       "emailInvalid": "Introduce un email válido."
     },
-    "cv": "Descargar CV"
+    "cv": "Descargar CV",
+    "statusStudio": "Disponible para proyectos seleccionados"
   },
   "work": {
     "title": "Proyectos · Aisen Studio",
@@ -278,31 +279,12 @@
     "label": "Herramientas",
     "rows": [
       {
-        "title": "Investigación e ideas",
-        "items": [
-          "Claude",
-          "ChatGPT",
-          "Gemini",
-          "Miro"
-        ]
-      },
-      {
         "title": "Diseño",
         "items": [
           "Figma",
           "Photoshop",
           "Illustrator",
-          "After Effects",
-          "Midjourney",
-          "Recraft"
-        ]
-      },
-      {
-        "title": "Prototipos con IA",
-        "items": [
-          "Claude Code",
-          "Cursor",
-          "Codex"
+          "Midjourney"
         ]
       },
       {
@@ -310,9 +292,15 @@
         "items": [
           "Webflow",
           "Framer",
-          "Shopify",
           "Tilda",
           "HTML y CSS"
+        ]
+      },
+      {
+        "title": "Prototipos con IA",
+        "items": [
+          "Claude Code",
+          "Cursor"
         ]
       }
     ]

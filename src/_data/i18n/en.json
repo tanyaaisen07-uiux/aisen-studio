@@ -46,7 +46,7 @@
       "Design with purpose.",
       "Build with clarity."
     ],
-    "role": "Brand, Web & Product Designer",
+    "role": "Brand & Web Designer · UI/UX",
     "words": [
       {
         "label": "Brand",
@@ -61,7 +61,7 @@
         "tab": "product"
       }
     ],
-    "intro": "Brand identity, websites and digital products for businesses and teams. Custom design, no templates.",
+    "intro": "Brand identity and websites for small and independent businesses: from the first logo to a site that brings in bookings and orders.",
     "toWork": "Selected work",
     "shapeLabel": "Change the shape",
     "caps": [
@@ -202,7 +202,8 @@
       "required": "Please fill in this field.",
       "emailInvalid": "Please enter a valid email."
     },
-    "cv": "Download CV"
+    "cv": "Download CV",
+    "statusStudio": "Available for selected projects"
   },
   "work": {
     "title": "Work · Aisen Studio",
@@ -278,31 +279,12 @@
     "label": "Tool stack",
     "rows": [
       {
-        "title": "Research & ideas",
-        "items": [
-          "Claude",
-          "ChatGPT",
-          "Gemini",
-          "Miro"
-        ]
-      },
-      {
         "title": "Design",
         "items": [
           "Figma",
           "Photoshop",
           "Illustrator",
-          "After Effects",
-          "Midjourney",
-          "Recraft"
-        ]
-      },
-      {
-        "title": "AI prototyping",
-        "items": [
-          "Claude Code",
-          "Cursor",
-          "Codex"
+          "Midjourney"
         ]
       },
       {
@@ -310,9 +292,15 @@
         "items": [
           "Webflow",
           "Framer",
-          "Shopify",
           "Tilda",
           "HTML & CSS"
+        ]
+      },
+      {
+        "title": "AI prototyping",
+        "items": [
+          "Claude Code",
+          "Cursor"
         ]
       }
     ]

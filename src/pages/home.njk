@@ -52,7 +52,7 @@ eleventyComputed:
 
 {#- 2. Плашка компетенций -#}
 <section class="container" aria-label="{{ t.home.capsLabel }}">
-  <ul class="caps">
+  <ul class="caps" style="--n: {{ entry.caps.length }}">
     {%- for i in entry.caps %}
     <li class="cap"><span class="cap__num mono">0{{ loop.index }}</span><span class="cap__label">{{ t.home.caps[i] }}</span></li>
     {%- endfor %}
@@ -120,7 +120,12 @@ eleventyComputed:
 
 {#- 5. Студия: портрет, текст, сноска, шаги -#}
 <section class="section container" id="studio" aria-labelledby="studio-label">
-  <div class="studio studio--text">
+  <div class="studio">
+    {#- Фото основателя: только здесь, не на первом экране -#}
+    <figure class="studio__portrait reveal">
+      <div class="studio__photo"><img src="/assets/img/about/tania-portrait.webp" alt="{{ t.studio.portraitAlt }}" loading="lazy" decoding="async" width="900" height="1117"></div>
+      <figcaption class="mono mono--plain soft">{{ t.studio.caption }}</figcaption>
+    </figure>
     <div class="studio__text">
       <p class="mono soft" id="studio-label">{{ t.studio.label }}</p>
       <p class="studio__statement">{{ t.studio.statement }}<sup class="mono mono--plain accent">1</sup></p>
@@ -182,7 +187,7 @@ eleventyComputed:
         <li><a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %} data-track="cta_click" data-track-label="home_{{ c.label | slugify }}">{{ c.label }}{% if c.external %} ↗{% endif %}</a></li>
         {%- endfor %}
       </ul>
-      <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ t.contact.status }}</p>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ t.contact.statusStudio if entry.studio else t.contact.status }}</p>
     </div>
   </div>
 </section>

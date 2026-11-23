@@ -46,7 +46,7 @@
       "Дизайн со смыслом.",
       "Решения с ясностью."
     ],
-    "role": "Дизайнер: бренд, веб, продукт",
+    "role": "Дизайнер: бренд и веб · UI/UX",
     "words": [
       {
         "label": "Бренд",
@@ -61,7 +61,7 @@
         "tab": "product"
       }
     ],
-    "intro": "Айдентика, сайты и цифровые продукты для бизнеса и команд. Индивидуальный дизайн, без шаблонов.",
+    "intro": "Айдентика и сайты для малого бизнеса и онлайн-школ: от первого логотипа до сайта, который приносит заявки и заказы.",
     "toWork": "Избранные работы",
     "shapeLabel": "Изменить форму",
     "caps": [
@@ -202,7 +202,8 @@
       "required": "Заполните это поле.",
       "emailInvalid": "Проверьте email."
     },
-    "cv": "Скачать резюме"
+    "cv": "Скачать резюме",
+    "statusStudio": "Беру новые проекты"
   },
   "work": {
     "title": "Работы · Aisen Studio",
@@ -278,31 +279,12 @@
     "label": "Инструменты",
     "rows": [
       {
-        "title": "Исследование и идеи",
-        "items": [
-          "Claude",
-          "ChatGPT",
-          "Gemini",
-          "Miro"
-        ]
-      },
-      {
         "title": "Дизайн",
         "items": [
           "Figma",
           "Photoshop",
           "Illustrator",
-          "After Effects",
-          "Midjourney",
-          "Recraft"
-        ]
-      },
-      {
-        "title": "Прототипы с AI",
-        "items": [
-          "Claude Code",
-          "Cursor",
-          "Codex"
+          "Midjourney"
         ]
       },
       {
@@ -310,9 +292,15 @@
         "items": [
           "Webflow",
           "Framer",
-          "Shopify",
           "Tilda",
           "HTML и CSS"
+        ]
+      },
+      {
+        "title": "Прототипы с AI",
+        "items": [
+          "Claude Code",
+          "Cursor"
         ]
       }
     ]
