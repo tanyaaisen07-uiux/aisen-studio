@@ -101,7 +101,6 @@
       "product"
     ],
     "year": 2025,
-    "type": "concept",
     "nameChanged": false,
     "hasCase": true,
     "draft": true,
@@ -499,10 +498,7 @@
     "hasCase": true,
     "cover": "/assets/img/covers/jewelry.webp",
     "coverPos": "center",
-    "sites": [
-      "main",
-      "ru"
-    ],
+    "sites": [],
     "order": {
       "main": 6,
       "ru": 5

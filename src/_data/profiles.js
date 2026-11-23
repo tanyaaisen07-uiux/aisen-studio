@@ -49,7 +49,7 @@ export default {
     }
   },
   brand: {
-    cases: ["art-cook", "kun", "jewelry-visuals"],
+    cases: ["art-cook", "kun"],
     tab: "brand",
     caps: [0, 1, 2, 3, 4],
     copy: {

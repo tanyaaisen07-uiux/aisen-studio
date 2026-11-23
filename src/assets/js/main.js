@@ -469,3 +469,49 @@ $$("[data-flash]").forEach((el) => {
     }
   } catch (e) { /* хранилище недоступно */ }
 })();
+
+/* ---------- Буквы перемешиваются при наведении (кнопки и ссылки) ----------
+   Как на ggdesign.it: буквы того же слова тасуются 4-5 кадров и встают на место слева направо.
+   Пробелы, скобки и знаки остаются на своих местах. Скринридеры читают исходный текст (aria-label). */
+(() => {
+  if (reduceMotion || !finePointer) return;
+  const SEL = ".btn, .site-nav__link, .link-plain, .chip, .pill-word, .contact-band__links a, .lang-switch__item";
+  const isChar = (ch) => /[\p{L}\p{N}]/u.test(ch);
+  const textNodes = (el) => {
+    const out = [];
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement.closest("svg") || !/[\p{L}\p{N}]/u.test(n.nodeValue) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT)
+    });
+    while (w.nextNode()) out.push(w.currentNode);
+    return out;
+  };
+  const shuffle = (arr) => { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; };
+  const frame = (orig, fixed) => {
+    const chars = [...orig];
+    const pos = chars.map((c, i) => (isChar(c) ? i : -1)).filter((i) => i >= 0);
+    const free = pos.slice(fixed);
+    const pool = shuffle(free.map((i) => chars[i]));
+    free.forEach((i, k) => { chars[i] = pool[k]; });
+    return chars.join("");
+  };
+  $$(SEL).forEach((el) => {
+    const nodes = textNodes(el);
+    if (!nodes.length) return;
+    const originals = nodes.map((n) => n.nodeValue);
+    if (!el.hasAttribute("aria-label")) el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
+    let timer = null;
+    el.addEventListener("mouseenter", () => {
+      clearInterval(timer);
+      const STEPS = 5;
+      let f = 0;
+      timer = setInterval(() => {
+        f++;
+        nodes.forEach((n, i) => {
+          const total = [...originals[i]].filter(isChar).length;
+          n.nodeValue = f >= STEPS ? originals[i] : frame(originals[i], Math.floor((total * f) / STEPS));
+        });
+        if (f >= STEPS) clearInterval(timer);
+      }, 55);
+    });
+  });
+})();
