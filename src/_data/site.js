@@ -38,7 +38,7 @@ const variants = {
     cvFile: { ru: "" },    // путь к PDF резюме, например "/assets/cv/tania-aisen-cv-ru.pdf"
     // LinkedIn здесь не показываем: в профиле указана локация
     contacts: [
-      { label: "WhatsApp +7 701 784 02 24", href: "https://wa.me/77017840224", external: true },
+      { label: "WhatsApp", href: "https://wa.me/77017840224", external: true },
       { label: "Telegram @tanya_ai", href: "https://t.me/tanya_ai", external: true },
       { label: "Behance", href: "https://www.behance.net/tanyaaisen", external: true },
       { label: "GitHub", href: "https://github.com/tanyaaisen07-uiux", external: true }
